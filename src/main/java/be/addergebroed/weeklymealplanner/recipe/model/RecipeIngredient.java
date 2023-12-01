@@ -19,7 +19,7 @@ public class RecipeIngredient {
     private Long Id;
 
     @Column(nullable = false)
-    private int qty;
+    private double qty;
 
     @ManyToOne
     @JoinColumn(name = "unit_id", nullable = false)

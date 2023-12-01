@@ -19,6 +19,9 @@ public class DietaryNeed {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToMany(mappedBy = "dietaryNeeds")
+    @ManyToMany
+    @JoinTable(name = "categories_excl_from_dietary_need",
+            joinColumns = @JoinColumn(name = "dietary_need_id",nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "excl_food_category_id",nullable = false))
     private Set<FoodCategory> excludedCategories = new HashSet<>();
 }

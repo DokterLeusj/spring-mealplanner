@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -25,6 +26,8 @@ public class FoodCategory {
         boolean allergen;
 
         @ManyToMany(mappedBy = "categories")
-                @Column(nullable = true)
-        Set<Ingredient> ingredients;
+        Set<Ingredient> ingredients= new HashSet<>();
+
+        @ManyToMany(mappedBy ="excludedCategories")
+        Set<FoodCategory> foodCategories=new HashSet<>();
 }

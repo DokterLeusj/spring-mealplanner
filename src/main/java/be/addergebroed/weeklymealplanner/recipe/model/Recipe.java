@@ -18,13 +18,12 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     String name;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     boolean nutriTech;
 
-    @Column(nullable = false)
     @ManyToMany()
     @JoinTable(name = "recipe_ingredient_per_recipe",
             joinColumns = @JoinColumn(name = "recipe_id"),
