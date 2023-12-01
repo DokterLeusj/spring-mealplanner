@@ -13,16 +13,22 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true,nullable = false)
+
+    @Column(nullable = false)
     private String username;
+
     @Column(nullable = false)
     private String password;
+
     @Column(unique = true,nullable = false)
     private String email;
-    @Column(unique = true,nullable = false)
+
+    @Column(nullable = true)
     private String imgUrl;
-    @OneToMany(mappedBy = "user")
-    private MealPlan mealPlan;
+
+    @ManyToOne
+    @JoinColumn(name = "plan_preference_id", nullable = true)
+    private PlanPreference planPreference;
 
 
 

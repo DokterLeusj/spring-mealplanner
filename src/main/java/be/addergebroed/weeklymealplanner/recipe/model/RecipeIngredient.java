@@ -22,12 +22,12 @@ public class RecipeIngredient {
     private int qty;
 
     @ManyToOne
-    @JoinColumn(name="unit_id", nullable = false)
+    @JoinColumn(name = "unit_id", nullable = false)
     private FoodUnit unit;
 
-@ManyToOne
-    @JoinColumn(name="ingredient_id",nullable = false)
-    private    Ingredient ingredient;
+    @ManyToOne
+    @JoinColumn(name = "ingredient_id", nullable = false)
+    private Ingredient ingredient;
 
     @ManyToMany(mappedBy = "recipeIngredients")
     private Set<Recipe> recipes;

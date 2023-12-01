@@ -1,4 +1,4 @@
-package be.addergebroed.weeklymealplanner.controller;
+package be.addergebroed.weeklymealplanner.recipe.controller;
 
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 import be.addergebroed.weeklymealplanner.recipe.service.RecipeService;
