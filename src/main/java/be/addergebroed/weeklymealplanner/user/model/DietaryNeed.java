@@ -1,10 +1,8 @@
 package be.addergebroed.weeklymealplanner.user.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import be.addergebroed.weeklymealplanner.recipe.model.FoodCategory;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.HashSet;
@@ -20,5 +18,10 @@ public class DietaryNeed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Set<FoodCategory> excludedCatergories = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(name = "dietary_need_excluded_category",
+            joinColumns = @JoinColumn(name = "dietary_need_id",nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "excl_food_category_id",nullable = false))
+    private Set<FoodCategory> excludedCategories = new HashSet<>();
 }

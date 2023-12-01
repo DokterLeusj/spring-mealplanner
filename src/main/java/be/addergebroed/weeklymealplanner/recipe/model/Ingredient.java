@@ -25,7 +25,7 @@ public class Ingredient {
     @JoinTable(name = "ingredient_category",
             joinColumns = @JoinColumn(name = "ingredient_id",nullable = false),
             inverseJoinColumns = @JoinColumn(name = "food_category_id",nullable = false))
-    Set<FoodCategory> categories;
+    Set<FoodCategory> foodCategories;
 
     @OneToMany(mappedBy="ingredient")
     Set<RecipeIngredient> recipeIngredients;
