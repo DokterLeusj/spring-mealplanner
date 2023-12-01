@@ -29,7 +29,4 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "plan_preference_id", nullable = true)
     private PlanPreference planPreference;
-
-
-
 }

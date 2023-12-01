@@ -29,7 +29,7 @@ public class PlanPreference {
             inverseJoinColumns = @JoinColumn(name = "dietary_need_id",nullable = false))
     private Set<DietaryNeed> dietaryNeeds = new HashSet<>();
 
-    @OneToMany(mappedBy="mealPlanPreference")
+    @OneToMany(mappedBy="planPreference")
     private Set<User> users = new HashSet<>();
 
 

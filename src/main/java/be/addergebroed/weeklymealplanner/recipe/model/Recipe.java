@@ -25,7 +25,7 @@ public class Recipe {
     boolean nutriTech;
 
     @ManyToMany()
-    @JoinTable(name = "recipe_ingredient_per_recipe",
+    @JoinTable(name = "recipe_recipe_ingredient",
             joinColumns = @JoinColumn(name = "recipe_id"),
             inverseJoinColumns = @JoinColumn(name = "recipe_ingredient_id"))
     Set<RecipeIngredient> recipeIngredients;

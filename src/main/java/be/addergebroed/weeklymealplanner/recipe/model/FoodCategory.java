@@ -1,5 +1,6 @@
 package be.addergebroed.weeklymealplanner.recipe.model;
 
+import be.addergebroed.weeklymealplanner.user.model.DietaryNeed;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,9 +26,9 @@ public class FoodCategory {
         @Column(nullable = false)
         boolean allergen;
 
-        @ManyToMany(mappedBy = "categories")
+        @ManyToMany(mappedBy = "foodCategories")
         Set<Ingredient> ingredients= new HashSet<>();
 
         @ManyToMany(mappedBy ="excludedCategories")
-        Set<FoodCategory> foodCategories=new HashSet<>();
+        Set<DietaryNeed> dietaryNeeds=new HashSet<>();
 }
