@@ -21,14 +21,12 @@ public class RecipeIngredient {
     @Column(nullable = false)
     private int qty;
 
-    @Column(nullable = false)
     @ManyToOne
-    @JoinColumn(name="unit_id")
-    private FoodUnit foodUnit;
+    @JoinColumn(name="unit_id", nullable = false)
+    private FoodUnit unit;
 
-    @Column(nullable = false)
 @ManyToOne
-    @JoinColumn(name="ingredient_id")
+    @JoinColumn(name="ingredient_id",nullable = false)
     private    Ingredient ingredient;
 
     @ManyToMany(mappedBy = "recipeIngredients")

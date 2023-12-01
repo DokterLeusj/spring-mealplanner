@@ -14,18 +14,17 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Ingredient {
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long Id;
 
     @Column(nullable = false)
     String name;
 
-    @Column(nullable = false)
     @ManyToMany
     @JoinTable(name = "ingredient_category",
-            joinColumns = @JoinColumn(name = "ingredient_id"),
-            inverseJoinColumns = @JoinColumn(name = "food_category_id"))
+            joinColumns = @JoinColumn(name = "ingredient_id",nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "food_category_id",nullable = false))
     Set<FoodCategory> categories;
 
     @OneToMany(mappedBy="ingredient")
