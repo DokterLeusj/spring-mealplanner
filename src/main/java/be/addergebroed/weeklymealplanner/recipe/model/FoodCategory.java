@@ -18,10 +18,10 @@ import java.util.Set;
 public class FoodCategory {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        Long Id;
+        Long id;
 
         @Column(nullable = false)
-        int name;
+        String name;
 
         @Column(nullable = false)
         boolean allergen;

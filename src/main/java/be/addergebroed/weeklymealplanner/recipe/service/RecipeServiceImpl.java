@@ -3,6 +3,7 @@ package be.addergebroed.weeklymealplanner.recipe.service;
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 import be.addergebroed.weeklymealplanner.recipe.repository.RecipeIngredientRepository;
 import be.addergebroed.weeklymealplanner.recipe.repository.RecipeRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +18,13 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public List<Recipe> fetchAllRecipes() {
      return recipeRepo.findAll();
+    }
+
+    @Override
+    public Recipe fetchRecipeById(Long id) {
+        if(id==null){
+            throw new IllegalArgumentException("Id can not be null");
+        }
+        return recipeRepo.findById(id).orElseThrow(()-> new EntityNotFoundException("Could not find recipe with id "+id));
     }
 }

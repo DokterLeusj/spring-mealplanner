@@ -8,6 +8,7 @@ public interface RecipeService {
     //C
     //R
     List<Recipe> fetchAllRecipes();
+   Recipe fetchRecipeById(Long id);
 
     //U
     //D
