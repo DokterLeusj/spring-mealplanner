@@ -23,6 +23,9 @@ public class Recipe {
     String name;
 
     @Column(nullable = true)
+    String description;
+
+    @Column(nullable = true)
     boolean nutriTech;
 
     @ManyToMany()
