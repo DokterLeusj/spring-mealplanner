@@ -16,7 +16,7 @@ public class FoodUnit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     String name;
 
     @OneToMany(mappedBy = "unit")
