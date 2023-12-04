@@ -1,14 +1,11 @@
 package be.addergebroed.weeklymealplanner.recipe.controller;
 
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
+import be.addergebroed.weeklymealplanner.recipe.model.dto.RecipeDetailDto;
 import be.addergebroed.weeklymealplanner.recipe.model.dto.RecipeListDto;
 import be.addergebroed.weeklymealplanner.recipe.service.RecipeService;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,6 +22,11 @@ public class RecipeController {
         return allRecipes.stream()
                 .map(RecipeListDto::convertToDto)
                 .collect(Collectors.toList());
+
+    }
+    @GetMapping("/{id}")
+    public RecipeDetailDto handleGetRecipeById(@PathVariable Long id){
+        return RecipeDetailDto.convertToDto(recipeService.fetchRecipeById(id));
 
     }
 }
