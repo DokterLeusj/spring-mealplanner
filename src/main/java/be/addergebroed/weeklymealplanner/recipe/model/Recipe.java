@@ -24,6 +24,8 @@ public class Recipe {
 
     @Column(nullable = true)
     String description;
+    @Column(nullable = true)
+    String imgUrl;
 
     @Column(nullable = true)
     boolean nutriTech;
