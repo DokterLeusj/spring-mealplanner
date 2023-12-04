@@ -18,7 +18,7 @@ public class Ingredient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long Id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     String name;
 
     @ManyToMany
