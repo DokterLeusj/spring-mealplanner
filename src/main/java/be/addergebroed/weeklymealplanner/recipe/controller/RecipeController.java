@@ -22,7 +22,6 @@ public class RecipeController {
         return allRecipes.stream()
                 .map(RecipeListDto::convertToDto)
                 .collect(Collectors.toList());
-
     }
     @GetMapping("/{id}")
     public RecipeDetailDto handleGetRecipeById(@PathVariable Long id){
