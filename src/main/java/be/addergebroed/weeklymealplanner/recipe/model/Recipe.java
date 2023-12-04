@@ -1,5 +1,6 @@
 package be.addergebroed.weeklymealplanner.recipe.model;
 
+import be.addergebroed.weeklymealplanner.user.model.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,4 +31,7 @@ public class Recipe {
             inverseJoinColumns = @JoinColumn(name = "recipe_ingredient_id"))
     Set<RecipeIngredient> recipeIngredients;
 
+    @ManyToOne
+    @JoinColumn(name = "author_id", nullable = false)
+    User author;
 }

@@ -1,7 +1,11 @@
 package be.addergebroed.weeklymealplanner.user.model;
 
+import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -30,5 +34,7 @@ public class User {
     @JoinColumn(name = "plan_preference_id", nullable = true)
     private PlanPreference planPreference;
 
+    @OneToMany(mappedBy = "author")
+    private List<Recipe> recipes;
 
 }
