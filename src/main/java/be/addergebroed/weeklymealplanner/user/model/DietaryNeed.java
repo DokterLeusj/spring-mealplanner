@@ -28,8 +28,6 @@ public class DietaryNeed {
             inverseJoinColumns = @JoinColumn(name = "excl_food_category_id",nullable = false))
     private Set<FoodCategory> excludedCategories = new HashSet<>();
 
-
-
     @ManyToMany(mappedBy="dietaryNeeds")
     private Set<PlanPreference> planPreferences = new HashSet<>();
 }

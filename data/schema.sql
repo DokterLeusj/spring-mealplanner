@@ -1,7 +1,10 @@
 create table dietary_need
 (
-    id bigint auto_increment
-        primary key
+    id   bigint auto_increment
+        primary key,
+    name varchar(255) null,
+    constraint UK_ccgi3klx3ctuw5yun1hs0yrg7
+        unique (name)
 );
 
 create table food_category
