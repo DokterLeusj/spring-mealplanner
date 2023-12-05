@@ -1,5 +1,6 @@
 package be.addergebroed.weeklymealplanner.user.model;
 
+import be.addergebroed.weeklymealplanner.recipe.model.FoodCategory;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,6 +23,7 @@ public class PlanPreference {
     private int mealsPerDay;
 
     private int servingsPerMeal;
+
 
     @ManyToMany
     @JoinTable(name = "plan_preference_per_diet",

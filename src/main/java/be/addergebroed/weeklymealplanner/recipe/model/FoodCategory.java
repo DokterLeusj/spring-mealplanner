@@ -31,4 +31,5 @@ public class FoodCategory {
 
         @ManyToMany(mappedBy ="excludedCategories")
         Set<DietaryNeed> dietaryNeeds=new HashSet<>();
+
 }
