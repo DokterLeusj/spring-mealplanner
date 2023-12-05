@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -39,4 +40,7 @@ public class Recipe {
     @ManyToOne
     @JoinColumn(name = "author_id", nullable = false)
     User author;
+
+    @OneToMany(mappedBy = "recipe")
+   Set <RecipeInstruction> instructions=new HashSet<>();
 }
