@@ -146,3 +146,49 @@ VALUES
     ('fatima.kwame@example.com', '', '$2y$10$5BVL2jFugIVk6c53R1nCrOvum0zU0.GbNc50lO.QrM9CeZFr7nO3y', 'SpicyFatima', 1),
     ('simba.nkosi@example.com', '', '$2y$10$O5eXz17ubrrSylXTcM3Rsevbk4M.NOe6Yujauq2U8PioVeLrFvZZ2', 'SafariExplorerSimba', 2);
 
+-- Sample recipe data
+INSERT INTO mealplanner_api.recipe (id, description, name, nutri_tech, author_id)
+VALUES
+    (1, 'Spaghetti Bolognese', 'Spaghetti Bolognese', 0, 1),
+    (2, 'Vegetarian Stir-Fry', 'Vegetarian Stir-Fry', 0, 2),
+    (3, 'Chicken Parmesan', 'Chicken Parmesan', 0, 1),
+    (4, 'Caprese Salad', 'Caprese Salad', 0, 2),
+    (5, 'Chocolate Cake', 'Chocolate Cake', 0, 3),
+    (6, 'Grilled Salmon', 'Grilled Salmon', 0, 6),
+    (7, 'Mushroom Risotto', 'Mushroom Risotto', 0, 2),
+    (8, 'Greek Salad', 'Greek Salad', 0, 8),
+    (9, 'Tiramisu', 'Tiramisu', 0, 9),
+    (10, 'Beef Tacos', 'Beef Tacos', 0, 10),
+    (11, 'Grilled Chicken Salad', 'Grilled Chicken Salad', 0, 11),
+    (12, 'Quinoa Stuffed Peppers', 'Quinoa Stuffed Peppers', 0, 12),
+    (13, 'Tomato Basil Pasta', 'Tomato Basil Pasta', 0, 13),
+    (14, 'Almond Milk Smoothie', 'Almond Milk Smoothie', 0, 14),
+    (15, 'Beef and Broccoli Stir-Fry', 'Beef and Broccoli Stir-Fry', 0, 15),
+    (16, 'Garlic Parmesan Breadsticks', 'Garlic Parmesan Breadsticks', 0, 16),
+    (17, 'Wheat Berry Salad', 'Wheat Berry Salad', 0, 17),
+    (18, 'Cheese Omelette', 'Cheese Omelette', 0, 18),
+    (19, 'Egg Fried Rice', 'Egg Fried Rice', 0, 19),
+    (20, 'Cabbage Rolls', 'Cabbage Rolls', 0, 20);
+
+INSERT INTO mealplanner_api.recipe (id, description, name, nutri_tech, author_id)
+VALUES
+    (1, 'Classic Italian pasta dish with savory Bolognese sauce.', 'Spaghetti Bolognese', 0, 1),
+    (2, 'Colorful and nutritious stir-fry with a variety of vegetables.', 'Vegetarian Stir-Fry', 0, 2),
+    (3, 'Crispy chicken cutlets topped with marinara sauce and melted cheese.', 'Chicken Parmesan', 0, 1),
+    (4, 'Refreshing salad featuring tomatoes, mozzarella, and basil.', 'Caprese Salad', 0, 2),
+    (5, 'Indulgent and moist chocolate cake for a sweet treat.', 'Chocolate Cake', 0, 3),
+    (6, 'Healthy and flavorful grilled salmon fillets.', 'Grilled Salmon', 0, 6),
+    (7, 'Creamy and comforting risotto with savory mushrooms.', 'Mushroom Risotto', 0, 2),
+    (8, 'Traditional Greek salad with fresh vegetables and feta cheese.', 'Greek Salad', 0, 8),
+    (9, 'Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.', 'Tiramisu', 0, 9),
+    (10, 'Savory beef tacos with a variety of toppings.', 'Beef Tacos', 0, 10),
+    (11, 'Light and nutritious salad with grilled chicken and fresh greens.', 'Grilled Chicken Salad', 0, 11),
+    (12, 'Quinoa-filled bell peppers for a wholesome and tasty dish.', 'Quinoa Stuffed Peppers', 0, 12),
+    (13, 'Delicious pasta dish featuring tomatoes and basil.', 'Tomato Basil Pasta', 0, 13),
+    (14, 'Smooth and nutritious almond milk smoothie.', 'Almond Milk Smoothie', 0, 14),
+    (15, 'Stir-fried beef and broccoli in a flavorful sauce.', 'Beef and Broccoli Stir-Fry', 0, 15),
+    (16, 'Garlic-infused breadsticks with Parmesan for a delightful side.', 'Garlic Parmesan Breadsticks', 0, 16),
+    (17, 'Wholesome salad with wheat berries, vegetables, and dressing.', 'Wheat Berry Salad', 0, 17),
+    (18, 'Cheesy omelette with a variety of ingredients.', 'Cheese Omelette', 0, 18),
+    (19, 'Classic egg fried rice with a medley of flavors.', 'Egg Fried Rice', 0, 19),
+    (20, 'Stuffed cabbage leaves with a flavorful filling.', 'Cabbage Rolls', 0, 20);
