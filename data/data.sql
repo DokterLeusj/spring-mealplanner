@@ -567,6 +567,131 @@ VALUES
 (11, 67), -- Qty: 12 pieces Cabbage leaves
 (11, 68); -- Qty: 1 tsp Thyme
 
+INSERT INTO mealplanner_api.recipe_instruction (instruction, step, recipe_id)
+VALUES
+-- Spaghetti Bolognese
+('Boil a large pot of water. Add salt to the boiling water and cook the spaghetti according to the package instructions.', 1, 1),
+('In a pan, brown the ground beef over medium-high heat. Add chopped onions and minced garlic. Cook until the onions are translucent.', 2, 1),
+('Stir in tomato paste, canned tomatoes, oregano, basil, salt, and pepper. Simmer for 15-20 minutes, stirring occasionally.', 3, 1),
+('Cook the spaghetti noodles until al dente. Drain the noodles and toss with the Bolognese sauce.', 4, 1),
+('Serve the spaghetti Bolognese hot, topped with grated Parmesan cheese.', 5, 1),
+
+-- Vegetarian Stir-Fry
+('In a wok or large skillet, heat oil over medium-high heat. Add sliced chicken breast and stir-fry until fully cooked.', 1, 2),
+('Add broccoli, bell peppers, carrots, and snap peas to the wok. Stir-fry for 5-7 minutes until vegetables are tender-crisp.', 2, 2),
+('In a small bowl, mix soy sauce, ginger, and sesame oil. Pour the sauce over the stir-fry and toss to coat.', 3, 2),
+('Serve the vegetarian stir-fry over a bed of cooked rice.', 4, 2),
+
+-- Chicken Parmesan
+('Preheat the oven to 375°F (190°C).', 1, 3),
+('Coat chicken breasts with flour, dip in beaten eggs, and coat with breadcrumbs. In a pan, heat olive oil over medium-high heat.', 2, 3),
+('Fry chicken breasts until golden brown on both sides. In a baking dish, layer marinara sauce, chicken, and mozzarella cheese.', 3, 3),
+('Bake in the preheated oven for 20-25 minutes, or until the cheese is melted and bubbly.', 4, 3),
+('Serve the chicken Parmesan hot, garnished with fresh basil.', 5, 3),
+
+-- Caprese Salad
+('In a bowl, combine flour and bread crumbs. In another bowl, beat eggs. Dip tomato slices in flour mixture, then in beaten eggs, and coat with flour mixture again.', 1, 4),
+('In a skillet, heat olive oil over medium-high heat. Fry the coated tomato slices until golden brown on both sides.', 2, 4),
+('In a serving dish, layer fried tomatoes with marinara sauce. Top with mozzarella cheese and bake until cheese is melted.', 3, 4),
+('Garnish the Caprese salad with fresh basil and serve warm.', 4, 4),
+
+-- Chocolate Cake
+('Preheat the oven to 350°F (175°C). Grease and flour a cake pan.', 1, 5),
+('In a bowl, combine all-purpose flour, cocoa powder, baking powder, and salt.', 2, 5),
+('In another bowl, beat together sugar, eggs, vegetable oil, and vanilla extract until well combined.', 3, 5),
+('Gradually add the dry ingredients to the wet ingredients, mixing until smooth. Pour the batter into the prepared cake pan.', 4, 5),
+('Bake for 30-35 minutes, or until a toothpick inserted into the center comes out clean.', 5, 5),
+('Let the chocolate cake cool completely before frosting or serving.', 6, 5),
+
+-- Grilled Salmon
+('Preheat the grill to medium-high heat. Brush salmon fillets with olive oil and season with salt and pepper.', 1, 6),
+('Grill the salmon for 4-5 minutes per side, or until it flakes easily with a fork.', 2, 6),
+('While the salmon is grilling, cook Arborio rice according to package instructions.', 3, 6),
+('Serve grilled salmon over a bed of cooked Arborio rice. Garnish with fresh lemon and dill.', 4, 6),
+
+-- Mushroom Risotto
+('In a large pan, sauté mushrooms in butter until tender. Set aside.', 1, 7),
+('In the same pan, add Arborio rice and cook for 2 minutes. Pour in a ladle of hot broth and stir until absorbed. Continue adding broth and stirring until rice is creamy and cooked.', 2, 7),
+('Stir in sautéed mushrooms and season with salt and pepper to taste.', 3, 7),
+('Garnish the mushroom risotto with fresh parsley and serve hot.', 4, 7),
+
+-- Greek Salad
+('In a large bowl, combine cucumber, red onion, Kalamata olives, and cherry tomatoes.', 1, 8),
+('Crumble feta cheese over the salad. Drizzle with olive oil and red wine vinegar. Toss to combine.', 2, 8),
+('Serve the Greek salad chilled as a refreshing side dish or light lunch.', 3, 8),
+
+-- Tiramisu
+('In a shallow dish, combine strong brewed coffee and coffee liqueur. Dip ladyfingers into the coffee mixture, ensuring they are soaked but not overly soggy.', 1, 9),
+('In a mixing bowl, whisk together mascarpone cheese, sugar, and vanilla extract until smooth.', 2, 9),
+('Layer soaked ladyfingers in a serving dish, spreading a portion of mascarpone mixture over each layer.', 3, 9),
+('Repeat layers, finishing with a dusting of cocoa powder on top.', 4, 9),
+('Refrigerate the tiramisu for at least 4 hours or overnight before serving.', 5, 9),
+
+-- Beef Tacos
+('In a pan, cook seasoned beef taco filling until browned and fully cooked.', 1, 10),
+('Warm taco shells in the oven or on the stovetop according to package instructions.', 2, 10),
+('Assemble tacos by filling each shell with seasoned beef, lettuce, mixed salad greens, cherry tomatoes, and Balsamic vinaigrette dressing.', 3, 10),
+('Top with shredded cheddar cheese and serve the beef tacos immediately.', 4, 10),
+
+-- Grilled Chicken Salad
+('In a large bowl, combine black beans, corn, cumin, and chili powder.', 1, 11),
+('In a blender, mix almond milk, banana, almond butter, and honey until smooth. Pour the dressing over the salad.', 2, 11),
+('Toss the salad until well coated with the almond milk dressing.', 3, 11),
+('Serve the grilled chicken salad chilled, garnished with fresh parsley.', 4, 11),
+('Enjoy this nutritious and flavorful salad!', 5, 11),
+-- Quinoa Stuffed Peppers
+('Preheat the oven to 375°F (190°C). Cut bell peppers in half lengthwise and remove seeds and membranes.', 1, 12),
+('In a saucepan, cook quinoa according to package instructions. In a bowl, mix cooked quinoa with your favorite vegetables and seasonings.', 2, 12),
+('Fill each bell pepper half with the quinoa mixture. Place the stuffed peppers in a baking dish.', 3, 12),
+('Bake for 25-30 minutes or until peppers are tender. Garnish with fresh herbs and serve hot.', 4, 12),
+
+-- Tomato Basil Pasta
+('Cook pasta in a large pot of salted boiling water until al dente. Drain and set aside.', 1, 13),
+('In a pan, sauté diced tomatoes, garlic, and basil in olive oil. Season with salt and pepper to taste.', 2, 13),
+('Combine the tomato mixture with the cooked pasta. Toss until the pasta is coated with the flavorful sauce.', 3, 13),
+('Serve the tomato basil pasta hot, garnished with grated Parmesan cheese.', 4, 13),
+
+-- Almond Milk Smoothie
+('In a blender, combine almond milk, banana, and your favorite fruits (e.g., berries, mango, or pineapple).', 1, 14),
+('Add a handful of spinach or kale for an extra boost of nutrients. Blend until smooth and creamy.', 2, 14),
+('Pour the smoothie into a glass and enjoy this refreshing and nutritious beverage.', 3, 14),
+
+-- Beef and Broccoli Stir-Fry
+('Slice beef sirloin thinly and marinate in a mixture of soy sauce, garlic, and ginger for 15-20 minutes.', 1, 15),
+('In a wok or large skillet, stir-fry marinated beef until browned. Add broccoli florets and stir-fry until tender-crisp.', 2, 15),
+('In a small bowl, mix soy sauce, oyster sauce, and cornstarch. Pour the sauce over the beef and broccoli. Stir until the sauce thickens.', 3, 15),
+('Serve the beef and broccoli stir-fry over a bed of cooked rice or noodles.', 4, 15),
+
+-- Garlic Parmesan Breadsticks
+('Preheat the oven to 375°F (190°C). Roll out pizza dough on a floured surface.', 1, 16),
+('In a bowl, mix melted butter, minced garlic, and grated Parmesan cheese. Spread the mixture over the pizza dough.', 2, 16),
+('Cut the dough into strips and twist each strip into a breadstick shape. Place on a baking sheet.', 3, 16),
+('Bake for 12-15 minutes or until golden brown. Serve the garlic Parmesan breadsticks warm.', 4, 16),
+
+-- Wheat Berry Salad
+('Cook wheat berries according to package instructions. Drain and let cool.', 1, 17),
+('In a large bowl, combine cooked wheat berries with chopped vegetables and herbs.', 2, 17),
+('In a small bowl, whisk together olive oil, Dijon mustard, salt, and pepper. Pour the dressing over the wheat berry salad.', 3, 17),
+('Toss the salad until well coated with the dressing. Serve chilled as a wholesome and flavorful side dish.', 4, 17),
+
+-- Cheese Omelette
+('In a bowl, beat eggs and season with salt and pepper. Heat a non-stick skillet over medium-high heat.', 1, 18),
+('Pour the beaten eggs into the skillet. As the edges set, lift with a spatula to let uncooked eggs flow underneath.', 2, 18),
+('Sprinkle shredded cheese over one half of the omelette. Once the bottom is set, fold the omelette in half and serve hot.', 3, 18),
+
+-- Egg Fried Rice
+('Cook rice according to package instructions and let it cool. In a wok, heat vegetable oil over medium-high heat.', 1, 19),
+('Add diced vegetables (e.g., peas, carrots, and corn) to the wok. Stir-fry until the vegetables are tender.', 2, 19),
+('Push the vegetables to the side and add beaten eggs to the wok. Scramble the eggs until cooked.', 3, 19),
+('Combine the cooked rice with vegetables and eggs. Season with soy sauce and stir-fry until heated through.', 4, 19),
+('Serve the egg fried rice hot, garnished with chopped green onions.', 5, 19),
+
+-- Cabbage Rolls
+('Preheat the oven to 350°F (175°C). Boil a large pot of water and blanch cabbage leaves until tender.', 1, 20),
+('In a bowl, mix together a filling of ground beef, cooked rice, diced onions, and seasonings.', 2, 20),
+('Place a portion of the filling on each cabbage leaf and roll tightly. Arrange the cabbage rolls in a baking dish.', 3, 20),
+('In a separate bowl, mix tomato sauce and herbs. Pour the sauce over the cabbage rolls.', 4, 20),
+('Bake for 25-30 minutes or until the cabbage rolls are cooked through. Serve hot.', 5, 20);
 
 
 
