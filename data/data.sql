@@ -221,8 +221,8 @@ VALUES (1, 5),   -- Chicken breast - Meat, Chicken, Animal Product
        (80, 6),
        (81, 1),  -- Green onions - Vegetables
        (82, 1),  -- Cabbage leaves - Vegetables
-       (83, 8);  -- Thyme - Spices
-
+       (83, 8);
+-- Thyme - Spices
 
 
 # Dietary needs
@@ -370,175 +370,179 @@ VALUES (1, 'grams'),
        (4, 'l'),
        (5, 'tbs'),
        (6, '');
-INSERT INTO mealplanner_api.recipe (id, description, name, nutri_tech, author_id)
-VALUES (1, 'Classic Italian pasta dish with savory Bolognese sauce.', 'Spaghetti Bolognese', 0, 1),
-       (2, 'Colorful and nutritious stir-fry with a variety of vegetables.', 'Vegetarian Stir-Fry', 0, 2),
-       (3, 'Crispy chicken cutlets topped with marinara sauce and melted cheese.', 'Chicken Parmesan', 0, 1),
-       (4, 'Refreshing salad featuring tomatoes, mozzarella, and basil.', 'Caprese Salad', 0, 2),
-       (5, 'Indulgent and moist chocolate cake for a sweet treat.', 'Chocolate Cake', 0, 3),
-       (6, 'Healthy and flavorful grilled salmon fillets.', 'Grilled Salmon', 0, 6),
-       (7, 'Creamy and comforting risotto with savory mushrooms.', 'Mushroom Risotto', 0, 2),
-       (8, 'Traditional Greek salad with fresh vegetables and feta cheese.', 'Greek Salad', 0, 8),
-       (9, 'Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.', 'Tiramisu', 0, 9),
-       (10, 'Savory beef tacos with a variety of toppings.', 'Beef Tacos', 0, 10),
-       (11, 'Light and nutritious salad with grilled chicken and fresh greens.', 'Grilled Chicken Salad', 0, 11),
-       (12, 'Quinoa-filled bell peppers for a wholesome and tasty dish.', 'Quinoa Stuffed Peppers', 0, 12),
-       (13, 'Delicious pasta dish featuring tomatoes and basil.', 'Tomato Basil Pasta', 0, 13),
-       (14, 'Smooth and nutritious almond milk smoothie.', 'Almond Milk Smoothie', 0, 14),
-       (15, 'Stir-fried beef and broccoli in a flavorful sauce.', 'Beef and Broccoli Stir-Fry', 0, 15),
-       (16, 'Garlic-infused breadsticks with Parmesan for a delightful side.', 'Garlic Parmesan Breadsticks', 0, 16),
-       (17, 'Wholesome salad with wheat berries, vegetables, and dressing.', 'Wheat Berry Salad', 0, 17),
-       (18, 'Cheesy omelette with a variety of ingredients.', 'Cheese Omelette', 0, 18),
-       (19, 'Classic egg fried rice with a medley of flavors.', 'Egg Fried Rice', 0, 19),
-       (20, 'Stuffed cabbage leaves with a flavorful filling.', 'Cabbage Rolls', 0, 20);
+
+INSERT INTO mealplanner_api.recipe (id, description, img_url, name, nutri_tech, author_id)
+VALUES (1, 'Classic Italian pasta dish with savory Bolognese sauce.', null, 'Spaghetti Bolognese', false, 1),
+       (2, 'Colorful and nutritious stir-fry with a variety of vegetables.', null, 'Vegetarian Stir-Fry', false, 2),
+       (3, 'Crispy chicken cutlets topped with marinara sauce and melted cheese.', null, 'Chicken Parmesan', false, 1),
+       (4, 'Refreshing salad featuring tomatoes, mozzarella, and basil.', null, 'Caprese Salad', false, 2),
+       (5, 'Indulgent and moist chocolate cake for a sweet treat.', null, 'Chocolate Cake', false, 3),
+       (6, 'Healthy and flavorful grilled salmon fillets.', null, 'Grilled Salmon', false, 6),
+       (7, 'Creamy and comforting risotto with savory mushrooms.', null, 'Mushroom Risotto', false, 2),
+       (8, 'Traditional Greek salad with fresh vegetables and feta cheese.', null, 'Greek Salad', false, 8),
+       (9, 'Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.', null, 'Tiramisu',
+        false, 9),
+       (10, 'Savory beef tacos with a variety of toppings.', null, 'Beef Tacos', false, 10),
+       (11, 'Light and nutritious salad with grilled chicken and fresh greens.', null, 'Grilled Chicken Salad', false,
+        11),
+       (12, 'Quinoa-filled bell peppers for a wholesome and tasty dish.', null, 'Quinoa Stuffed Peppers', false, 12),
+       (13, 'Delicious pasta dish featuring tomatoes and basil.', null, 'Tomato Basil Pasta', false, 13),
+       (14, 'Smooth and nutritious almond milk smoothie.', null, 'Almond Milk Smoothie', false, 14),
+       (15, 'Stir-fried beef and broccoli in a flavorful sauce.', null, 'Beef and Broccoli Stir-Fry', false, 15),
+       (16, 'Garlic-infused breadsticks with Parmesan for a delightful side.', null, 'Garlic Parmesan Breadsticks',
+        false, 16),
+       (17, 'Wholesome salad with wheat berries, vegetables, and dressing.', null, 'Wheat Berry Salad', false, 17),
+       (18, 'Cheesy omelette with a variety of ingredients.', null, 'Cheese Omelette', false, 18),
+       (19, 'Classic egg fried rice with a medley of flavors.', null, 'Egg Fried Rice', false, 19),
+       (20, 'Stuffed cabbage leaves with a flavorful filling.', null, 'Cabbage Rolls', false, 20);
+
 
 INSERT INTO mealplanner_api.recipe_ingredient (id, qty, ingredient_id, unit_id)
-VALUES
-    (1, 250, 12, 1),   -- Ground beef (Qty: 250 grams)
-    (2, 1, 13, 2),     -- Onion (Qty: 1 piece)
-    (3, 3, 7, 3),      -- Garlic (Qty: 3 cloves)
-    (4, 150, 14, 5),   -- Tomato paste (Qty: 150 grams)
-    (5, 400, 15, 4),   -- Canned tomatoes (Qty: 400 grams)
-    (6, 1, 6, 5),      -- Oregano (Qty: 1 tsp)
-    (7, 1, 17, 5),     -- Basil (Qty: 1 tsp)
-    (8, 1, 18, 5),     -- Salt (Qty: 1 tsp)
-    (9, 0.5, 19, 5),   -- Pepper (Qty: 0.5 tsp)
-    (10, 300, 20, 1),  -- Spaghetti noodles (Qty: 300 grams)
-    (11, 100, 21, 1),  -- Parmesan cheese (Qty: 100 grams)
-    (12, 200, 22, 1),  -- Tofu (Qty: 200 grams)
-    (13, 1, 8, 5),     -- Broccoli (Qty: 1 piece)
-    (14, 2, 23, 1),    -- Bell peppers (Qty: 2 pieces)
-    (15, 150, 24, 1),  -- Carrots (Qty: 150 grams)
-    (16, 100, 25, 1),  -- Snap peas (Qty: 100 grams)
-    (17, 50, 26, 5),   -- Soy sauce (Qty: 50 ml)
-    (18, 1, 27, 1),    -- Ginger (Qty: 1 piece)
-    (19, 2, 28, 5),    -- Sesame oil (Qty: 2 tbs)
-    (20, 200, 29, 1),  -- Rice (Qty: 200 grams)
-    (21, 150, 30, 1),  -- Flour (Qty: 150 grams)
-    (22, 100, 31, 1),  -- Bread crumbs (Qty: 100 grams)
-    (23, 30, 32, 4),   -- Olive oil (Qty: 30 ml)
-    (24, 500, 33, 4),  -- Marinara sauce (Qty: 500 ml)
-    (25, 200, 34, 1),  -- Mozzarella cheese (Qty: 200 grams)
-    (26, 30, 35, 5),   -- Balsamic glaze (Qty: 30 ml)
-    (27, 200, 36, 1),  -- All-purpose flour (Qty: 200 grams)
-    (28, 30, 37, 5),   -- Cocoa powder (Qty: 30 grams)
-    (29, 10, 38, 5),   -- Baking powder (Qty: 10 grams)
-    (30, 100, 39, 5),  -- Sugar (Qty: 100 grams)
-    (31, 30, 40, 4),   -- Vegetable oil (Qty: 30 ml)
-    (32, 5, 41, 5),    -- Vanilla extract (Qty: 5 ml)
-    (33, 30, 42, 4),   -- Hot water (Qty: 30 ml)
-    (34, 200, 43, 1),  -- Salmon fillets (Qty: 200 grams)
-    (35, 1, 44, 2),    -- Lemon (Qty: 1 piece)
-    (36, 5, 45, 5),    -- Dill (Qty: 5 grams)
-    (37, 200, 46, 1),  -- Arborio rice (Qty: 200 grams)
-    (38, 150, 47, 1),  -- Mushrooms (Qty: 150 grams)
-    (39, 500, 48, 4),  -- Vegetable or chicken broth (Qty: 500 ml)
-    (40, 50, 49, 5),   -- Butter (Qty: 50 grams)
-    (41, 1, 51, 2),    -- Cucumber (Qty: 1 piece)
-    (42, 1, 52, 2),    -- Red onion (Qty: 1 piece)
-    (43, 100, 53, 1),  -- Kalamata olives (Qty: 100 grams)
-    (44, 150, 54, 1),  -- Feta cheese (Qty: 150 grams)
-    (45, 30, 55, 4),   -- Red wine vinegar (Qty: 30 ml)
-    (46, 100, 56, 2),  -- Ladyfingers (Qty: 100 grams)
-    (47, 250, 57, 4),  -- Strong brewed coffee (Qty: 250 ml)
-    (48, 250, 58, 1),  -- Mascarpone cheese (Qty: 250 grams)
-    (49, 1, 59, 1),    -- Taco seasoning (Qty: 1 piece)
-    (50, 8, 60, 1),    -- Taco shells (Qty: 8 pieces)
-    (51, 100, 61, 1),  -- Lettuce (Qty: 100 grams)
-    (52, 100, 62, 1),  -- Mixed salad greens (Qty: 100 grams)
-    (53, 150, 63, 2),  -- Cherry tomatoes (Qty: 150 grams)
-    (54, 50, 64, 5),   -- Balsamic vinaigrette dressing (Qty: 50 ml)
-    (55, 200, 65, 5),  -- Black beans (Qty: 200 grams)
-    (56, 150, 66, 5),  -- Corn (Qty: 150 grams)
-    (57, 1, 67, 5),    -- Cumin (Qty: 1 tsp)
-    (58, 1, 68, 5),    -- Chili powder (Qty: 1 tsp)
-    (59, 250, 69, 4),  -- Almond milk (Qty: 250 ml)
-    (60, 1, 70, 2),    -- Banana (Qty: 1 piece)
-    (61, 30, 71, 5),   -- Almond butter (Qty: 30 grams)
-    (62, 30, 72, 1),   -- Honey (Qty: 30 grams)
-    (63, 200, 73, 1),  -- Beef sirloin (Qty: 200 grams)
-    (64, 50, 74, 5),   -- Brown sugar (Qty: 50 grams)
-    (65, 20, 75, 5),   -- Cornstarch (Qty: 20 grams)
-    (66, 500, 76, 1),  -- Pizza dough (Qty: 500 grams)
-    (67, 5, 77, 1),    -- Fresh parsley (Qty: 5 grams)
-    (68, 150, 78, 1),  -- Wheat berries (Qty: 150 grams)
-    (69, 1, 79, 5),    -- Dijon mustard (Qty: 1 tsp)
-    (70, 100, 80, 1),  -- Cheddar cheese (Qty: 100 grams)
-    (71, 2, 81, 1),    -- Green onions (Qty: 2 pieces)
-    (72, 12, 82, 1),   -- Cabbage leaves (Qty: 12 pieces)
-    (73, 1, 83, 5);    -- Thyme (Qty: 1 tsp)
+VALUES (1, 250, 12, 1),  -- Ground beef (Qty: 250 grams)
+       (2, 1, 13, 2),    -- Onion (Qty: 1 piece)
+       (3, 3, 7, 3),     -- Garlic (Qty: 3 cloves)
+       (4, 150, 14, 5),  -- Tomato paste (Qty: 150 grams)
+       (5, 400, 15, 4),  -- Canned tomatoes (Qty: 400 grams)
+       (6, 1, 6, 5),     -- Oregano (Qty: 1 tsp)
+       (7, 1, 17, 5),    -- Basil (Qty: 1 tsp)
+       (8, 1, 18, 5),    -- Salt (Qty: 1 tsp)
+       (9, 0.5, 19, 5),  -- Pepper (Qty: 0.5 tsp)
+       (10, 300, 20, 1), -- Spaghetti noodles (Qty: 300 grams)
+       (11, 100, 21, 1), -- Parmesan cheese (Qty: 100 grams)
+       (12, 200, 22, 1), -- Tofu (Qty: 200 grams)
+       (13, 1, 8, 5),    -- Broccoli (Qty: 1 piece)
+       (14, 2, 23, 1),   -- Bell peppers (Qty: 2 pieces)
+       (15, 150, 24, 1), -- Carrots (Qty: 150 grams)
+       (16, 100, 25, 1), -- Snap peas (Qty: 100 grams)
+       (17, 50, 26, 5),  -- Soy sauce (Qty: 50 ml)
+       (18, 1, 27, 1),   -- Ginger (Qty: 1 piece)
+       (19, 2, 28, 5),   -- Sesame oil (Qty: 2 tbs)
+       (20, 200, 29, 1), -- Rice (Qty: 200 grams)
+       (21, 150, 30, 1), -- Flour (Qty: 150 grams)
+       (22, 100, 31, 1), -- Bread crumbs (Qty: 100 grams)
+       (23, 30, 32, 4),  -- Olive oil (Qty: 30 ml)
+       (24, 500, 33, 4), -- Marinara sauce (Qty: 500 ml)
+       (25, 200, 34, 1), -- Mozzarella cheese (Qty: 200 grams)
+       (26, 30, 35, 5),  -- Balsamic glaze (Qty: 30 ml)
+       (27, 200, 36, 1), -- All-purpose flour (Qty: 200 grams)
+       (28, 30, 37, 5),  -- Cocoa powder (Qty: 30 grams)
+       (29, 10, 38, 5),  -- Baking powder (Qty: 10 grams)
+       (30, 100, 39, 5), -- Sugar (Qty: 100 grams)
+       (31, 30, 40, 4),  -- Vegetable oil (Qty: 30 ml)
+       (32, 5, 41, 5),   -- Vanilla extract (Qty: 5 ml)
+       (33, 30, 42, 4),  -- Hot water (Qty: 30 ml)
+       (34, 200, 43, 1), -- Salmon fillets (Qty: 200 grams)
+       (35, 1, 44, 2),   -- Lemon (Qty: 1 piece)
+       (36, 5, 45, 5),   -- Dill (Qty: 5 grams)
+       (37, 200, 46, 1), -- Arborio rice (Qty: 200 grams)
+       (38, 150, 47, 1), -- Mushrooms (Qty: 150 grams)
+       (39, 500, 48, 4), -- Vegetable or chicken broth (Qty: 500 ml)
+       (40, 50, 49, 5),  -- Butter (Qty: 50 grams)
+       (41, 1, 51, 2),   -- Cucumber (Qty: 1 piece)
+       (42, 1, 52, 2),   -- Red onion (Qty: 1 piece)
+       (43, 100, 53, 1), -- Kalamata olives (Qty: 100 grams)
+       (44, 150, 54, 1), -- Feta cheese (Qty: 150 grams)
+       (45, 30, 55, 4),  -- Red wine vinegar (Qty: 30 ml)
+       (46, 100, 56, 2), -- Ladyfingers (Qty: 100 grams)
+       (47, 250, 57, 4), -- Strong brewed coffee (Qty: 250 ml)
+       (48, 250, 58, 1), -- Mascarpone cheese (Qty: 250 grams)
+       (49, 1, 59, 1),   -- Taco seasoning (Qty: 1 piece)
+       (50, 8, 60, 1),   -- Taco shells (Qty: 8 pieces)
+       (51, 100, 61, 1), -- Lettuce (Qty: 100 grams)
+       (52, 100, 62, 1), -- Mixed salad greens (Qty: 100 grams)
+       (53, 150, 63, 2), -- Cherry tomatoes (Qty: 150 grams)
+       (54, 50, 64, 5),  -- Balsamic vinaigrette dressing (Qty: 50 ml)
+       (55, 200, 65, 5), -- Black beans (Qty: 200 grams)
+       (56, 150, 66, 5), -- Corn (Qty: 150 grams)
+       (57, 1, 67, 5),   -- Cumin (Qty: 1 tsp)
+       (58, 1, 68, 5),   -- Chili powder (Qty: 1 tsp)
+       (59, 250, 69, 4), -- Almond milk (Qty: 250 ml)
+       (60, 1, 70, 2),   -- Banana (Qty: 1 piece)
+       (61, 30, 71, 5),  -- Almond butter (Qty: 30 grams)
+       (62, 30, 72, 1),  -- Honey (Qty: 30 grams)
+       (63, 200, 73, 1), -- Beef sirloin (Qty: 200 grams)
+       (64, 50, 74, 5),  -- Brown sugar (Qty: 50 grams)
+       (65, 20, 75, 5),  -- Cornstarch (Qty: 20 grams)
+       (66, 500, 76, 1), -- Pizza dough (Qty: 500 grams)
+       (67, 5, 77, 1),   -- Fresh parsley (Qty: 5 grams)
+       (68, 150, 78, 1), -- Wheat berries (Qty: 150 grams)
+       (69, 1, 79, 5),   -- Dijon mustard (Qty: 1 tsp)
+       (70, 100, 80, 1), -- Cheddar cheese (Qty: 100 grams)
+       (71, 2, 81, 1),   -- Green onions (Qty: 2 pieces)
+       (72, 12, 82, 1),  -- Cabbage leaves (Qty: 12 pieces)
+       (73, 1, 83, 5); -- Thyme (Qty: 1 tsp)
 
 
 INSERT INTO mealplanner_api.recipe_recipe_ingredient (recipe_id, recipe_ingredient_id)
 VALUES
 -- Spaghetti Bolognese
-(1, 1),  -- Qty: 250 grams Ground beef
-(1, 2),  -- Qty: 1 piece Onion
-(1, 3),  -- Qty: 3 cloves Garlic
-(1, 4),  -- Qty: 150 grams Tomato paste
-(1, 5),  -- Qty: 400 grams Canned tomatoes
-(1, 6),  -- Qty: 1 tsp Oregano
-(1, 7),  -- Qty: 1 tsp Basil
-(1, 8),  -- Qty: 1 tsp Salt
-(1, 9),  -- Qty: 0.5 tsp Pepper
-(1, 10), -- Qty: 300 grams Spaghetti noodles
-(1, 11), -- Qty: 100 grams Parmesan cheese
+(1, 1),   -- Qty: 250 grams Ground beef
+(1, 2),   -- Qty: 1 piece Onion
+(1, 3),   -- Qty: 3 cloves Garlic
+(1, 4),   -- Qty: 150 grams Tomato paste
+(1, 5),   -- Qty: 400 grams Canned tomatoes
+(1, 6),   -- Qty: 1 tsp Oregano
+(1, 7),   -- Qty: 1 tsp Basil
+(1, 8),   -- Qty: 1 tsp Salt
+(1, 9),   -- Qty: 0.5 tsp Pepper
+(1, 10),  -- Qty: 300 grams Spaghetti noodles
+(1, 11),  -- Qty: 100 grams Parmesan cheese
 
 -- Vegetarian Stir-Fry
-(2, 6),  -- Qty: 300 grams Chicken breast
-(2, 7),  -- Qty: 150 grams Broccoli
-(2, 8),  -- Qty: 100 grams Bell peppers
-(2, 9),  -- Qty: 50 grams Carrots
-(2, 10), -- Qty: 50 grams Snap peas
-(2, 11), -- Qty: 30 tbsp Soy sauce
-(2, 12), -- Qty: 20 tbsp Ginger
-(2, 13), -- Qty: 15 tbsp Sesame oil
-(2, 14), -- Qty: 200 grams Rice
+(2, 6),   -- Qty: 300 grams Chicken breast
+(2, 7),   -- Qty: 150 grams Broccoli
+(2, 8),   -- Qty: 100 grams Bell peppers
+(2, 9),   -- Qty: 50 grams Carrots
+(2, 10),  -- Qty: 50 grams Snap peas
+(2, 11),  -- Qty: 30 tbsp Soy sauce
+(2, 12),  -- Qty: 20 tbsp Ginger
+(2, 13),  -- Qty: 15 tbsp Sesame oil
+(2, 14),  -- Qty: 200 grams Rice
 
 -- Chicken Parmesan
-(3, 15), -- Qty: 300 grams Chicken breast
-(3, 16), -- Qty: 200 grams Tomato paste
-(3, 17), -- Qty: 400 grams Canned tomatoes
-(3, 18), -- Qty: 10 tbsp Oregano
-(3, 19), -- Qty: 10 tbsp Basil
-(3, 20), -- Qty: 5 tbsp Salt
+(3, 15),  -- Qty: 300 grams Chicken breast
+(3, 16),  -- Qty: 200 grams Tomato paste
+(3, 17),  -- Qty: 400 grams Canned tomatoes
+(3, 18),  -- Qty: 10 tbsp Oregano
+(3, 19),  -- Qty: 10 tbsp Basil
+(3, 20),  -- Qty: 5 tbsp Salt
 
 -- Caprese Salad
-(4, 21), -- Qty: 150 grams Flour
-(4, 22), -- Qty: 100 grams Bread crumbs
-(4, 23), -- Qty: 30 ml Olive oil
-(4, 24), -- Qty: 500 ml Marinara sauce
+(4, 21),  -- Qty: 150 grams Flour
+(4, 22),  -- Qty: 100 grams Bread crumbs
+(4, 23),  -- Qty: 30 ml Olive oil
+(4, 24),  -- Qty: 500 ml Marinara sauce
 
 -- Chocolate Cake
-(5, 25), -- Qty: 200 grams Mozzarella cheese
-(5, 26), -- Qty: 30 ml Balsamic glaze
-(5, 27), -- Qty: 200 grams All-purpose flour
-(5, 28), -- Qty: 30 grams Cocoa powder
+(5, 25),  -- Qty: 200 grams Mozzarella cheese
+(5, 26),  -- Qty: 30 ml Balsamic glaze
+(5, 27),  -- Qty: 200 grams All-purpose flour
+(5, 28),  -- Qty: 30 grams Cocoa powder
 
 -- Grilled Salmon
-(6, 29), -- Qty: 200 grams Salmon fillets
-(6, 30), -- Qty: 1 piece Lemon
-(6, 31), -- Qty: 5 grams Dill
-(6, 32), -- Qty: 200 grams Arborio rice
+(6, 29),  -- Qty: 200 grams Salmon fillets
+(6, 30),  -- Qty: 1 piece Lemon
+(6, 31),  -- Qty: 5 grams Dill
+(6, 32),  -- Qty: 200 grams Arborio rice
 
 -- Mushroom Risotto
-(7, 33), -- Qty: 150 grams Mushrooms
-(7, 34), -- Qty: 500 ml Vegetable or chicken broth
-(7, 35), -- Qty: 50 grams Butter
-(7, 36), -- Qty: 1 piece Cucumber
-(7, 37), -- Qty: 1 piece Red onion
+(7, 33),  -- Qty: 150 grams Mushrooms
+(7, 34),  -- Qty: 500 ml Vegetable or chicken broth
+(7, 35),  -- Qty: 50 grams Butter
+(7, 36),  -- Qty: 1 piece Cucumber
+(7, 37),  -- Qty: 1 piece Red onion
 
 -- Greek Salad
-(8, 38), -- Qty: 100 grams Kalamata olives
-(8, 39), -- Qty: 150 grams Feta cheese
-(8, 40), -- Qty: 30 ml Red wine vinegar
+(8, 38),  -- Qty: 100 grams Kalamata olives
+(8, 39),  -- Qty: 150 grams Feta cheese
+(8, 40),  -- Qty: 30 ml Red wine vinegar
 
 -- Tiramisu
-(9, 41), -- Qty: 200 grams Ladyfingers
-(9, 42), -- Qty: 250 ml Strong brewed coffee
-(9, 43), -- Qty: 250 grams Mascarpone cheese
-(9, 44), -- Qty: 1 piece Taco seasoning
-(9, 45), -- Qty: 8 pieces Taco shells
+(9, 41),  -- Qty: 200 grams Ladyfingers
+(9, 42),  -- Qty: 250 ml Strong brewed coffee
+(9, 43),  -- Qty: 250 grams Mascarpone cheese
+(9, 44),  -- Qty: 1 piece Taco seasoning
+(9, 45),  -- Qty: 8 pieces Taco shells
 
 -- Beef Tacos
 (10, 46), -- Qty: 100 grams Lettuce
@@ -570,36 +574,47 @@ VALUES
 INSERT INTO mealplanner_api.recipe_instruction (instruction, step, recipe_id)
 VALUES
 -- Spaghetti Bolognese
-('Boil a large pot of water. Add salt to the boiling water and cook the spaghetti according to the package instructions.', 1, 1),
-('In a pan, brown the ground beef over medium-high heat. Add chopped onions and minced garlic. Cook until the onions are translucent.', 2, 1),
-('Stir in tomato paste, canned tomatoes, oregano, basil, salt, and pepper. Simmer for 15-20 minutes, stirring occasionally.', 3, 1),
+('Boil a large pot of water. Add salt to the boiling water and cook the spaghetti according to the package instructions.',
+ 1, 1),
+('In a pan, brown the ground beef over medium-high heat. Add chopped onions and minced garlic. Cook until the onions are translucent.',
+ 2, 1),
+('Stir in tomato paste, canned tomatoes, oregano, basil, salt, and pepper. Simmer for 15-20 minutes, stirring occasionally.',
+ 3, 1),
 ('Cook the spaghetti noodles until al dente. Drain the noodles and toss with the Bolognese sauce.', 4, 1),
 ('Serve the spaghetti Bolognese hot, topped with grated Parmesan cheese.', 5, 1),
 
 -- Vegetarian Stir-Fry
-('In a wok or large skillet, heat oil over medium-high heat. Add sliced chicken breast and stir-fry until fully cooked.', 1, 2),
-('Add broccoli, bell peppers, carrots, and snap peas to the wok. Stir-fry for 5-7 minutes until vegetables are tender-crisp.', 2, 2),
+('In a wok or large skillet, heat oil over medium-high heat. Add sliced chicken breast and stir-fry until fully cooked.',
+ 1, 2),
+('Add broccoli, bell peppers, carrots, and snap peas to the wok. Stir-fry for 5-7 minutes until vegetables are tender-crisp.',
+ 2, 2),
 ('In a small bowl, mix soy sauce, ginger, and sesame oil. Pour the sauce over the stir-fry and toss to coat.', 3, 2),
 ('Serve the vegetarian stir-fry over a bed of cooked rice.', 4, 2),
 
 -- Chicken Parmesan
 ('Preheat the oven to 375°F (190°C).', 1, 3),
-('Coat chicken breasts with flour, dip in beaten eggs, and coat with breadcrumbs. In a pan, heat olive oil over medium-high heat.', 2, 3),
-('Fry chicken breasts until golden brown on both sides. In a baking dish, layer marinara sauce, chicken, and mozzarella cheese.', 3, 3),
+('Coat chicken breasts with flour, dip in beaten eggs, and coat with breadcrumbs. In a pan, heat olive oil over medium-high heat.',
+ 2, 3),
+('Fry chicken breasts until golden brown on both sides. In a baking dish, layer marinara sauce, chicken, and mozzarella cheese.',
+ 3, 3),
 ('Bake in the preheated oven for 20-25 minutes, or until the cheese is melted and bubbly.', 4, 3),
 ('Serve the chicken Parmesan hot, garnished with fresh basil.', 5, 3),
 
 -- Caprese Salad
-('In a bowl, combine flour and bread crumbs. In another bowl, beat eggs. Dip tomato slices in flour mixture, then in beaten eggs, and coat with flour mixture again.', 1, 4),
-('In a skillet, heat olive oil over medium-high heat. Fry the coated tomato slices until golden brown on both sides.', 2, 4),
-('In a serving dish, layer fried tomatoes with marinara sauce. Top with mozzarella cheese and bake until cheese is melted.', 3, 4),
+('In a bowl, combine flour and bread crumbs. In another bowl, beat eggs. Dip tomato slices in flour mixture, then in beaten eggs, and coat with flour mixture again.',
+ 1, 4),
+('In a skillet, heat olive oil over medium-high heat. Fry the coated tomato slices until golden brown on both sides.',
+ 2, 4),
+('In a serving dish, layer fried tomatoes with marinara sauce. Top with mozzarella cheese and bake until cheese is melted.',
+ 3, 4),
 ('Garnish the Caprese salad with fresh basil and serve warm.', 4, 4),
 
 -- Chocolate Cake
 ('Preheat the oven to 350°F (175°C). Grease and flour a cake pan.', 1, 5),
 ('In a bowl, combine all-purpose flour, cocoa powder, baking powder, and salt.', 2, 5),
 ('In another bowl, beat together sugar, eggs, vegetable oil, and vanilla extract until well combined.', 3, 5),
-('Gradually add the dry ingredients to the wet ingredients, mixing until smooth. Pour the batter into the prepared cake pan.', 4, 5),
+('Gradually add the dry ingredients to the wet ingredients, mixing until smooth. Pour the batter into the prepared cake pan.',
+ 4, 5),
 ('Bake for 30-35 minutes, or until a toothpick inserted into the center comes out clean.', 5, 5),
 ('Let the chocolate cake cool completely before frosting or serving.', 6, 5),
 
@@ -611,7 +626,8 @@ VALUES
 
 -- Mushroom Risotto
 ('In a large pan, sauté mushrooms in butter until tender. Set aside.', 1, 7),
-('In the same pan, add Arborio rice and cook for 2 minutes. Pour in a ladle of hot broth and stir until absorbed. Continue adding broth and stirring until rice is creamy and cooked.', 2, 7),
+('In the same pan, add Arborio rice and cook for 2 minutes. Pour in a ladle of hot broth and stir until absorbed. Continue adding broth and stirring until rice is creamy and cooked.',
+ 2, 7),
 ('Stir in sautéed mushrooms and season with salt and pepper to taste.', 3, 7),
 ('Garnish the mushroom risotto with fresh parsley and serve hot.', 4, 7),
 
@@ -621,7 +637,8 @@ VALUES
 ('Serve the Greek salad chilled as a refreshing side dish or light lunch.', 3, 8),
 
 -- Tiramisu
-('In a shallow dish, combine strong brewed coffee and coffee liqueur. Dip ladyfingers into the coffee mixture, ensuring they are soaked but not overly soggy.', 1, 9),
+('In a shallow dish, combine strong brewed coffee and coffee liqueur. Dip ladyfingers into the coffee mixture, ensuring they are soaked but not overly soggy.',
+ 1, 9),
 ('In a mixing bowl, whisk together mascarpone cheese, sugar, and vanilla extract until smooth.', 2, 9),
 ('Layer soaked ladyfingers in a serving dish, spreading a portion of mascarpone mixture over each layer.', 3, 9),
 ('Repeat layers, finishing with a dusting of cocoa powder on top.', 4, 9),
@@ -630,18 +647,21 @@ VALUES
 -- Beef Tacos
 ('In a pan, cook seasoned beef taco filling until browned and fully cooked.', 1, 10),
 ('Warm taco shells in the oven or on the stovetop according to package instructions.', 2, 10),
-('Assemble tacos by filling each shell with seasoned beef, lettuce, mixed salad greens, cherry tomatoes, and Balsamic vinaigrette dressing.', 3, 10),
+('Assemble tacos by filling each shell with seasoned beef, lettuce, mixed salad greens, cherry tomatoes, and Balsamic vinaigrette dressing.',
+ 3, 10),
 ('Top with shredded cheddar cheese and serve the beef tacos immediately.', 4, 10),
 
 -- Grilled Chicken Salad
 ('In a large bowl, combine black beans, corn, cumin, and chili powder.', 1, 11),
-('In a blender, mix almond milk, banana, almond butter, and honey until smooth. Pour the dressing over the salad.', 2, 11),
+('In a blender, mix almond milk, banana, almond butter, and honey until smooth. Pour the dressing over the salad.', 2,
+ 11),
 ('Toss the salad until well coated with the almond milk dressing.', 3, 11),
 ('Serve the grilled chicken salad chilled, garnished with fresh parsley.', 4, 11),
 ('Enjoy this nutritious and flavorful salad!', 5, 11),
 -- Quinoa Stuffed Peppers
 ('Preheat the oven to 375°F (190°C). Cut bell peppers in half lengthwise and remove seeds and membranes.', 1, 12),
-('In a saucepan, cook quinoa according to package instructions. In a bowl, mix cooked quinoa with your favorite vegetables and seasonings.', 2, 12),
+('In a saucepan, cook quinoa according to package instructions. In a bowl, mix cooked quinoa with your favorite vegetables and seasonings.',
+ 2, 12),
 ('Fill each bell pepper half with the quinoa mixture. Place the stuffed peppers in a baking dish.', 3, 12),
 ('Bake for 25-30 minutes or until peppers are tender. Garnish with fresh herbs and serve hot.', 4, 12),
 
@@ -658,29 +678,36 @@ VALUES
 
 -- Beef and Broccoli Stir-Fry
 ('Slice beef sirloin thinly and marinate in a mixture of soy sauce, garlic, and ginger for 15-20 minutes.', 1, 15),
-('In a wok or large skillet, stir-fry marinated beef until browned. Add broccoli florets and stir-fry until tender-crisp.', 2, 15),
-('In a small bowl, mix soy sauce, oyster sauce, and cornstarch. Pour the sauce over the beef and broccoli. Stir until the sauce thickens.', 3, 15),
+('In a wok or large skillet, stir-fry marinated beef until browned. Add broccoli florets and stir-fry until tender-crisp.',
+ 2, 15),
+('In a small bowl, mix soy sauce, oyster sauce, and cornstarch. Pour the sauce over the beef and broccoli. Stir until the sauce thickens.',
+ 3, 15),
 ('Serve the beef and broccoli stir-fry over a bed of cooked rice or noodles.', 4, 15),
 
 -- Garlic Parmesan Breadsticks
 ('Preheat the oven to 375°F (190°C). Roll out pizza dough on a floured surface.', 1, 16),
-('In a bowl, mix melted butter, minced garlic, and grated Parmesan cheese. Spread the mixture over the pizza dough.', 2, 16),
+('In a bowl, mix melted butter, minced garlic, and grated Parmesan cheese. Spread the mixture over the pizza dough.', 2,
+ 16),
 ('Cut the dough into strips and twist each strip into a breadstick shape. Place on a baking sheet.', 3, 16),
 ('Bake for 12-15 minutes or until golden brown. Serve the garlic Parmesan breadsticks warm.', 4, 16),
 
 -- Wheat Berry Salad
 ('Cook wheat berries according to package instructions. Drain and let cool.', 1, 17),
 ('In a large bowl, combine cooked wheat berries with chopped vegetables and herbs.', 2, 17),
-('In a small bowl, whisk together olive oil, Dijon mustard, salt, and pepper. Pour the dressing over the wheat berry salad.', 3, 17),
+('In a small bowl, whisk together olive oil, Dijon mustard, salt, and pepper. Pour the dressing over the wheat berry salad.',
+ 3, 17),
 ('Toss the salad until well coated with the dressing. Serve chilled as a wholesome and flavorful side dish.', 4, 17),
 
 -- Cheese Omelette
 ('In a bowl, beat eggs and season with salt and pepper. Heat a non-stick skillet over medium-high heat.', 1, 18),
-('Pour the beaten eggs into the skillet. As the edges set, lift with a spatula to let uncooked eggs flow underneath.', 2, 18),
-('Sprinkle shredded cheese over one half of the omelette. Once the bottom is set, fold the omelette in half and serve hot.', 3, 18),
+('Pour the beaten eggs into the skillet. As the edges set, lift with a spatula to let uncooked eggs flow underneath.',
+ 2, 18),
+('Sprinkle shredded cheese over one half of the omelette. Once the bottom is set, fold the omelette in half and serve hot.',
+ 3, 18),
 
 -- Egg Fried Rice
-('Cook rice according to package instructions and let it cool. In a wok, heat vegetable oil over medium-high heat.', 1, 19),
+('Cook rice according to package instructions and let it cool. In a wok, heat vegetable oil over medium-high heat.', 1,
+ 19),
 ('Add diced vegetables (e.g., peas, carrots, and corn) to the wok. Stir-fry until the vegetables are tender.', 2, 19),
 ('Push the vegetables to the side and add beaten eggs to the wok. Scramble the eggs until cooked.', 3, 19),
 ('Combine the cooked rice with vegetables and eggs. Season with soy sauce and stir-fry until heated through.', 4, 19),
@@ -689,7 +716,8 @@ VALUES
 -- Cabbage Rolls
 ('Preheat the oven to 350°F (175°C). Boil a large pot of water and blanch cabbage leaves until tender.', 1, 20),
 ('In a bowl, mix together a filling of ground beef, cooked rice, diced onions, and seasonings.', 2, 20),
-('Place a portion of the filling on each cabbage leaf and roll tightly. Arrange the cabbage rolls in a baking dish.', 3, 20),
+('Place a portion of the filling on each cabbage leaf and roll tightly. Arrange the cabbage rolls in a baking dish.', 3,
+ 20),
 ('In a separate bowl, mix tomato sauce and herbs. Pour the sauce over the cabbage rolls.', 4, 20),
 ('Bake for 25-30 minutes or until the cabbage rolls are cooked through. Serve hot.', 5, 20);
 
