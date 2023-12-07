@@ -10,7 +10,8 @@ import java.util.stream.Collectors;
 public record IngredientCategoriesDto(Long id, List<FoodCategoryDto> foodCategory) {
       public static IngredientCategoriesDto convertToDto(Ingredient ingredient) {
         return new IngredientCategoriesDto(
-                ingredient.getId(),ingredient.getFoodCategories().stream().map(FoodCategoryDto::convertToDto).collect(Collectors.toList())
+                ingredient.getId(),
+                ingredient.getFoodCategories().stream().map(FoodCategoryDto::convertToDto).collect(Collectors.toList())
         );
     }
 }
