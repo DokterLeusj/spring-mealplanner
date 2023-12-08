@@ -33,7 +33,7 @@ public class PlanPreference {
     @OneToMany(mappedBy = "planPreference")
     private Set<User> users = new HashSet<>();
 
-    @ManyToMany(mappedBy = "planPreferences")
+    @OneToMany(mappedBy = "planPreference")
     private Set<MealPlanPossibility> mealPlans = new HashSet<>();
 
 }

@@ -47,4 +47,11 @@ public class Recipe {
 
     @ManyToMany(mappedBy = "recipes")
     private Set<MealPlanPossibility> mealPlanPossibilities;
+
+    @ManyToMany()
+    @JoinTable(name = "food_categories_per_recipe",
+            joinColumns = @JoinColumn(name = "recipe_id"),
+            inverseJoinColumns = @JoinColumn(name = "food_category_id"))
+    Set<FoodCategory> includedFoodCategories;
+
 }

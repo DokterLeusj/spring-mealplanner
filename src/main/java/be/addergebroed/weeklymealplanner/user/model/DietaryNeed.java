@@ -30,4 +30,7 @@ public class DietaryNeed {
 
     @ManyToMany(mappedBy="dietaryNeeds")
     private Set<PlanPreference> planPreferences = new HashSet<>();
+
+
+
 }
