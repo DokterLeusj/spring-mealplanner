@@ -8,7 +8,11 @@ import be.addergebroed.weeklymealplanner.user.model.User;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public record UserDto(Long id, String username, String imgUrl, PlanPreference planPreference, List<RecipeDetailDto> recipes) {
+public record UserDto(Long id,
+                      String username,
+                      String imgUrl,
+                      PlanPreference planPreference,
+                      List<RecipeDetailDto> recipes) {
     public static UserDto convertToDto(User user){
         return new UserDto(
                 user.getId(),
