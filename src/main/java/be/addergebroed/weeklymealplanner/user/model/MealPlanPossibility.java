@@ -39,10 +39,10 @@ public class MealPlanPossibility {
 
     private Set<Recipe> getRecipesForPlanPreference(PlanPreference planPreference) {
         Set<Recipe> recipes = new HashSet<>();
+        Set<FoodCategory> excludedCategories = getExcludedCategories(planPreference.getDietaryNeeds()); // Can never be in a recipe
 
         Set<Ingredient> usedIngredients = new HashSet<>();
 
-        Set<FoodCategory> excludedCategories = getExcludedCategories(planPreference.getDietaryNeeds()); // Can never be in a recipe
 
 
         return recipes;
