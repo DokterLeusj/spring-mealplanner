@@ -10,7 +10,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public record FoodCategoryDto(Long id, String name, boolean allergen, List<IngredientNameDto> ingredients) {
+public record FoodCategoryDto(Long id,
+                              String name,
+                              boolean allergen,
+                              List<IngredientNameDto> ingredients) {
     public static FoodCategoryDto convertToDto(FoodCategory category){
         return new FoodCategoryDto(
                 category.getId(),
