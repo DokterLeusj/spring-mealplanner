@@ -1,5 +1,6 @@
 package be.addergebroed.weeklymealplanner.recipe.model;
 
+import be.addergebroed.weeklymealplanner.user.model.MealPlanPossibility;
 import be.addergebroed.weeklymealplanner.user.model.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,7 +21,7 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     String name;
 
     @Column(nullable = true)
@@ -43,4 +44,7 @@ public class Recipe {
 
     @OneToMany(mappedBy = "recipe")
    Set <RecipeInstruction> instructions=new HashSet<>();
+
+    @ManyToMany(mappedBy = "recipes")
+    private Set<MealPlanPossibility> mealPlanPossibilities;
 }
