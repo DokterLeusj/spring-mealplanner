@@ -28,4 +28,6 @@ public class RecipeController {
         return RecipeDetailDto.convertToDto(recipeService.fetchRecipeById(id));
 
     }
+
+
 }
