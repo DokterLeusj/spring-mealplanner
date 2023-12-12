@@ -15,15 +15,10 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepo;
     @Override
     public User registerNewUser(UserRegistrationDto user) {
-        //todo: happy flow
-        //   1. is e-mail unique/new?
-        //   2. create actual User
-        //   3. save User to DB
-        //   4. return User
-
         if (userRepo.findByEmail(user.email()).isPresent()){
             throw new IllegalArgumentException("Email " + user.email() + " is alreay in use. Please use new ");
         }
+
         User newUser = User.builder()
                 .email(user.email())
                 .username(user.email())
@@ -32,6 +27,8 @@ public class UserServiceImpl implements UserService {
 
         return userRepo.save(newUser);
     }
+
+
 
     @Override
     public List<User> fetchAllUsers() {

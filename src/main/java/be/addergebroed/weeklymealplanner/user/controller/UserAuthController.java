@@ -23,6 +23,6 @@ public class UserAuthController {
             throw new IllegalArgumentException("Invalid User registration");
         }
         userService.registerNewUser(userDto);
-        return ResponseEntity.ok("you can now log in as " );
+        return ResponseEntity.ok("you can now log in as " + userDto.email());
     }
 }
