@@ -24,7 +24,6 @@ public class UserController {
     @GetMapping
     public List<UserDto> handleGetAllUsers(){
         return userService.fetchAllUsers().stream()
-                .map(u -> UserDto.convertToDto(u))
-                .collect(Collectors.toList());
+                .map(UserDto::convertToDto).toList();
     }
 }
