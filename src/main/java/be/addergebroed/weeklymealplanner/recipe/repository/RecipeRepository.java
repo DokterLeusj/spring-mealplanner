@@ -14,19 +14,17 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public interface RecipeRepository extends JpaRepository<Recipe,Long> {
-        @Query("SELECT DISTINCT r FROM Recipe r " +
-            "JOIN r.recipeIngredients ri " +
-            "JOIN ri.ingredient i " +
-            "JOIN i.foodCategories fc " +
+public interface RecipeRepository extends JpaRepository<Recipe, Long> {
+    @Query("SELECT DISTINCT r FROM Recipe r " +
+            "left JOIN r.recipeIngredients ri " +
+            "left  JOIN ri.ingredient i " +
+            "left JOIN i.foodCategories fc " +
             "LEFT JOIN fc.dietaryNeeds dn " +
             "WHERE " +
             "(:nameContains IS NULL OR LOWER(r.name) LIKE LOWER(CONCAT('%', :nameContains, '%'))) " +
             "AND (:authorIds IS NULL OR r.author.id IN :authorIds) " +
-            "AND (:dietaryNeedIds IS NULL OR dn.id not IN :dietaryNeedIds) " +
-            "AND (:excludedCategoryIds IS NULL OR fc.id NOT IN :excludedCategoryIds)")
-
-
+            "AND (:excludedCategoryIds IS NULL OR fc.id NOT IN :excludedCategoryIds) " +
+            "AND (:dietaryNeedIds IS NULL OR dn.id not in :dietaryNeedIds)")
     List<Recipe> findRecipesByCriteria(
             @Param("nameContains") String nameContains,
             @Param("authorIds") Long[] authorIds,

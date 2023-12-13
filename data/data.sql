@@ -500,87 +500,80 @@ VALUES
 (1, 11),  -- Qty: 100 grams Parmesan cheese
 
 -- Vegetarian Stir-Fry
-(2, 6),   -- Qty: 300 grams Chicken breast
-(2, 7),   -- Qty: 150 grams Broccoli
-(2, 8),   -- Qty: 100 grams Bell peppers
-(2, 9),   -- Qty: 50 grams Carrots
-(2, 10),  -- Qty: 50 grams Snap peas
-(2, 11),  -- Qty: 30 tbsp Soy sauce
-(2, 12),  -- Qty: 20 tbsp Ginger
-(2, 13),  -- Qty: 15 tbsp Sesame oil
-(2, 14),  -- Qty: 200 grams Rice
+(2, 12),   -- Qty: 200 grams Tofu
+(2, 13),   -- Qty: 1 piece Broccoli
+(2, 14),   -- Qty: 2 pieces Bell peppers
+(2, 15),   -- Qty: 150 grams Carrots
+(2, 16),   -- Qty: 100 grams Snap peas
+(2, 17),   -- Qty: 50 ml Soy sauce
+(2, 18),   -- Qty: 1 piece Ginger
+(2, 19),   -- Qty: 2 tbs Sesame oil
+(2, 20),   -- Qty: 200 grams Rice
 
 -- Chicken Parmesan
-(3, 15),  -- Qty: 300 grams Chicken breast
-(3, 16),  -- Qty: 200 grams Tomato paste
-(3, 17),  -- Qty: 400 grams Canned tomatoes
-(3, 18),  -- Qty: 10 tbsp Oregano
-(3, 19),  -- Qty: 10 tbsp Basil
-(3, 20),  -- Qty: 5 tbsp Salt
-
--- Caprese Salad
-(4, 21),  -- Qty: 150 grams Flour
-(4, 22),  -- Qty: 100 grams Bread crumbs
-(4, 23),  -- Qty: 30 ml Olive oil
-(4, 24),  -- Qty: 500 ml Marinara sauce
+(3, 21),  -- Qty: 150 grams Flour
+(3, 22),  -- Qty: 100 grams Bread crumbs
+(3, 23),  -- Qty: 30 ml Olive oil
+(3, 24),  -- Qty: 500 ml Marinara sauce
 
 -- Chocolate Cake
-(5, 25),  -- Qty: 200 grams Mozzarella cheese
-(5, 26),  -- Qty: 30 ml Balsamic glaze
-(5, 27),  -- Qty: 200 grams All-purpose flour
-(5, 28),  -- Qty: 30 grams Cocoa powder
+(4, 25),  -- Qty: 200 grams Mozzarella cheese
+(4, 26),  -- Qty: 30 ml Balsamic glaze
+(4, 27),  -- Qty: 200 grams All-purpose flour
+(4, 28),  -- Qty: 30 grams Cocoa powder
 
 -- Grilled Salmon
-(6, 29),  -- Qty: 200 grams Salmon fillets
-(6, 30),  -- Qty: 1 piece Lemon
-(6, 31),  -- Qty: 5 grams Dill
-(6, 32),  -- Qty: 200 grams Arborio rice
+(5, 29),  -- Qty: 200 grams Salmon fillets
+(5, 30),  -- Qty: 1 piece Lemon
+(5, 31),  -- Qty: 5 grams Dill
+(5, 32),  -- Qty: 200 grams Arborio rice
 
 -- Mushroom Risotto
-(7, 33),  -- Qty: 150 grams Mushrooms
-(7, 34),  -- Qty: 500 ml Vegetable or chicken broth
-(7, 35),  -- Qty: 50 grams Butter
-(7, 36),  -- Qty: 1 piece Cucumber
-(7, 37),  -- Qty: 1 piece Red onion
+(6, 33),  -- Qty: 150 grams Mushrooms
+(6, 34),  -- Qty: 500 ml Vegetable or chicken broth
+(6, 35),  -- Qty: 50 grams Butter
+(6, 36),  -- Qty: 1 piece Cucumber
+(6, 37),  -- Qty: 1 piece Red onion
 
 -- Greek Salad
-(8, 38),  -- Qty: 100 grams Kalamata olives
-(8, 39),  -- Qty: 150 grams Feta cheese
-(8, 40),  -- Qty: 30 ml Red wine vinegar
+(7, 38),  -- Qty: 100 grams Kalamata olives
+(7, 39),  -- Qty: 150 grams Feta cheese
+(7, 40),  -- Qty: 30 ml Red wine vinegar
 
 -- Tiramisu
-(9, 41),  -- Qty: 200 grams Ladyfingers
-(9, 42),  -- Qty: 250 ml Strong brewed coffee
-(9, 43),  -- Qty: 250 grams Mascarpone cheese
-(9, 44),  -- Qty: 1 piece Taco seasoning
-(9, 45),  -- Qty: 8 pieces Taco shells
+(8, 41),  -- Qty: 200 grams Ladyfingers
+(8, 42),  -- Qty: 250 ml Strong brewed coffee
+(8, 43),  -- Qty: 250 grams Mascarpone cheese
+(8, 44),  -- Qty: 1 piece Taco seasoning
+(8, 45),  -- Qty: 8 pieces Taco shells
 
 -- Beef Tacos
-(10, 46), -- Qty: 100 grams Lettuce
-(10, 47), -- Qty: 100 grams Mixed salad greens
-(10, 48), -- Qty: 150 grams Cherry tomatoes
-(10, 49), -- Qty: 50 ml Balsamic vinaigrette dressing
+(9, 46), -- Qty: 100 grams Lettuce
+(9, 47), -- Qty: 100 grams Mixed salad greens
+(9, 48), -- Qty: 150 grams Cherry tomatoes
+(9, 49), -- Qty: 50 ml Balsamic vinaigrette dressing
 
 -- Grilled Chicken Salad
-(11, 50), -- Qty: 200 grams Black beans
-(11, 51), -- Qty: 150 grams Corn
-(11, 52), -- Qty: 1 tsp Cumin
-(11, 53), -- Qty: 1 tsp Chili powder
-(11, 54), -- Qty: 250 ml Almond milk
-(11, 55), -- Qty: 1 piece Banana
-(11, 56), -- Qty: 30 grams Almond butter
-(11, 57), -- Qty: 30 grams Honey
-(11, 58), -- Qty: 200 grams Beef sirloin
-(11, 59), -- Qty: 50 grams Brown sugar
-(11, 60), -- Qty: 20 grams Cornstarch
-(11, 61), -- Qty: 500 grams Pizza dough
-(11, 62), -- Qty: 5 grams Fresh parsley
-(11, 63), -- Qty: 150 grams Wheat berries
-(11, 64), -- Qty: 1 tsp Dijon mustard
-(11, 65), -- Qty: 100 grams Cheddar cheese
-(11, 66), -- Qty: 2 pieces Green onions
-(11, 67), -- Qty: 12 pieces Cabbage leaves
-(11, 68); -- Qty: 1 tsp Thyme
+(10, 50), -- Qty: 200 grams Black beans
+(10, 51), -- Qty: 150 grams Corn
+(10, 52), -- Qty: 1 tsp Cumin
+(10, 53), -- Qty: 1 tsp Chili powder
+(10, 54), -- Qty: 250 ml Almond milk
+(10, 55), -- Qty: 1 piece Banana
+(10, 56), -- Qty: 30 grams Almond butter
+(10, 57), -- Qty: 30 grams Honey
+(10, 58), -- Qty: 200 grams Beef sirloin
+(10, 59), -- Qty: 50 grams Brown sugar
+(10, 60), -- Qty: 20 grams Cornstarch
+(10, 61), -- Qty: 500 grams Pizza dough
+(10, 62), -- Qty: 5 grams Fresh parsley
+(10, 63), -- Qty: 150 grams Wheat berries
+(10, 64), -- Qty: 1 tsp Dijon mustard
+(10, 65), -- Qty: 100 grams Cheddar cheese
+(10, 66), -- Qty: 2 pieces Green onions
+(10, 67), -- Qty: 12 pieces Cabbage leaves
+(10, 68); -- Qty: 1 tsp Thyme
+
 
 INSERT INTO mealplanner_api.recipe_instruction (instruction, step, recipe_id)
 VALUES
