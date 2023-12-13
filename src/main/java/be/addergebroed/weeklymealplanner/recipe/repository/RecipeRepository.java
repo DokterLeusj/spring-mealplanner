@@ -15,8 +15,7 @@ import java.util.Optional;
 import java.util.Set;
 
 public interface RecipeRepository extends JpaRepository<Recipe,Long> {
-
-    @Query("SELECT DISTINCT r FROM Recipe r " +
+        @Query("SELECT DISTINCT r FROM Recipe r " +
             "JOIN r.recipeIngredients ri " +
             "JOIN ri.ingredient i " +
             "JOIN i.foodCategories fc " +
@@ -24,7 +23,7 @@ public interface RecipeRepository extends JpaRepository<Recipe,Long> {
             "WHERE " +
             "(:nameContains IS NULL OR LOWER(r.name) LIKE LOWER(CONCAT('%', :nameContains, '%'))) " +
             "AND (:authorIds IS NULL OR r.author.id IN :authorIds) " +
-            "AND (:dietaryNeedIds IS NULL OR dn.id IN :dietaryNeedIds) " +
+            "AND (:dietaryNeedIds IS NULL OR dn.id not IN :dietaryNeedIds) " +
             "AND (:excludedCategoryIds IS NULL OR fc.id NOT IN :excludedCategoryIds)")
 
 

@@ -98,7 +98,7 @@ VALUES (1, 'Chicken breast'),
        (81, 'Green onions'),
        (82, 'Cabbage leaves'),
        (83, 'Thyme');
-INSERT INTO mealplanner_api.ingredient_category (ingredient_id, food_category_id)
+INSERT INTO mealplanner_api.ingredient_per_category (ingredient_id, food_category_id)
 VALUES (1, 5),   -- Chicken breast - Meat, Chicken, Animal Product
        (1, 9),
        (1, 6),
