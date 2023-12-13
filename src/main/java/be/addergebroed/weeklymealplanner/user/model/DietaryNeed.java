@@ -19,6 +19,7 @@ public class DietaryNeed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(nullable = true,unique = true)
     private String name;
 
@@ -30,4 +31,7 @@ public class DietaryNeed {
 
     @ManyToMany(mappedBy="dietaryNeeds")
     private Set<PlanPreference> planPreferences = new HashSet<>();
+
+
+
 }
