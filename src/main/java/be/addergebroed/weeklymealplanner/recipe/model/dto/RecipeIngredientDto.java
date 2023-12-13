@@ -6,7 +6,8 @@ public record RecipeIngredientDto(double qty,
                                   FoodUnitDto foodUnit,
                                   IngredientNameDto ingredient) {
     public static RecipeIngredientDto convertToDto(RecipeIngredient recipeIngredient) {
-     return new RecipeIngredientDto(recipeIngredient.getId(),
+     return new RecipeIngredientDto(
+             recipeIngredient.getQty(),
                 FoodUnitDto.convertToDto(recipeIngredient.getUnit()),
              IngredientNameDto.convertToDto(recipeIngredient.getIngredient()));
 

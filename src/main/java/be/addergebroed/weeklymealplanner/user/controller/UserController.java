@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1/user")
@@ -24,7 +23,6 @@ public class UserController {
     @GetMapping
     public List<UserDto> handleGetAllUsers(){
         return userService.fetchAllUsers().stream()
-                .map(u -> UserDto.convertToDto(u))
-                .collect(Collectors.toList());
+                .map(UserDto::convertToDto).toList();
     }
 }
