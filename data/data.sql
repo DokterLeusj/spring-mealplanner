@@ -373,13 +373,19 @@ VALUES (1, 'grams'),
        (6, '');
 
 INSERT INTO mealplanner_api.recipe (id, description, img_url, name, nutri_tech, author_id)
-VALUES (1, 'Classic Italian pasta dish with savory Bolognese sauce.', null, 'Spaghetti Bolognese', false, 1),
+VALUES (1, 'Classic Italian pasta dish with savory Bolognese sauce.', 'https://i.imgur.com/D2k7lJE.jpg',
+        'Spaghetti Bolognese', false, 1),
        (2, 'Colorful and nutritious stir-fry with a variety of vegetables.', null, 'Vegetarian Stir-Fry', false, 2),
-       (3, 'Crispy chicken cutlets topped with marinara sauce and melted cheese.', null, 'Chicken Parmesan', false, 1),
-       (4, 'Refreshing salad featuring tomatoes, mozzarella, and basil.', null, 'Caprese Salad', false, 2),
-       (5, 'Indulgent and moist chocolate cake for a sweet treat.', null, 'Chocolate Cake', false, 3),
-       (6, 'Healthy and flavorful grilled salmon fillets.', null, 'Grilled Salmon', false, 6),
-       (7, 'Creamy and comforting risotto with savory mushrooms.', null, 'Mushroom Risotto', false, 2),
+       (3, 'Crispy chicken cutlets topped with marinara sauce and melted cheese.', 'https://i.imgur.com/0Ge0Na5.jpg',
+        'Chicken Parmesan', false, 1),
+       (4, 'Refreshing salad featuring tomatoes, mozzarella, and basil.', 'https://i.imgur.com/LSUBvav.jpg',
+        'Caprese Salad', false, 2),
+       (5, 'Indulgent and moist chocolate cake for a sweet treat.', 'https://i.imgur.com/c3zSUTa.jpg', 'Chocolate Cake',
+        false, 3),
+       (6, 'Healthy and flavorful grilled salmon fillets.', 'https://i.imgur.com/R16Zr95.jpg', 'Grilled Salmon', false,
+        6),
+       (7, 'Creamy and comforting risotto with savory mushrooms.', 'https://i.imgur.com/72ODRtl.jpg',
+        'Mushroom Risotto', false, 2),
        (8, 'Traditional Greek salad with fresh vegetables and feta cheese.', null, 'Greek Salad', false, 8),
        (9, 'Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.', null, 'Tiramisu',
         false, 9),
@@ -396,8 +402,6 @@ VALUES (1, 'Classic Italian pasta dish with savory Bolognese sauce.', null, 'Spa
        (18, 'Cheesy omelette with a variety of ingredients.', null, 'Cheese Omelette', false, 18),
        (19, 'Classic egg fried rice with a medley of flavors.', null, 'Egg Fried Rice', false, 19),
        (20, 'Stuffed cabbage leaves with a flavorful filling.', null, 'Cabbage Rolls', false, 20);
-
-
 INSERT INTO mealplanner_api.recipe_ingredient (id, qty, ingredient_id, unit_id)
 VALUES (1, 250, 12, 1),  -- Ground beef (Qty: 250 grams)
        (2, 1, 13, 2),    -- Onion (Qty: 1 piece)
