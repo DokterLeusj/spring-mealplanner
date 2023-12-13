@@ -360,7 +360,8 @@ VALUES ('matteo.rossi@example.com', '', '$2y$10$J2Z62ZIkwZptBvK/4eAlSesjOjgy6Dke
        ('fatima.kwame@example.com', '', '$2y$10$5BVL2jFugIVk6c53R1nCrOvum0zU0.GbNc50lO.QrM9CeZFr7nO3y', 'SpicyFatima',
         1),
        ('simba.nkosi@example.com', '', '$2y$10$O5eXz17ubrrSylXTcM3Rsevbk4M.NOe6Yujauq2U8PioVeLrFvZZ2',
-        'SafariExplorerSimba', 2);
+        'SafariExplorerSimba', 2),
+    ('someone@someone.com','','$2a$10$c/4CredT0C7DWe7/SyEJqOvRXGgIDvNah36kXswpkuMhSAGs7wBqu', 'someone','3');
 
 # Recipes
 INSERT INTO mealplanner_api.food_unit (id, name)
