@@ -5,9 +5,10 @@ import be.addergebroed.weeklymealplanner.recipe.model.FoodCategory;
 import java.util.List;
 
 public interface FoodCategoryService {
-    List<FoodCategory> fetchAllCategories();
     //C
     //R
+    List<FoodCategory> fetchAllCategories();
+
     //U
     //D
 }
