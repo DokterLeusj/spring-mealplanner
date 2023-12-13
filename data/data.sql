@@ -229,15 +229,20 @@ VALUES (1, 5),   -- Chicken breast - Meat, Chicken, Animal Product
 INSERT INTO mealplanner_api.dietary_need (id, name)
 VALUES (1, 'Vegetarian'),
        (2, 'Gluten Free'),
-       (3, 'Dairy Free');
+       (3, 'Dairy Free'),
+       (4, 'Vegan');
 
-# Needs update from mr chatgpt
 INSERT INTO mealplanner_api.dietary_need_excluded_category (dietary_need_id, excl_food_category_id)
-VALUES (1, 5), -- Vegetarian excludes Chicken
-       (1, 9), -- Vegetarian excludes Chicken
-       (2, 7), -- Gluten Free excludes Gluten
-       (3, 4), -- Dairy Free excludes Dairy
-       (3, 10);
+VALUES
+    (3, 4),
+    (4, 4),
+    (1, 5),
+    (4, 5),
+    (4, 6),
+    (2, 7),
+    (1, 9),
+    (4, 9),
+    (3, 10);
 
 
 # Plans
@@ -362,7 +367,7 @@ VALUES ('matteo.rossi@example.com', '', '$2y$10$J2Z62ZIkwZptBvK/4eAlSesjOjgy6Dke
         1),
        ('simba.nkosi@example.com', '', '$2y$10$O5eXz17ubrrSylXTcM3Rsevbk4M.NOe6Yujauq2U8PioVeLrFvZZ2',
         'SafariExplorerSimba', 2),
-    ('someone@someone.com','','$2a$10$c/4CredT0C7DWe7/SyEJqOvRXGgIDvNah36kXswpkuMhSAGs7wBqu', 'someone','3');
+       ('someone@someone.com', '', '$2a$10$c/4CredT0C7DWe7/SyEJqOvRXGgIDvNah36kXswpkuMhSAGs7wBqu', 'someone', '3');
 
 # Recipes
 INSERT INTO mealplanner_api.food_unit (id, name)
@@ -404,80 +409,79 @@ VALUES (1, 'Classic Italian pasta dish with savory Bolognese sauce.', 'https://i
        (19, 'Classic egg fried rice with a medley of flavors.', null, 'Egg Fried Rice', false, 19),
        (20, 'Stuffed cabbage leaves with a flavorful filling.', null, 'Cabbage Rolls', false, 20);
 INSERT INTO mealplanner_api.recipe_ingredient (id, qty, ingredient_id, unit_id)
-VALUES
-    (1, 250, 12, 1),   -- Ground beef (Qty: 250 grams)
-    (2, 1, 13, 2),     -- Onion (Qty: 1 piece)
-    (3, 3, 7, 3),      -- Garlic (Qty: 3 cloves)
-    (4, 150, 14, 5),   -- Tomato paste (Qty: 150 grams)
-    (5, 400, 15, 4),   -- Canned tomatoes (Qty: 400 grams)
-    (6, 1, 16, 5),     -- Oregano (Qty: 1 tsp)
-    (7, 1, 17, 5),     -- Basil (Qty: 1 tsp)
-    (8, 1, 18, 5),     -- Salt (Qty: 1 tsp)
-    (9, 0.5, 19, 5),   -- Pepper (Qty: 0.5 tsp)
-    (10, 300, 20, 1),  -- Spaghetti noodles (Qty: 300 grams)
-    (11, 100, 21, 1),  -- Parmesan cheese (Qty: 100 grams)
-    (12, 200, 22, 1),  -- Tofu (Qty: 200 grams)
-    (13, 1, 8, 5),     -- Broccoli (Qty: 1 piece)
-    (14, 2, 23, 1),    -- Bell peppers (Qty: 2 pieces)
-    (15, 150, 24, 1),  -- Carrots (Qty: 150 grams)
-    (16, 100, 25, 1),  -- Snap peas (Qty: 100 grams)
-    (17, 50, 26, 5),   -- Soy sauce (Qty: 50 ml)
-    (18, 1, 27, 1),    -- Ginger (Qty: 1 piece)
-    (19, 2, 28, 5),    -- Sesame oil (Qty: 2 tbs)
-    (20, 200, 29, 1),  -- Rice (Qty: 200 grams)
-    (21, 150, 30, 1),  -- Flour (Qty: 150 grams)
-    (22, 100, 31, 1),  -- Bread crumbs (Qty: 100 grams)
-    (23, 30, 32, 4),   -- Olive oil (Qty: 30 ml)
-    (24, 500, 33, 4),  -- Marinara sauce (Qty: 500 ml)
-    (25, 200, 34, 1),  -- Mozzarella cheese (Qty: 200 grams)
-    (26, 30, 35, 5),   -- Balsamic glaze (Qty: 30 ml)
-    (27, 200, 36, 1),  -- All-purpose flour (Qty: 200 grams)
-    (28, 30, 37, 5),   -- Cocoa powder (Qty: 30 grams)
-    (29, 10, 38, 5),   -- Baking powder (Qty: 10 grams)
-    (30, 100, 39, 5),  -- Sugar (Qty: 100 grams)
-    (31, 30, 40, 4),   -- Vegetable oil (Qty: 30 ml)
-    (32, 5, 41, 5),    -- Vanilla extract (Qty: 5 ml)
-    (33, 30, 42, 4),   -- Hot water (Qty: 30 ml)
-    (34, 200, 43, 1),  -- Salmon fillets (Qty: 200 grams)
-    (35, 1, 44, 2),    -- Lemon (Qty: 1 piece)
-    (36, 5, 45, 5),    -- Dill (Qty: 5 grams)
-    (37, 200, 46, 1),  -- Arborio rice (Qty: 200 grams)
-    (38, 150, 47, 1),  -- Mushrooms (Qty: 150 grams)
-    (39, 500, 48, 4),  -- Vegetable or chicken broth (Qty: 500 ml)
-    (40, 50, 49, 5),   -- Butter (Qty: 50 grams)
-    (41, 1, 51, 2),    -- Cucumber (Qty: 1 piece)
-    (42, 1, 52, 2),    -- Red onion (Qty: 1 piece)
-    (43, 100, 53, 1),  -- Kalamata olives (Qty: 100 grams)
-    (44, 150, 54, 1),  -- Feta cheese (Qty: 150 grams)
-    (45, 30, 55, 4),   -- Red wine vinegar (Qty: 30 ml)
-    (46, 100, 56, 2),  -- Ladyfingers (Qty: 100 grams)
-    (47, 250, 57, 4),  -- Strong brewed coffee (Qty: 250 ml)
-    (48, 250, 58, 1),  -- Mascarpone cheese (Qty: 250 grams)
-    (49, 1, 59, 1),    -- Taco seasoning (Qty: 1 piece)
-    (50, 8, 60, 1),    -- Taco shells (Qty: 8 pieces)
-    (51, 100, 61, 1),  -- Lettuce (Qty: 100 grams)
-    (52, 100, 62, 1),  -- Mixed salad greens (Qty: 100 grams)
-    (53, 150, 63, 2),  -- Cherry tomatoes (Qty: 150 grams)
-    (54, 50, 64, 5),   -- Balsamic vinaigrette dressing (Qty: 50 ml)
-    (55, 200, 65, 5),  -- Black beans (Qty: 200 grams)
-    (56, 150, 66, 5),  -- Corn (Qty: 150 grams)
-    (57, 1, 67, 5),    -- Cumin (Qty: 1 tsp)
-    (58, 1, 68, 5),    -- Chili powder (Qty: 1 tsp)
-    (59, 250, 69, 4),  -- Almond milk (Qty: 250 ml)
-    (60, 1, 70, 2),    -- Banana (Qty: 1 piece)
-    (61, 30, 71, 5),   -- Almond butter (Qty: 30 grams)
-    (62, 30, 72, 1),   -- Honey (Qty: 30 grams)
-    (63, 200, 73, 1),  -- Beef sirloin (Qty: 200 grams)
-    (64, 50, 74, 5),   -- Brown sugar (Qty: 50 grams)
-    (65, 20, 75, 5),   -- Cornstarch (Qty: 20 grams)
-    (66, 500, 76, 1),  -- Pizza dough (Qty: 500 grams)
-    (67, 5, 77, 1),    -- Fresh parsley (Qty: 5 grams)
-    (68, 150, 78, 1),  -- Wheat berries (Qty: 150 grams)
-    (69, 1, 79, 5),    -- Dijon mustard (Qty: 1 tsp)
-    (70, 100, 80, 1),  -- Cheddar cheese (Qty: 100 grams)
-    (71, 2, 81, 1),    -- Green onions (Qty: 2 pieces)
-    (72, 12, 82, 1),   -- Cabbage leaves (Qty: 12 pieces)
-    (73, 1, 83, 5);    -- Thyme (Qty: 1 tsp)
+VALUES (1, 250, 12, 1),  -- Ground beef (Qty: 250 grams)
+       (2, 1, 13, 2),    -- Onion (Qty: 1 piece)
+       (3, 3, 7, 3),     -- Garlic (Qty: 3 cloves)
+       (4, 150, 14, 5),  -- Tomato paste (Qty: 150 grams)
+       (5, 400, 15, 4),  -- Canned tomatoes (Qty: 400 grams)
+       (6, 1, 16, 5),    -- Oregano (Qty: 1 tsp)
+       (7, 1, 17, 5),    -- Basil (Qty: 1 tsp)
+       (8, 1, 18, 5),    -- Salt (Qty: 1 tsp)
+       (9, 0.5, 19, 5),  -- Pepper (Qty: 0.5 tsp)
+       (10, 300, 20, 1), -- Spaghetti noodles (Qty: 300 grams)
+       (11, 100, 21, 1), -- Parmesan cheese (Qty: 100 grams)
+       (12, 200, 22, 1), -- Tofu (Qty: 200 grams)
+       (13, 1, 8, 5),    -- Broccoli (Qty: 1 piece)
+       (14, 2, 23, 1),   -- Bell peppers (Qty: 2 pieces)
+       (15, 150, 24, 1), -- Carrots (Qty: 150 grams)
+       (16, 100, 25, 1), -- Snap peas (Qty: 100 grams)
+       (17, 50, 26, 5),  -- Soy sauce (Qty: 50 ml)
+       (18, 1, 27, 1),   -- Ginger (Qty: 1 piece)
+       (19, 2, 28, 5),   -- Sesame oil (Qty: 2 tbs)
+       (20, 200, 29, 1), -- Rice (Qty: 200 grams)
+       (21, 150, 30, 1), -- Flour (Qty: 150 grams)
+       (22, 100, 31, 1), -- Bread crumbs (Qty: 100 grams)
+       (23, 30, 32, 4),  -- Olive oil (Qty: 30 ml)
+       (24, 500, 33, 4), -- Marinara sauce (Qty: 500 ml)
+       (25, 200, 34, 1), -- Mozzarella cheese (Qty: 200 grams)
+       (26, 30, 35, 5),  -- Balsamic glaze (Qty: 30 ml)
+       (27, 200, 36, 1), -- All-purpose flour (Qty: 200 grams)
+       (28, 30, 37, 5),  -- Cocoa powder (Qty: 30 grams)
+       (29, 10, 38, 5),  -- Baking powder (Qty: 10 grams)
+       (30, 100, 39, 5), -- Sugar (Qty: 100 grams)
+       (31, 30, 40, 4),  -- Vegetable oil (Qty: 30 ml)
+       (32, 5, 41, 5),   -- Vanilla extract (Qty: 5 ml)
+       (33, 30, 42, 4),  -- Hot water (Qty: 30 ml)
+       (34, 200, 43, 1), -- Salmon fillets (Qty: 200 grams)
+       (35, 1, 44, 2),   -- Lemon (Qty: 1 piece)
+       (36, 5, 45, 5),   -- Dill (Qty: 5 grams)
+       (37, 200, 46, 1), -- Arborio rice (Qty: 200 grams)
+       (38, 150, 47, 1), -- Mushrooms (Qty: 150 grams)
+       (39, 500, 48, 4), -- Vegetable or chicken broth (Qty: 500 ml)
+       (40, 50, 49, 5),  -- Butter (Qty: 50 grams)
+       (41, 1, 51, 2),   -- Cucumber (Qty: 1 piece)
+       (42, 1, 52, 2),   -- Red onion (Qty: 1 piece)
+       (43, 100, 53, 1), -- Kalamata olives (Qty: 100 grams)
+       (44, 150, 54, 1), -- Feta cheese (Qty: 150 grams)
+       (45, 30, 55, 4),  -- Red wine vinegar (Qty: 30 ml)
+       (46, 100, 56, 2), -- Ladyfingers (Qty: 100 grams)
+       (47, 250, 57, 4), -- Strong brewed coffee (Qty: 250 ml)
+       (48, 250, 58, 1), -- Mascarpone cheese (Qty: 250 grams)
+       (49, 1, 59, 1),   -- Taco seasoning (Qty: 1 piece)
+       (50, 8, 60, 1),   -- Taco shells (Qty: 8 pieces)
+       (51, 100, 61, 1), -- Lettuce (Qty: 100 grams)
+       (52, 100, 62, 1), -- Mixed salad greens (Qty: 100 grams)
+       (53, 150, 63, 2), -- Cherry tomatoes (Qty: 150 grams)
+       (54, 50, 64, 5),  -- Balsamic vinaigrette dressing (Qty: 50 ml)
+       (55, 200, 65, 5), -- Black beans (Qty: 200 grams)
+       (56, 150, 66, 5), -- Corn (Qty: 150 grams)
+       (57, 1, 67, 5),   -- Cumin (Qty: 1 tsp)
+       (58, 1, 68, 5),   -- Chili powder (Qty: 1 tsp)
+       (59, 250, 69, 4), -- Almond milk (Qty: 250 ml)
+       (60, 1, 70, 2),   -- Banana (Qty: 1 piece)
+       (61, 30, 71, 5),  -- Almond butter (Qty: 30 grams)
+       (62, 30, 72, 1),  -- Honey (Qty: 30 grams)
+       (63, 200, 73, 1), -- Beef sirloin (Qty: 200 grams)
+       (64, 50, 74, 5),  -- Brown sugar (Qty: 50 grams)
+       (65, 20, 75, 5),  -- Cornstarch (Qty: 20 grams)
+       (66, 500, 76, 1), -- Pizza dough (Qty: 500 grams)
+       (67, 5, 77, 1),   -- Fresh parsley (Qty: 5 grams)
+       (68, 150, 78, 1), -- Wheat berries (Qty: 150 grams)
+       (69, 1, 79, 5),   -- Dijon mustard (Qty: 1 tsp)
+       (70, 100, 80, 1), -- Cheddar cheese (Qty: 100 grams)
+       (71, 2, 81, 1),   -- Green onions (Qty: 2 pieces)
+       (72, 12, 82, 1),  -- Cabbage leaves (Qty: 12 pieces)
+       (73, 1, 83, 5); -- Thyme (Qty: 1 tsp)
 
 
 INSERT INTO mealplanner_api.recipe_recipe_ingredient (recipe_id, recipe_ingredient_id)
