@@ -14,9 +14,13 @@ import java.util.List;
 public interface UserService {
     //C
     User registerNewUser(UserRegistrationDto user);
+
+
     //R
     List<User> fetchAllUsers();
     User fetchUserById(Long id);
+
+
 
     //U
     //D
