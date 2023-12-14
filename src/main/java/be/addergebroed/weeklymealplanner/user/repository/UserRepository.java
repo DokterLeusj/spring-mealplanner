@@ -16,11 +16,11 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
     @Query("SELECT DISTINCT u FROM User u " +
             "LEFT JOIN u.recipes r " +
-            "WHERE (:hasRecipes = null " +
+            "WHERE (:hasRecipes IS null " +
             "   OR (:hasRecipes = TRUE AND SIZE(u.recipes) > 0)" +
             "       or (:hasRecipes=false and size(u.recipes)=0) )"
     )
     List<User> findAllBy(
-            @Param("hasRecipes") boolean hasRecipes
+            @Param("hasRecipes") Boolean hasRecipes
     );
 }

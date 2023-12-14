@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserListDto> fetchAllUsers(boolean hasRecipes) {
+    public List<UserListDto> fetchAllUsers(Boolean hasRecipes) {
         return userRepo.findAllBy(hasRecipes).stream()
                 .map(UserListDto::convertToDto).toList();
     }

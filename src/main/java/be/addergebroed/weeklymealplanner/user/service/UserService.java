@@ -16,7 +16,7 @@ public interface UserService {
     //C
     User registerNewUser(UserRegistrationDto user);
     //R
-    List<UserListDto> fetchAllUsers(boolean hasRecipes);
+    List<UserListDto> fetchAllUsers(Boolean hasRecipes);
     User fetchUserById(Long id);
 
     //U

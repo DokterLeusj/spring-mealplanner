@@ -22,7 +22,7 @@ public class UserController {
 
     @GetMapping("")
     public List<UserListDto> handleGetAllUsers(
-            @RequestParam(required = false) boolean hasRecipes
+            @RequestParam(required = false) Boolean hasRecipes
     ) {
         return userService.fetchAllUsers(hasRecipes);
     }
