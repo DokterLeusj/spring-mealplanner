@@ -1,6 +1,5 @@
 package be.addergebroed.weeklymealplanner.user.model;
 
-import be.addergebroed.weeklymealplanner.recipe.model.FoodCategory;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,12 +26,14 @@ public class PlanPreference {
 
     @ManyToMany
     @JoinTable(name = "plan_preference_per_diet",
-            joinColumns = @JoinColumn(name = "plan_preference_id",nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "dietary_need_id",nullable = false))
+            joinColumns = @JoinColumn(name = "plan_preference_id", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "dietary_need_id", nullable = false))
     private Set<DietaryNeed> dietaryNeeds = new HashSet<>();
 
-    @OneToMany(mappedBy="planPreference")
+    @OneToMany(mappedBy = "planPreference")
     private Set<User> users = new HashSet<>();
 
+    @OneToMany(mappedBy = "planPreference")
+    private Set<MealPlanPossibility> mealPlans = new HashSet<>();
 
 }

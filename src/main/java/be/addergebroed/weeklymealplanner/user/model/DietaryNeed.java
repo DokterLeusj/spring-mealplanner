@@ -19,15 +19,19 @@ public class DietaryNeed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(nullable = true,unique = true)
     private String name;
 
     @ManyToMany
     @JoinTable(name = "dietary_need_excluded_category",
-            joinColumns = @JoinColumn(name = "dietary_need_id",nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "excl_food_category_id",nullable = false))
+            joinColumns = @JoinColumn(name = "dietary_need_id",nullable = false,unique=false),
+            inverseJoinColumns = @JoinColumn(name = "excl_food_category_id",nullable = false,unique=false))
     private Set<FoodCategory> excludedCategories = new HashSet<>();
 
     @ManyToMany(mappedBy="dietaryNeeds")
     private Set<PlanPreference> planPreferences = new HashSet<>();
+
+
+
 }

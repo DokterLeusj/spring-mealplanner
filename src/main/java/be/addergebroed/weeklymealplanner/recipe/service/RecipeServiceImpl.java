@@ -17,14 +17,22 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public List<Recipe> fetchAllRecipes() {
-     return recipeRepo.findAll();
+        return recipeRepo.findAll();
     }
 
     @Override
     public Recipe fetchRecipeById(Long id) {
-        if(id==null){
+        if (id == null) {
             throw new IllegalArgumentException("Id can not be null");
         }
-        return recipeRepo.findById(id).orElseThrow(()-> new EntityNotFoundException("Could not find recipe with id "+id));
+        return recipeRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find recipe with id " + id));
+    }
+
+    @Override
+    public List<Recipe> fetchFilteredRecipes(String nameContains,
+                                             Long[] authorIds,
+                                             Long[] excludedCategoryIds,
+                                             Long[] dietaryNeedIds) {
+        return recipeRepo.findRecipesByCriteria(nameContains,authorIds,excludedCategoryIds,dietaryNeedIds);
     }
 }

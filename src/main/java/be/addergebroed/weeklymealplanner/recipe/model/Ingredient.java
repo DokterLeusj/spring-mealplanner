@@ -22,7 +22,7 @@ public class Ingredient {
     String name;
 
     @ManyToMany
-    @JoinTable(name = "ingredient_category",
+    @JoinTable(name = "ingredient_per_category",
             joinColumns = @JoinColumn(name = "ingredient_id",nullable = false),
             inverseJoinColumns = @JoinColumn(name = "food_category_id",nullable = false))
     Set<FoodCategory> foodCategories;
