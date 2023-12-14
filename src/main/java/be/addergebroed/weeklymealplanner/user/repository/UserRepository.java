@@ -13,9 +13,13 @@ public interface UserRepository extends JpaRepository<User,Long> {
     Optional<User> findByUsername(String username);
     Optional<User> findByEmail(String email);
 
-    @Query("SELECT u FROM User u " +
-            "WHERE :hasRecipes IS NULL " +
-            "   OR u.recipes.size >= :hasRecipes")
+
+    @Query("SELECT DISTINCT u FROM User u " +
+            "LEFT JOIN u.recipes r " +
+            "WHERE (:hasRecipes = null " +
+            "   OR (:hasRecipes = TRUE AND SIZE(u.recipes) > 0)" +
+            "       or (:hasRecipes=false and size(u.recipes)=0) )"
+    )
     List<User> findAllBy(
             @Param("hasRecipes") boolean hasRecipes
     );
