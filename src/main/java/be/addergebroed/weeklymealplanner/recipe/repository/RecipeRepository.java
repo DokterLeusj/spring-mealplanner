@@ -15,16 +15,17 @@ import java.util.Optional;
 import java.util.Set;
 
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
-    @Query("SELECT DISTINCT r FROM Recipe r " +
-            "left JOIN r.recipeIngredients ri " +
-            "left  JOIN ri.ingredient i " +
-            "left JOIN i.foodCategories fc " +
-            "LEFT JOIN fc.dietaryNeeds dn " +
-            "WHERE " +
-            "(:nameContains IS NULL OR LOWER(r.name) LIKE LOWER(CONCAT('%', :nameContains, '%'))) " +
-            "AND (:authorIds IS NULL OR r.author.id IN :authorIds) " +
-            "AND (:excludedCategoryIds IS NULL OR fc.id NOT IN :excludedCategoryIds) " +
-            "AND (:dietaryNeedIds IS NULL OR dn.id not in :dietaryNeedIds)")
+    @Query("SELECT r FROM Recipe r " +
+            "WHERE ((:nameContains IS NULL OR LOWER(r.name) LIKE LOWER(CONCAT('%', :nameContains, '%')))) " +
+            "       AND (:authorIds IS NULL OR r.author.id IN :authorIds) " +
+            "       AND r.id not IN (" +
+            "           SELECT r.id FROM Recipe r " +
+            "               left JOIN r.recipeIngredients ri " +
+            "                left JOIN ri.ingredient i " +
+            "                left JOIN i.foodCategories fc " +
+            "                left JOIN fc.dietaryNeeds dn " +
+            "           where ((:excludedCategoryIds IS NOT NULL AND fc.id in :excludedCategoryIds) " +
+            "               or (:dietaryNeedIds IS NOT NULL AND dn.id in :dietaryNeedIds )))")
     List<Recipe> findRecipesByCriteria(
             @Param("nameContains") String nameContains,
             @Param("authorIds") Long[] authorIds,
