@@ -14,11 +14,11 @@ import java.util.List;
 public class RecipeServiceImpl implements RecipeService {
     private final RecipeIngredientRepository recipeIngredientRepo;
     private final RecipeRepository recipeRepo;
-
-    @Override
-    public List<Recipe> fetchAllRecipes() {
-        return recipeRepo.findAll();
-    }
+//
+//    @Override
+//    public List<Recipe> fetchAllRecipes() {
+//        return recipeRepo.findAll();
+//    }
 
     @Override
     public Recipe fetchRecipeById(Long id) {
@@ -29,10 +29,10 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public List<Recipe> fetchFilteredRecipes(String nameContains,
+    public List<Recipe> fetchAllRecipesBy(String nameContains,
                                              Long[] authorIds,
                                              Long[] excludedCategoryIds,
                                              Long[] dietaryNeedIds) {
-        return recipeRepo.findRecipesByCriteria(nameContains,authorIds,excludedCategoryIds,dietaryNeedIds);
+        return recipeRepo.findAllBy(nameContains,authorIds,excludedCategoryIds,dietaryNeedIds);
     }
 }

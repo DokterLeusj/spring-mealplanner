@@ -8,10 +8,9 @@ public interface RecipeService {
     //C
     //R
 
-    List<Recipe> fetchAllRecipes();
    Recipe fetchRecipeById(Long id);
 
-    List<Recipe> fetchFilteredRecipes(String nameContains,
+    List<Recipe> fetchAllRecipesBy(String nameContains,
                                       Long[] authorIds,
                                       Long[] excludedCategoryIds,
                                       Long[] dietaryNeedIds

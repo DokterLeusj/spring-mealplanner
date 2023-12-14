@@ -1,6 +1,8 @@
 package be.addergebroed.weeklymealplanner.user.service;
 
+import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 import be.addergebroed.weeklymealplanner.user.model.User;
+import be.addergebroed.weeklymealplanner.user.model.dto.UserListDto;
 import be.addergebroed.weeklymealplanner.user.model.dto.UserLoginDto;
 import be.addergebroed.weeklymealplanner.user.model.dto.UserRegistrationDto;
 import be.addergebroed.weeklymealplanner.user.repository.UserRepository;
@@ -29,8 +31,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> fetchAllUsers() {
-        return userRepo.findAll();
+    public List<UserListDto> fetchAllUsers(Boolean hasRecipes) {
+        return userRepo.findAllBy(hasRecipes).stream()
+                .map(UserListDto::convertToDto).toList();
     }
 
     @Override

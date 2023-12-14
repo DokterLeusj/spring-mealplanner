@@ -2,10 +2,7 @@ package be.addergebroed.weeklymealplanner.user.controller;
 
 
 import be.addergebroed.weeklymealplanner.user.model.dto.DietaryNeedDto;
-import be.addergebroed.weeklymealplanner.user.model.dto.UserDto;
 import be.addergebroed.weeklymealplanner.user.service.DietaryNeedService;
-import be.addergebroed.weeklymealplanner.user.service.DietaryNeedServiceImpl;
-import be.addergebroed.weeklymealplanner.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

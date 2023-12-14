@@ -17,13 +17,6 @@ import java.util.stream.Collectors;
 public class RecipeController {
     private final RecipeService recipeService;
 
-    @GetMapping("")
-    public List<RecipeListDto> handleGetAllRecipes() {
-        List<Recipe> allRecipes = recipeService.fetchAllRecipes();
-        return allRecipes.stream()
-                .map(RecipeListDto::convertToDto)
-                .collect(Collectors.toList());
-    }
 
     @GetMapping("/{id}")
     public RecipeDetailDto handleGetRecipeById(@PathVariable Long id) {
@@ -31,13 +24,13 @@ public class RecipeController {
 
     }
 
-    @GetMapping("/filter")
-    public List<RecipeListDto> handleGetFilteredRecipes(
+    @GetMapping("")
+    public List<RecipeListDto> handleGetAllRecipes(
             @RequestParam(required = false) String nameContains,
             @RequestParam(required = false)Long[] authorIds,
             @RequestParam(required = false)Long[] excludedCategoryIds,
             @RequestParam(required = false)Long[] dietaryNeedIds) {
-        List<Recipe> filteredRecipes = recipeService.fetchFilteredRecipes(nameContains,  authorIds, excludedCategoryIds, dietaryNeedIds);
+        List<Recipe> filteredRecipes = recipeService.fetchAllRecipesBy(nameContains,  authorIds, excludedCategoryIds, dietaryNeedIds);
         return filteredRecipes.stream()
                 .map(RecipeListDto::convertToDto)
                 .collect(Collectors.toList());
