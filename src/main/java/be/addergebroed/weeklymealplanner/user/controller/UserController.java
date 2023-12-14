@@ -16,13 +16,14 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/{id}")
-    public UserListDto handleGetUserById(@PathVariable Long id){
+    public UserListDto handleGetUserById(@PathVariable Long id) {
         return UserListDto.convertToDto(userService.fetchUserById(id));
     }
 
-    @GetMapping
-    public List<UserListDto> handleGetAllUsers(){
-        return userService.fetchAllUsers().stream()
-                .map(UserListDto::convertToDto).toList();
+    @GetMapping("")
+    public List<UserListDto> handleGetAllUsers(
+            @RequestParam(required = false) boolean hasRecipes
+    ) {
+        return userService.fetchAllUsers(hasRecipes);
     }
 }

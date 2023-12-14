@@ -1,18 +1,11 @@
 package be.addergebroed.weeklymealplanner.recipe.repository;
 
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
-import be.addergebroed.weeklymealplanner.recipe.model.RecipeIngredient;
-import be.addergebroed.weeklymealplanner.recipe.model.RecipeInstruction;
-import be.addergebroed.weeklymealplanner.user.model.User;
-import jakarta.persistence.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
     @Query("SELECT r FROM Recipe r " +
@@ -26,7 +19,7 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
             "                left JOIN fc.dietaryNeeds dn " +
             "           where ((:excludedCategoryIds IS NOT NULL AND fc.id in :excludedCategoryIds) " +
             "               or (:dietaryNeedIds IS NOT NULL AND dn.id in :dietaryNeedIds )))")
-    List<Recipe> findRecipesByCriteria(
+    List<Recipe> findAllBy(
             @Param("nameContains") String nameContains,
             @Param("authorIds") Long[] authorIds,
             @Param("excludedCategoryIds") Long[] excludedCategoryIds,
