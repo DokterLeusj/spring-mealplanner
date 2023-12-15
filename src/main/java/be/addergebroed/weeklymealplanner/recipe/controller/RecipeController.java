@@ -16,16 +16,25 @@ import java.util.stream.Collectors;
 @CrossOrigin
 public class RecipeController {
     private final RecipeService recipeService;
-    @GetMapping("")
-    public List<RecipeListDto> handleGetAllRecipes(){
-        List<Recipe> allRecipes = recipeService.fetchAllRecipes();
-        return allRecipes.stream()
-                .map(RecipeListDto::convertToDto)
-                .collect(Collectors.toList());
-    }
+
+
     @GetMapping("/{id}")
-    public RecipeDetailDto handleGetRecipeById(@PathVariable Long id){
+    public RecipeDetailDto handleGetRecipeById(@PathVariable Long id) {
         return RecipeDetailDto.convertToDto(recipeService.fetchRecipeById(id));
 
     }
+
+    @GetMapping("")
+    public List<RecipeListDto> handleGetAllRecipes(
+            @RequestParam(required = false) String nameContains,
+            @RequestParam(required = false)Long[] authorIds,
+            @RequestParam(required = false)Long[] excludedCategoryIds,
+            @RequestParam(required = false)Long[] dietaryNeedIds) {
+        List<Recipe> filteredRecipes = recipeService.fetchAllRecipesBy(nameContains,  authorIds, excludedCategoryIds, dietaryNeedIds);
+        return filteredRecipes.stream()
+                .map(RecipeListDto::convertToDto)
+                .collect(Collectors.toList());
+    }
+
+
 }

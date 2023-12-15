@@ -7,8 +7,14 @@ import java.util.List;
 public interface RecipeService {
     //C
     //R
-    List<Recipe> fetchAllRecipes();
+
    Recipe fetchRecipeById(Long id);
+
+    List<Recipe> fetchAllRecipesBy(String nameContains,
+                                      Long[] authorIds,
+                                      Long[] excludedCategoryIds,
+                                      Long[] dietaryNeedIds
+    );
 
     //U
     //D
