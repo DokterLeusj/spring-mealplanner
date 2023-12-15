@@ -1,8 +1,7 @@
-package be.addergebroed.weeklymealplanner.user.service;
+package be.addergebroed.weeklymealplanner.mealplan.service;
 
-import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
-import be.addergebroed.weeklymealplanner.user.model.MealPlanPossibility;
-import be.addergebroed.weeklymealplanner.user.repository.MealPlanPossibilityRepository;
+import be.addergebroed.weeklymealplanner.mealplan.model.MealPlanPossibility;
+import be.addergebroed.weeklymealplanner.mealplan.model.PlanPreference;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,7 +11,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class MealPlanPossibilityServiceImpl implements MealPlanPossibilityService {
-    private final MealPlanPossibilityRepository mealPlanPossibilityRepo;
+    private final PlanPreference.MealPlanPossibilityRepository mealPlanPossibilityRepo;
 
     @Override
     public List<MealPlanPossibility> fetchAllMealPlanPossibilities() {

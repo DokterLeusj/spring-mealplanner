@@ -1,6 +1,6 @@
-package be.addergebroed.weeklymealplanner.user.model.dto;
+package be.addergebroed.weeklymealplanner.mealplan.model.dto;
 
-import be.addergebroed.weeklymealplanner.user.model.MealPlanPossibility;
+import be.addergebroed.weeklymealplanner.mealplan.model.MealPlanPossibility;
 
 import java.util.List;
 import java.util.stream.Collectors;

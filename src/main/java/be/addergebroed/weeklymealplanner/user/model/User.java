@@ -1,11 +1,11 @@
 package be.addergebroed.weeklymealplanner.user.model;
 
+import be.addergebroed.weeklymealplanner.mealplan.model.PlanPreference;
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Getter

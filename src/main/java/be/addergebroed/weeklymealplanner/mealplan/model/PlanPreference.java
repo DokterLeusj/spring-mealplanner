@@ -1,7 +1,10 @@
-package be.addergebroed.weeklymealplanner.user.model;
+package be.addergebroed.weeklymealplanner.mealplan.model;
 
+import be.addergebroed.weeklymealplanner.user.model.DietaryNeed;
+import be.addergebroed.weeklymealplanner.user.model.User;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -36,4 +39,9 @@ public class PlanPreference {
     @OneToMany(mappedBy = "planPreference")
     private Set<MealPlanPossibility> mealPlans = new HashSet<>();
 
+    public static interface MealPlanPossibilityRepository extends JpaRepository<MealPlanPossibility,Long> {
+    }
+
+    public static interface PlanPreferenceRepository extends JpaRepository<PlanPreference,Long> {
+    }
 }

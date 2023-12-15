@@ -1,6 +1,6 @@
-package be.addergebroed.weeklymealplanner.user.model.dto;
+package be.addergebroed.weeklymealplanner.mealplan.model.dto;
 
-import be.addergebroed.weeklymealplanner.user.model.PlanPreference;
+import be.addergebroed.weeklymealplanner.mealplan.model.PlanPreference;
 
 public record PlanPreferenceDto(Long id,
                                 int kcalTarget,

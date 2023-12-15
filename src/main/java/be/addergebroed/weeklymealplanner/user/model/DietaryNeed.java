@@ -1,8 +1,8 @@
 package be.addergebroed.weeklymealplanner.user.model;
 
 
+import be.addergebroed.weeklymealplanner.mealplan.model.PlanPreference;
 import be.addergebroed.weeklymealplanner.recipe.model.FoodCategory;
-import be.addergebroed.weeklymealplanner.recipe.model.Ingredient;
 import jakarta.persistence.*;
 import lombok.*;
 

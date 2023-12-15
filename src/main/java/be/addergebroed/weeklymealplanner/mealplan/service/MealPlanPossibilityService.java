@@ -1,7 +1,7 @@
-package be.addergebroed.weeklymealplanner.user.service;
+package be.addergebroed.weeklymealplanner.mealplan.service;
 
 
-import be.addergebroed.weeklymealplanner.user.model.MealPlanPossibility;
+import be.addergebroed.weeklymealplanner.mealplan.model.MealPlanPossibility;
 
 import java.util.List;
 
