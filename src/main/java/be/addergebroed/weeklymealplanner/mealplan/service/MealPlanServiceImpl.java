@@ -1,6 +1,6 @@
 package be.addergebroed.weeklymealplanner.mealplan.service;
 
-import be.addergebroed.weeklymealplanner.mealplan.model.MealPlanPossibility;
+import be.addergebroed.weeklymealplanner.mealplan.model.MealPlan;
 import be.addergebroed.weeklymealplanner.mealplan.model.PlanPreference;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -10,16 +10,16 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class MealPlanPossibilityServiceImpl implements MealPlanPossibilityService {
+public class MealPlanServiceImpl implements MealPlanService {
     private final PlanPreference.MealPlanPossibilityRepository mealPlanPossibilityRepo;
 
     @Override
-    public List<MealPlanPossibility> fetchAllMealPlanPossibilities() {
+    public List<MealPlan> fetchAllMealPlans() {
         return mealPlanPossibilityRepo.findAll();
     }
 
     @Override
-    public MealPlanPossibility fetchMealPlanPossibilityById(Long id) {
+    public MealPlan fetchMealPlansById(Long id) {
         if(id==null){
             throw new IllegalArgumentException("Id can not be null");
         }

@@ -30,8 +30,6 @@ public class DietaryNeed {
     private Set<FoodCategory> excludedCategories = new HashSet<>();
 
     @ManyToMany(mappedBy="dietaryNeeds")
-    private Set<PlanPreference> planPreferences = new HashSet<>();
-
-
+    private Set<User> users = new HashSet<>();
 
 }

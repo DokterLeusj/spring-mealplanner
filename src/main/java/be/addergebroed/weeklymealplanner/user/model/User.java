@@ -5,7 +5,9 @@ import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -34,7 +36,13 @@ public class User {
     @JoinColumn(name = "plan_preference_id", nullable = true)
     private PlanPreference planPreference;
 
+    @ManyToMany
+    @JoinTable(name = "dietary_need_per_user",
+            joinColumns = @JoinColumn(name = "user_id", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "dietary_need_id", nullable = false))
+    private Set<DietaryNeed> dietaryNeeds = new HashSet<>();
+
     @OneToMany(mappedBy = "author")
-    private List<Recipe> recipes;
+    private List<Recipe> authoredRecipes;
 
 }

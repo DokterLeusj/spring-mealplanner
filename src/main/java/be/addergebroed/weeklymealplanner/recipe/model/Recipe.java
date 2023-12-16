@@ -1,6 +1,6 @@
 package be.addergebroed.weeklymealplanner.recipe.model;
 
-import be.addergebroed.weeklymealplanner.mealplan.model.MealPlanPossibility;
+import be.addergebroed.weeklymealplanner.mealplan.model.MealPlan;
 import be.addergebroed.weeklymealplanner.user.model.User;
 import jakarta.persistence.*;
 import lombok.*;
@@ -44,7 +44,7 @@ public class Recipe {
    Set <RecipeInstruction> instructions=new HashSet<>();
 
     @ManyToMany(mappedBy = "recipes")
-    private Set<MealPlanPossibility> mealPlanPossibilities;
+    private Set<MealPlan> mealPlanPossibilities;
 
     @ManyToMany()
     @JoinTable(name = "food_categories_per_recipe",

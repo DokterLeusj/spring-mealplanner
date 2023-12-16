@@ -16,7 +16,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class MealPlanPossibility {
+public class MealPlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -25,20 +25,25 @@ public class MealPlanPossibility {
     @JoinColumn(name = "plan_preference_id", nullable = false)
     private PlanPreference planPreference;
 
+    @ManyToOne
+    @JoinColumn(name = "dietary_need_id", nullable = false)
+    private DietaryNeed dietaryNeed;
+
+
     @ManyToMany
     @JoinTable(name = "mealplan_possibility_per_plan_preference",
             joinColumns = @JoinColumn(name = "mealplan_possibility_id", nullable = false),
             inverseJoinColumns = @JoinColumn(name = "recipe_id", nullable = false))
     private Set<Recipe> recipes;
 
-    public MealPlanPossibility(PlanPreference planPreference) {
+    public MealPlan(PlanPreference planPreference) {
         this.planPreference = planPreference;
         this.recipes = getRecipesForPlanPreference(planPreference);
     }
 
     private Set<Recipe> getRecipesForPlanPreference(PlanPreference planPreference) {
         Set<Recipe> recipes = new HashSet<>();
-        Set<FoodCategory> excludedCategories = getExcludedCategories(planPreference.getDietaryNeeds()); // Can never be in a recipe
+//        Set<FoodCategory> excludedCategories = getExcludedCategories(planPreference.getDietaryNeeds()); // Can never be in a recipe
 
         Set<Ingredient> usedIngredients = new HashSet<>();
 
