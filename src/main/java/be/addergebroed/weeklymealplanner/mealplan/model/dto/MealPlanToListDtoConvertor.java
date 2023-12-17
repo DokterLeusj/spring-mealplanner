@@ -11,4 +11,5 @@ public class MealPlanToListDtoConvertor {
                 .map(MealPlanListDto::convertToDto)
                 .collect(Collectors.toList());
     }
+
 }

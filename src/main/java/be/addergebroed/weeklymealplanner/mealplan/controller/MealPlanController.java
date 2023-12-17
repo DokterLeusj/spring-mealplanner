@@ -1,5 +1,6 @@
 package be.addergebroed.weeklymealplanner.mealplan.controller;
 
+import be.addergebroed.weeklymealplanner.mealplan.service.MealPlanService;
 import be.addergebroed.weeklymealplanner.recipe.service.RecipeService;
 import be.addergebroed.weeklymealplanner.mealplan.model.MealPlan;
 import be.addergebroed.weeklymealplanner.mealplan.model.dto.MealPlanToListDtoConvertor;
@@ -16,7 +17,7 @@ import java.util.List;
 @CrossOrigin
 public class MealPlanController {
     private final RecipeService recipeService;
-    private final MealPlanServiceImpl mealPlanService;
+    private final MealPlanService mealPlanService;
     @GetMapping("")
     public List<MealPlanListDto> handleGetAllPlans(){
         List<MealPlan> mealPlans= mealPlanService.fetchAllMealPlans();
@@ -26,4 +27,5 @@ public class MealPlanController {
     public MealPlanListDto handleGetPlanById(@PathVariable Long id){
         return MealPlanListDto.convertToDto(mealPlanService.fetchMealPlansById(id));
     }
+
 }

@@ -1,7 +1,10 @@
 package be.addergebroed.weeklymealplanner.mealplan.model.dto;
 
 import be.addergebroed.weeklymealplanner.mealplan.model.PlanPreference;
+import lombok.Getter;
+import org.springframework.web.bind.annotation.GetMapping;
 
+@Getter
 public record PlanPreferenceDto(Long id,
                                 int kcalTarget,
                                 int mealsPerDay,
@@ -14,4 +17,5 @@ public record PlanPreferenceDto(Long id,
                 planPreference.getServingsPerMeal()
         );
     }
+
 }

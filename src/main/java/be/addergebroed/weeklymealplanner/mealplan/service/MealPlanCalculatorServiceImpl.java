@@ -2,6 +2,7 @@ package be.addergebroed.weeklymealplanner.mealplan.service;
 
 import be.addergebroed.weeklymealplanner.mealplan.model.MealPlan;
 import be.addergebroed.weeklymealplanner.mealplan.model.MealPlanDay;
+import be.addergebroed.weeklymealplanner.mealplan.model.PlanPreference;
 import be.addergebroed.weeklymealplanner.mealplan.model.RestrictionsContainer;
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 import be.addergebroed.weeklymealplanner.recipe.service.RecipeService;
@@ -17,16 +18,14 @@ public class MealPlanCalculatorServiceImpl implements MealPlanCalculatorService 
     private final RecipeService recipeService;
 
     @Override
-    public MealPlan calcMealPlan(MealPlan mealPlan) {
+    public MealPlan calcMealPlan(PlanPreference planPreference, Set<DietaryNeed> dietaryNeeds) {
         Set<Recipe> recipes = recipeService.fetchAllRecipesBy(null,
                 null,
                 null,
-                mealPlan.getRestrictionsContainer().getDietaryNeedIds());
-        int mealsPerDay = mealPlan.getPlanPreference().getMealsPerDay();
-
+                dietaryNeeds.stream().map(DietaryNeed::getId).toArray(Long[]::new));
+        int mealsPerDay = planPreference.getMealsPerDay();
         Set<MealPlanDay> mealPlanDays = fillMealPlanDaysAdRandom(recipes, 5, mealsPerDay);
-        return new MealPlan(mealPlan.getPlanPreference(),
-                mealPlan.getRestrictionsContainer(),
+        return new MealPlan(planPreference,new RestrictionsContainer(null,dietaryNeeds,null),
                 mealPlanDays);
     }
 
