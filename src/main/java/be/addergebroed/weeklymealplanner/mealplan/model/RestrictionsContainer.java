@@ -27,4 +27,11 @@ public class RestrictionsContainer {
 
     @OneToMany(mappedBy = "restrictionsContainer")
     private Set<MealPlan> mealPlans;
+
+    public Long[] getDietaryNeedIds() {
+        return this.getDietaryNeeds().stream()
+                .map(DietaryNeed::getId)
+                .toArray(Long[]::new);
+    }
+
 }

@@ -7,4 +7,5 @@ import be.addergebroed.weeklymealplanner.mealplan.model.RestrictionsContainer;
 public interface MealPlanCalculatorService {
     MealPlan calcMealPlan(MealPlan mealPlan);
 
+
    }
