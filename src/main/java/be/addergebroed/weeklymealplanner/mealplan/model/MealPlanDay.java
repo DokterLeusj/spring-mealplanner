@@ -17,10 +17,15 @@ import java.util.List;
 public class MealPlanDay {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    int dayNumber;
+    private int dayNumber;
 
     @ManyToMany(mappedBy = "mealPlanDays")
-    List<Recipe> recipes;
+    private List<Recipe> recipes;
+
+    public void addRecipe(Recipe recipe){
+        this.recipes.add(recipe);
+    }
+
 }

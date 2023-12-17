@@ -5,31 +5,57 @@ import be.addergebroed.weeklymealplanner.mealplan.model.MealPlanDay;
 import be.addergebroed.weeklymealplanner.mealplan.model.PlanPreference;
 import be.addergebroed.weeklymealplanner.mealplan.model.RestrictionsContainer;
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
+import be.addergebroed.weeklymealplanner.recipe.service.RecipeService;
 import be.addergebroed.weeklymealplanner.user.model.DietaryNeed;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.*;
+import java.util.stream.IntStream;
 
+@Service
+@RequiredArgsConstructor
 public class MealPlanCalculatorServiceImpl implements MealPlanCalculatorService {
+    private final RecipeService recipeService;
 
-    public static MealPlan calcMealPlan(PlanPreference planPreference, RestrictionsContainer restrictions){
-       Set<Recipe> recipes=calcRecipes();
-
-        planPreference.getMealsPerDay();
-        planPreference.getServingsPerMeal();
-
-        restrictions.dietaryNeeds.stream();
-
+    @Override
+    public MealPlan calcMealPlan(MealPlan mealPlan) {
+        Set<Recipe> recipes = getRecipesOnRestrictions(mealPlan.getRestrictionsContainer());
+        int mealsPerDay = mealPlan.getPlanPreference().getMealsPerDay();
+        Set<MealPlanDay> mealPlanDays = fillMealPlanDaysAdRandom(recipes, 5, mealsPerDay);
+        return new MealPlan(mealPlan.getPlanPreference(), mealPlan.getRestrictionsContainer(), mealPlanDays);
     }
 
-
-    public static Set<Recipe> calcRecipes() {
-
-
-
-        return recipes;
+    public Set<MealPlanDay> fillMealPlanDaysAdRandom(Set<Recipe> recipes, int totalDays, int mealsPerDay) {
+        Set<MealPlanDay> mealPlanDays = new HashSet<>();
+        for (int day = 1; day <= totalDays; day++) {
+            MealPlanDay planDay = new MealPlanDay();
+            planDay.setDayNumber(day);
+            for (int meal = 0; meal < mealsPerDay; meal++) {
+                Recipe recipe = pickRandomRecipe(recipes);
+                planDay.addRecipe(recipe);
+                recipes.remove(recipe);
+            }
+            mealPlanDays.add(planDay);
+        }
+        return mealPlanDays;
     }
-//    public static Set<MealPlanDay> calcMealPlanDays(){
-//
-//    }
 
+    public Recipe pickRandomRecipe(Set<Recipe> recipes) {
+        Random random = new Random();
+        int index = random.nextInt(recipes.size());
+        return recipes.stream().toList().get(index);
+    }
+
+    public Set<Recipe> getRecipesOnRestrictions(RestrictionsContainer restrictions) {
+        return recipeService.fetchAllRecipesBy(
+                null,
+                null,
+                null,
+                restrictions.getDietaryNeeds().stream()
+                        .map(DietaryNeed::getId)
+                        .toArray(Long[]::new)
+        );
+
+    }
 }

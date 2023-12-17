@@ -17,14 +17,14 @@ import java.util.Set;
 public class RestrictionsContainer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    private Long id;
 
     @ManyToMany
     @JoinTable(name = "dietary_needs_per_restriction",
             joinColumns = @JoinColumn(name = "restriction_id", nullable = false),
             inverseJoinColumns = @JoinColumn(name = "diet_id", nullable = false))
-    public Set<DietaryNeed> dietaryNeeds;
+    private Set<DietaryNeed> dietaryNeeds;
 
     @OneToMany(mappedBy = "restrictionsContainer")
-    public Set<MealPlan> mealPlans;
+    private Set<MealPlan> mealPlans;
 }
