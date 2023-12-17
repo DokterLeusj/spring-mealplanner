@@ -29,12 +29,4 @@ public class PlanPreference {
     @OneToMany(mappedBy = "planPreference")
     private Set<User> users = new HashSet<>();
 
-    @OneToMany(mappedBy = "planPreference")
-    private Set<MealPlan> mealPlans = new HashSet<>();
-
-    public static interface MealPlanPossibilityRepository extends JpaRepository<MealPlan,Long> {
-    }
-
-    public static interface PlanPreferenceRepository extends JpaRepository<PlanPreference,Long> {
-    }
 }

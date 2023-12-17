@@ -1,7 +1,7 @@
 package be.addergebroed.weeklymealplanner.user.model;
 
 
-import be.addergebroed.weeklymealplanner.mealplan.model.PlanPreference;
+import be.addergebroed.weeklymealplanner.mealplan.model.MealPlan;
 import be.addergebroed.weeklymealplanner.recipe.model.FoodCategory;
 import jakarta.persistence.*;
 import lombok.*;
@@ -15,7 +15,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class DietaryNeed {
+public class DietaryNeed{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,5 +31,9 @@ public class DietaryNeed {
 
     @ManyToMany(mappedBy="dietaryNeeds")
     private Set<User> users = new HashSet<>();
+
+
+    @ManyToMany(mappedBy="dietaryNeeds")
+    private Set<MealPlan> mealPlans = new HashSet<>();
 
 }

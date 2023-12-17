@@ -1,8 +1,5 @@
 package be.addergebroed.weeklymealplanner.mealplan.model;
 
-import be.addergebroed.weeklymealplanner.recipe.model.FoodCategory;
-import be.addergebroed.weeklymealplanner.recipe.model.Ingredient;
-import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 import be.addergebroed.weeklymealplanner.user.model.DietaryNeed;
 import jakarta.persistence.*;
 import lombok.*;
@@ -26,37 +23,19 @@ public class MealPlan {
     private PlanPreference planPreference;
 
     @ManyToOne
-    @JoinColumn(name = "dietary_need_id", nullable = false)
-    private DietaryNeed dietaryNeed;
-
+    @JoinColumn(name="restrictions_id",nullable = true)
+    private RestrictionsContainer restrictionsContainer;
 
     @ManyToMany
-    @JoinTable(name = "mealplan_possibility_per_plan_preference",
-            joinColumns = @JoinColumn(name = "mealplan_possibility_id", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "recipe_id", nullable = false))
-    private Set<Recipe> recipes;
+    @JoinTable(name = "meal_plan_days_per_meal_plan",
+            joinColumns = @JoinColumn(name = "meal_plan_id", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "meal_plan_day_id", nullable = false))
+    Set<MealPlanDay> mealPlanDays = new HashSet<>();
 
-    public MealPlan(PlanPreference planPreference) {
+    public MealPlan(PlanPreference planPreference, RestrictionsContainer restrictionsContainer, Set<MealPlanDay> mealPlanDays) {
         this.planPreference = planPreference;
-        this.recipes = getRecipesForPlanPreference(planPreference);
+        this.restrictionsContainer = restrictionsContainer;
+        this.mealPlanDays = mealPlanDays;
     }
 
-    private Set<Recipe> getRecipesForPlanPreference(PlanPreference planPreference) {
-        Set<Recipe> recipes = new HashSet<>();
-//        Set<FoodCategory> excludedCategories = getExcludedCategories(planPreference.getDietaryNeeds()); // Can never be in a recipe
-
-        Set<Ingredient> usedIngredients = new HashSet<>();
-
-
-
-        return recipes;
-    }
-
-    private Set<FoodCategory> getExcludedCategories(Set<DietaryNeed> dietaryNeeds) {
-        Set<FoodCategory> excludedCategories = new HashSet<>();
-        dietaryNeeds.stream()
-                .map(DietaryNeed::getExcludedCategories)
-                .forEach(excludedCategories::addAll);
-        return excludedCategories;
-    }
 }
