@@ -114,7 +114,7 @@ VALUES (1, 'Chicken breast'),
        (90, 'Peanut Butter'),
        (91, 'Cilantro'),
        (92, 'Pumpkin Seeds');
-       
+
 INSERT INTO mealplanner_api.ingredient_category (ingredient_id, food_category_id)
 VALUES (1, 5),   -- Chicken breast - Meat, Chicken, Animal Product
        (1, 9),
@@ -183,7 +183,7 @@ VALUES (1, 5),   -- Chicken breast - Meat, Chicken, Animal Product
        (42, 8),  -- Hot water - Spices
        (43, 6),  -- Salmon fillets - Fish, Animal Product, seafood
        (43, 5),
-       (43,14),
+       (43, 14),
        (44, 1),  -- Lemon - Vegetables, Spices
        (44, 8),
        (45, 8),  -- Dill - Spices
@@ -244,18 +244,19 @@ VALUES (1, 5),   -- Chicken breast - Meat, Chicken, Animal Product
        (84, 6),
        (85, 13), -- Edamame - Vegetarian protein, Grains
        (85, 3),
-       (86, 1),   -- Eggplant - Vegetables
-       (87, 18),  -- Lentils - Vegetarian protein
-       (88, 12),  -- Avocado - Fruit
-       (89, 20),  -- Crab - Shellfish, seafood, animal
+       (86, 1),  -- Eggplant - Vegetables
+       (87, 18), -- Lentils - Vegetarian protein
+       (88, 12), -- Avocado - Fruit
+       (89, 20), -- Crab - Shellfish, seafood, animal
        (89, 14),
        (89, 6),
-       (90, 2), -- Peanut Butter - Nuts, Fruit
+       (90, 2),  -- Peanut Butter - Nuts, Fruit
        (90, 12),
-       (91, 8),   -- Cilantro - Spices
-       (92, 1),   -- Cucumber - Vegetables
+       (91, 8),  -- Cilantro - Spices
+       (92, 1),  -- Cucumber - Vegetables
        (97, 2),
-       (97, 12);   -- Pumpkin Seeds - Nuts, Fruit
+       (97, 12);
+-- Pumpkin Seeds - Nuts, Fruit
 
 
 # Dietary needs
@@ -266,16 +267,15 @@ VALUES (1, 'Vegetarian'),
        (4, 'Vegan');
 
 INSERT INTO mealplanner_api.dietary_need_excluded_category (dietary_need_id, excl_food_category_id)
-VALUES
-    (3, 4),
-    (4, 4),
-    (1, 5),
-    (4, 5),
-    (4, 6),
-    (2, 7),
-    (1, 9),
-    (4, 9),
-    (3, 10);
+VALUES (3, 4),
+       (4, 4),
+       (1, 5),
+       (4, 5),
+       (4, 6),
+       (2, 7),
+       (1, 9),
+       (4, 9),
+       (3, 10);
 
 
 # Plans
@@ -441,26 +441,66 @@ VALUES (1, 'Classic Italian pasta dish with savory Bolognese sauce.', 'https://i
        (18, 'Cheesy omelette with a variety of ingredients.', null, 'Cheese Omelette', false, 18),
        (19, 'Classic egg fried rice with a medley of flavors.', null, 'Egg Fried Rice', false, 19),
        (20, 'Stuffed cabbage leaves with a flavorful filling.', null, 'Cabbage Rolls', false, 20),
-       (21, 'Immerse yourself in the fragrant allure of Vegan Lentil Curry. Tender lentils, bathed in a rich coconut milk and tomato sauce, mingle with an array of aromatic spices. This hearty curry promises a symphony of flavors and textures, delivering a satisfying, plant-based experience.', null, 'Vegan Lentil Curry', true, 17),
-       (22, 'Elevate your salad experience with the Grilled Chicken Caesar Salad. Juicy grilled chicken strips crown a bed of crisp romaine lettuce, tossed with crunchy croutons, cherry tomatoes, and shaved Parmesan. Drizzled with creamy Caesar dressing, this salad is a harmonious blend of freshness and savory indulgence.', null, 'Grilled Chicken Caesar Salad', false, 8),
-       (23, 'Embark on a journey of wholesome goodness with the Roasted Vegetable Quinoa Bowl. Colorful roasted bell peppers, zucchini, and cherry tomatoes intertwine with fluffy quinoa. Drizzled with balsamic glaze and sprinkled with fresh basil, this bowl promises a symphony of flavors and textures.', null, 'Roasted Vegetable Quinoa Bowl', true, 23),
-       (24, 'Ignite your taste buds with the Spicy Shrimp Stir-Fry. Succulent shrimp, stir-fried to perfection, join a medley of vibrant vegetables in a fiery garlic sauce. Served over a bed of steamed rice or noodles, this stir-fry is a tantalizing fusion of heat and savor.', null, 'Spicy Shrimp Stir-Fry', false, 11),
-       (25, 'Delight in the rich and creamy goodness of Mushroom Risotto. Each spoonful unveils the earthy essence of sautéed mushrooms, perfectly balanced with the silky Arborio rice. Garnished with Parmesan cheese and fresh parsley, this risotto promises a luxurious and comforting dining experience.', null, 'Mushroom Risotto', true, 13),
-       (26, 'Immerse yourself in the vibrant medley of Black Bean and Corn Salad. The hearty combination of black beans and sweet corn, tossed with juicy tomatoes and crisp red onions, creates a refreshing and nutritious salad. Drizzled with a zesty dressing, this salad is a celebration of color and flavor.', null, 'Black Bean and Corn Salad', false, 6),
-       (27, 'Succumb to the allure of Honey Mustard Glazed Salmon. Each bite reveals the succulence of perfectly grilled salmon, glazed with a luscious blend of honey and mustard. Served alongside vibrant vegetables, this dish promises a perfect harmony of sweet and savory.', null, 'Honey Mustard Glazed Salmon', true, 28),
-       (28, 'Transport your taste buds to Italy with the Caprese Pasta Salad. Al dente pasta, cherry tomatoes, mozzarella, and fresh basil come together in a delightful medley. Drizzled with balsamic glaze and olive oil, this salad is a refreshing and satisfying ode to the classic Caprese.', null, 'Caprese Pasta Salad', false, 15),
-       (29, 'Immerse yourself in the comfort of Chickpea and Spinach Stew. Sautéed onions, garlic, and carrots create a flavorful base for tender chickpeas and diced tomatoes. Fresh spinach adds a burst of green goodness, resulting in a hearty and wholesome stew.', null, 'Chickpea and Spinach Stew', true, 5),
-       (30, 'Indulge in the savory delights of Teriyaki Tofu Stir-Fry. Cubes of tofu, bathed in a sweet and tangy teriyaki sauce, join a colorful array of crisp vegetables. Served over a bed of steamed rice or noodles, this stir-fry promises a symphony of Asian-inspired flavors.', null, 'Teriyaki Tofu Stir-Fry', false, 20),
-       (31, 'Delight in the tantalizing aroma of Pesto Chicken Penne. Juicy chicken slices, cherry tomatoes, and al dente penne pasta are ensconced in a velvety pesto sauce. Garnished with grated Parmesan, this dish is a celebration of fresh, herbaceous flavors.', null, 'Pesto Chicken Penne', true, 1),
-       (32, 'Immerse yourself in the aromatic embrace of Cauliflower and Chickpea Curry. Diced onions, garlic, and ginger sautéed to perfection lay the foundation for a robust curry. Cauliflower florets and chickpeas soak up coconut milk and vegetable broth, creating a luscious, fragrant stew. Served over basmati rice or quinoa, this curry is garnished with fresh cilantro and a squeeze of lime juice, promising a symphony of flavors.', null, 'Cauliflower and Chickpea Curry', false, 9),
-       (33, 'Revel in the vibrant fusion of flavors with Mango Avocado Salsa. Ripe mangoes and avocados intermingle with red onions, jalapeños, and cilantro, creating a tantalizing salsa. A splash of lime juice enhances the freshness, making this salsa a delightful accompaniment or a standalone treat.', null, 'Mango Avocado Salsa', true, 12),
-       (34, 'Elevate your pasta experience with the bright and zesty Lemon Garlic Shrimp Pasta. Succulent shrimp, sautéed in a garlic-infused olive oil, join forces with cherry tomatoes and baby spinach. The marriage of lemon juice, al dente pasta, and fresh herbs creates a harmonious symphony that\'s both comforting and invigorating.', null, 'Lemon Garlic Shrimp Pasta', false, 29),
-       (35, 'Delight in the wholesome goodness of Stuffed Bell Peppers. Ground turkey, cooked quinoa, black beans, and corn unite in a flavorful mixture, creating a hearty filling for vibrant bell peppers. Baked to perfection and crowned with melted cheese, these stuffed peppers promise a comforting and satisfying meal.', null, 'Stuffed Bell Peppers', true, 18),
-       (36, 'Embark on a culinary journey with the vibrant and refreshing Mediterranean Quinoa Salad. Quinoa, tossed with cherry tomatoes, olives, cucumbers, and feta cheese, creates a symphony of textures. Drizzled with olive oil and a hint of oregano, this salad is a celebration of Mediterranean flavors.', null, 'Mediterranean Quinoa Salad', false, 14),
-       (37, 'Immerse yourself in the bold and vibrant flavors of Vegetarian Pad Thai. Rice noodles, stir-fried with tofu, bean sprouts, and julienned carrots, are enrobed in a delectable tamarind-infused sauce. Garnished with crushed peanuts and lime wedges, this dish promises an irresistible balance of sweet, sour, and savory.', null, 'Vegetarian Pad Thai', true, 26),
-       (38, 'Cozy up to the warmth and nourishment of Lentil and Vegetable Stew. Sautéed onions, carrots, and celery provide the backdrop for tender lentils, diced tomatoes, and a fragrant blend of herbs. A hearty and wholesome stew that\'s perfect for any occasion.', null, 'Lentil and Vegetable Stew', false, 3),
-       (39, 'Ignite your taste buds with the bold Cajun flavors of Shrimp and Sausage Skillet. Sliced sausage, succulent shrimp, and a medley of vibrant vegetables are brought together in a fiery and flavorful concoction. Served over rice or enjoyed on its own, this skillet promises a spicy and satisfying experience.', null, 'Cajun Shrimp and Sausage Skillet', true, 25),
-       (40, 'Delight in the creamy and comforting Butternut Squash Risotto. Arborio rice, toasted to perfection, is enveloped in a velvety blend of sautéed onions, butter, and roasted butternut squash. Garnished with sage and Parmesan cheese, this risotto is a celebration of autumnal flavors.', null, 'Butternut Squash Risotto', false, 7);
+       (21,
+        'Immerse yourself in the fragrant allure of Vegan Lentil Curry. Tender lentils, bathed in a rich coconut milk and tomato sauce, mingle with an array of aromatic spices. This hearty curry promises a symphony of flavors and textures, delivering a satisfying, plant-based experience.',
+        null, 'Vegan Lentil Curry', true, 17),
+       (22,
+        'Elevate your salad experience with the Grilled Chicken Caesar Salad. Juicy grilled chicken strips crown a bed of crisp romaine lettuce, tossed with crunchy croutons, cherry tomatoes, and shaved Parmesan. Drizzled with creamy Caesar dressing, this salad is a harmonious blend of freshness and savory indulgence.',
+        null, 'Grilled Chicken Caesar Salad', false, 8),
+       (23,
+        'Embark on a journey of wholesome goodness with the Roasted Vegetable Quinoa Bowl. Colorful roasted bell peppers, zucchini, and cherry tomatoes intertwine with fluffy quinoa. Drizzled with balsamic glaze and sprinkled with fresh basil, this bowl promises a symphony of flavors and textures.',
+        null, 'Roasted Vegetable Quinoa Bowl', true, 23),
+       (24,
+        'Ignite your taste buds with the Spicy Shrimp Stir-Fry. Succulent shrimp, stir-fried to perfection, join a medley of vibrant vegetables in a fiery garlic sauce. Served over a bed of steamed rice or noodles, this stir-fry is a tantalizing fusion of heat and savor.',
+        null, 'Spicy Shrimp Stir-Fry', false, 11),
+       (25,
+        'Delight in the rich and creamy goodness of Mushroom Risotto. Each spoonful unveils the earthy essence of sautéed mushrooms, perfectly balanced with the silky Arborio rice. Garnished with Parmesan cheese and fresh parsley, this risotto promises a luxurious and comforting dining experience.',
+        null, 'Mushroom Risotto', true, 13),
+       (26,
+        'Immerse yourself in the vibrant medley of Black Bean and Corn Salad. The hearty combination of black beans and sweet corn, tossed with juicy tomatoes and crisp red onions, creates a refreshing and nutritious salad. Drizzled with a zesty dressing, this salad is a celebration of color and flavor.',
+        null, 'Black Bean and Corn Salad', false, 6),
+       (27,
+        'Succumb to the allure of Honey Mustard Glazed Salmon. Each bite reveals the succulence of perfectly grilled salmon, glazed with a luscious blend of honey and mustard. Served alongside vibrant vegetables, this dish promises a perfect harmony of sweet and savory.',
+        null, 'Honey Mustard Glazed Salmon', true, 28),
+       (28,
+        'Transport your taste buds to Italy with the Caprese Pasta Salad. Al dente pasta, cherry tomatoes, mozzarella, and fresh basil come together in a delightful medley. Drizzled with balsamic glaze and olive oil, this salad is a refreshing and satisfying ode to the classic Caprese.',
+        null, 'Caprese Pasta Salad', false, 15),
+       (29,
+        'Immerse yourself in the comfort of Chickpea and Spinach Stew. Sautéed onions, garlic, and carrots create a flavorful base for tender chickpeas and diced tomatoes. Fresh spinach adds a burst of green goodness, resulting in a hearty and wholesome stew.',
+        null, 'Chickpea and Spinach Stew', true, 5),
+       (30,
+        'Indulge in the savory delights of Teriyaki Tofu Stir-Fry. Cubes of tofu, bathed in a sweet and tangy teriyaki sauce, join a colorful array of crisp vegetables. Served over a bed of steamed rice or noodles, this stir-fry promises a symphony of Asian-inspired flavors.',
+        null, 'Teriyaki Tofu Stir-Fry', false, 20),
+       (31,
+        'Delight in the tantalizing aroma of Pesto Chicken Penne. Juicy chicken slices, cherry tomatoes, and al dente penne pasta are ensconced in a velvety pesto sauce. Garnished with grated Parmesan, this dish is a celebration of fresh, herbaceous flavors.',
+        null, 'Pesto Chicken Penne', true, 1),
+       (32,
+        'Immerse yourself in the aromatic embrace of Cauliflower and Chickpea Curry. Diced onions, garlic, and ginger sautéed to perfection lay the foundation for a robust curry. Cauliflower florets and chickpeas soak up coconut milk and vegetable broth, creating a luscious, fragrant stew. Served over basmati rice or quinoa, this curry is garnished with fresh cilantro and a squeeze of lime juice, promising a symphony of flavors.',
+        null, 'Cauliflower and Chickpea Curry', false, 9),
+       (33,
+        'Revel in the vibrant fusion of flavors with Mango Avocado Salsa. Ripe mangoes and avocados intermingle with red onions, jalapeños, and cilantro, creating a tantalizing salsa. A splash of lime juice enhances the freshness, making this salsa a delightful accompaniment or a standalone treat.',
+        null, 'Mango Avocado Salsa', true, 12),
+       (34,
+        'Elevate your pasta experience with the bright and zesty Lemon Garlic Shrimp Pasta. Succulent shrimp, sautéed in a garlic-infused olive oil, join forces with cherry tomatoes and baby spinach. The marriage of lemon juice, al dente pasta, and fresh herbs creates a harmonious symphony that\'s both comforting and invigorating.',
+        null, 'Lemon Garlic Shrimp Pasta', false, 29),
+       (35,
+        'Delight in the wholesome goodness of Stuffed Bell Peppers. Ground turkey, cooked quinoa, black beans, and corn unite in a flavorful mixture, creating a hearty filling for vibrant bell peppers. Baked to perfection and crowned with melted cheese, these stuffed peppers promise a comforting and satisfying meal.',
+        null, 'Stuffed Bell Peppers', true, 18),
+       (36,
+        'Embark on a culinary journey with the vibrant and refreshing Mediterranean Quinoa Salad. Quinoa, tossed with cherry tomatoes, olives, cucumbers, and feta cheese, creates a symphony of textures. Drizzled with olive oil and a hint of oregano, this salad is a celebration of Mediterranean flavors.',
+        null, 'Mediterranean Quinoa Salad', false, 14),
+       (37,
+        'Immerse yourself in the bold and vibrant flavors of Vegetarian Pad Thai. Rice noodles, stir-fried with tofu, bean sprouts, and julienned carrots, are enrobed in a delectable tamarind-infused sauce. Garnished with crushed peanuts and lime wedges, this dish promises an irresistible balance of sweet, sour, and savory.',
+        null, 'Vegetarian Pad Thai', true, 26),
+       (38,
+        'Cozy up to the warmth and nourishment of Lentil and Vegetable Stew. Sautéed onions, carrots, and celery provide the backdrop for tender lentils, diced tomatoes, and a fragrant blend of herbs. A hearty and wholesome stew that\'s perfect for any occasion.',
+        null, 'Lentil and Vegetable Stew', false, 3),
+       (39,
+        'Ignite your taste buds with the bold Cajun flavors of Shrimp and Sausage Skillet. Sliced sausage, succulent shrimp, and a medley of vibrant vegetables are brought together in a fiery and flavorful concoction. Served over rice or enjoyed on its own, this skillet promises a spicy and satisfying experience.',
+        null, 'Cajun Shrimp and Sausage Skillet', true, 25),
+       (40,
+        'Delight in the creamy and comforting Butternut Squash Risotto. Arborio rice, toasted to perfection, is enveloped in a velvety blend of sautéed onions, butter, and roasted butternut squash. Garnished with sage and Parmesan cheese, this risotto is a celebration of autumnal flavors.',
+        null, 'Butternut Squash Risotto', false, 7);
 
 INSERT INTO mealplanner_api.recipe_ingredient (id, qty, ingredient_id, unit_id)
 VALUES (1, 250, 12, 1),  -- Ground beef (Qty: 250 grams)
@@ -535,23 +575,23 @@ VALUES (1, 250, 12, 1),  -- Ground beef (Qty: 250 grams)
        (70, 100, 80, 1), -- Cheddar cheese (Qty: 100 grams)
        (71, 2, 81, 1),   -- Green onions (Qty: 2 pieces)
        (72, 12, 82, 1),  -- Cabbage leaves (Qty: 12 pieces)
-       (73, 1, 83, 5);   -- Thyme (Qty: 1 tsp)
+       (73, 1, 83, 5); -- Thyme (Qty: 1 tsp)
 
 
 INSERT INTO mealplanner_api.recipe_recipe_ingredient (recipe_id, recipe_ingredient_id)
 VALUES
 -- Spaghetti Bolognese
-(1, 1),   -- Qty: 250 grams Ground beef
-(1, 2),   -- Qty: 1 piece Onion
-(1, 3),   -- Qty: 3 cloves Garlic
-(1, 4),   -- Qty: 150 grams Tomato paste
-(1, 5),   -- Qty: 400 grams Canned tomatoes
-(1, 6),   -- Qty: 1 tsp Oregano
-(1, 7),   -- Qty: 1 tsp Basil
-(1, 8),   -- Qty: 1 tsp Salt
-(1, 9),   -- Qty: 0.5 tsp Pepper
-(1, 10),  -- Qty: 300 grams Spaghetti noodles
-(1, 11),  -- Qty: 100 grams Parmesan cheese
+(1, 1),    -- Qty: 250 grams Ground beef
+(1, 2),    -- Qty: 1 piece Onion
+(1, 3),    -- Qty: 3 cloves Garlic
+(1, 4),    -- Qty: 150 grams Tomato paste
+(1, 5),    -- Qty: 400 grams Canned tomatoes
+(1, 6),    -- Qty: 1 tsp Oregano
+(1, 7),    -- Qty: 1 tsp Basil
+(1, 8),    -- Qty: 1 tsp Salt
+(1, 9),    -- Qty: 0.5 tsp Pepper
+(1, 10),   -- Qty: 300 grams Spaghetti noodles
+(1, 11),   -- Qty: 100 grams Parmesan cheese
 
 -- Vegetarian Stir-Fry
 (2, 12),   -- Qty: 200 grams Tofu
@@ -565,68 +605,284 @@ VALUES
 (2, 20),   -- Qty: 200 grams Rice
 
 -- Chicken Parmesan
-(3, 21),  -- Qty: 150 grams Flour
-(3, 22),  -- Qty: 100 grams Bread crumbs
-(3, 23),  -- Qty: 30 ml Olive oil
-(3, 24),  -- Qty: 500 ml Marinara sauce
+(3, 21),   -- Qty: 150 grams Flour
+(3, 22),   -- Qty: 100 grams Bread crumbs
+(3, 23),   -- Qty: 30 ml Olive oil
+(3, 24),   -- Qty: 500 ml Marinara sauce
 
 -- Chocolate Cake
-(4, 25),  -- Qty: 200 grams Mozzarella cheese
-(4, 26),  -- Qty: 30 ml Balsamic glaze
-(4, 27),  -- Qty: 200 grams All-purpose flour
-(4, 28),  -- Qty: 30 grams Cocoa powder
+(4, 25),   -- Qty: 200 grams Mozzarella cheese
+(4, 26),   -- Qty: 30 ml Balsamic glaze
+(4, 27),   -- Qty: 200 grams All-purpose flour
+(4, 28),   -- Qty: 30 grams Cocoa powder
 
 -- Grilled Salmon
-(5, 29),  -- Qty: 200 grams Salmon fillets
-(5, 30),  -- Qty: 1 piece Lemon
-(5, 31),  -- Qty: 5 grams Dill
-(5, 32),  -- Qty: 200 grams Arborio rice
+(5, 29),   -- Qty: 200 grams Salmon fillets
+(5, 30),   -- Qty: 1 piece Lemon
+(5, 31),   -- Qty: 5 grams Dill
+(5, 32),   -- Qty: 200 grams Arborio rice
 
 -- Mushroom Risotto
-(6, 33),  -- Qty: 150 grams Mushrooms
-(6, 34),  -- Qty: 500 ml Vegetable or chicken broth
-(6, 35),  -- Qty: 50 grams Butter
-(6, 36),  -- Qty: 1 piece Cucumber
-(6, 37),  -- Qty: 1 piece Red onion
+(6, 33),   -- Qty: 150 grams Mushrooms
+(6, 34),   -- Qty: 500 ml Vegetable or chicken broth
+(6, 35),   -- Qty: 50 grams Butter
+(6, 36),   -- Qty: 1 piece Cucumber
+(6, 37),   -- Qty: 1 piece Red onion
 
 -- Greek Salad
-(7, 38),  -- Qty: 100 grams Kalamata olives
-(7, 39),  -- Qty: 150 grams Feta cheese
-(7, 40),  -- Qty: 30 ml Red wine vinegar
+(7, 38),   -- Qty: 100 grams Kalamata olives
+(7, 39),   -- Qty: 150 grams Feta cheese
+(7, 40),   -- Qty: 30 ml Red wine vinegar
 
 -- Tiramisu
-(8, 41),  -- Qty: 200 grams Ladyfingers
-(8, 42),  -- Qty: 250 ml Strong brewed coffee
-(8, 43),  -- Qty: 250 grams Mascarpone cheese
-(8, 44),  -- Qty: 1 piece Taco seasoning
-(8, 45),  -- Qty: 8 pieces Taco shells
+(8, 41),   -- Qty: 200 grams Ladyfingers
+(8, 42),   -- Qty: 250 ml Strong brewed coffee
+(8, 43),   -- Qty: 250 grams Mascarpone cheese
+(8, 44),   -- Qty: 1 piece Taco seasoning
+(8, 45),   -- Qty: 8 pieces Taco shells
 
 -- Beef Tacos
-(9, 46), -- Qty: 100 grams Lettuce
-(9, 47), -- Qty: 100 grams Mixed salad greens
-(9, 48), -- Qty: 150 grams Cherry tomatoes
-(9, 49), -- Qty: 50 ml Balsamic vinaigrette dressing
+(9, 46),   -- Qty: 100 grams Lettuce
+(9, 47),   -- Qty: 100 grams Mixed salad greens
+(9, 48),   -- Qty: 150 grams Cherry tomatoes
+(9, 49),   -- Qty: 50 ml Balsamic vinaigrette dressing
 
 -- Grilled Chicken Salad
-(10, 50), -- Qty: 200 grams Black beans
-(10, 51), -- Qty: 150 grams Corn
-(10, 52), -- Qty: 1 tsp Cumin
-(10, 53), -- Qty: 1 tsp Chili powder
-(10, 54), -- Qty: 250 ml Almond milk
-(10, 55), -- Qty: 1 piece Banana
-(10, 56), -- Qty: 30 grams Almond butter
-(10, 57), -- Qty: 30 grams Honey
-(10, 58), -- Qty: 200 grams Beef sirloin
-(10, 59), -- Qty: 50 grams Brown sugar
-(10, 60), -- Qty: 20 grams Cornstarch
-(10, 61), -- Qty: 500 grams Pizza dough
-(10, 62), -- Qty: 5 grams Fresh parsley
-(10, 63), -- Qty: 150 grams Wheat berries
-(10, 64), -- Qty: 1 tsp Dijon mustard
-(10, 65), -- Qty: 100 grams Cheddar cheese
-(10, 66), -- Qty: 2 pieces Green onions
-(10, 67), -- Qty: 12 pieces Cabbage leaves
-(10, 68); -- Qty: 1 tsp Thyme
+(10, 50),  -- Qty: 200 grams Black beans
+(10, 51),  -- Qty: 150 grams Corn
+(10, 52),  -- Qty: 1 tsp Cumin
+(10, 53),  -- Qty: 1 tsp Chili powder
+(10, 54),  -- Qty: 250 ml Almond milk
+(10, 55),  -- Qty: 1 piece Banana
+(10, 56),  -- Qty: 30 grams Almond butter
+(10, 57),  -- Qty: 30 grams Honey
+(10, 58),  -- Qty: 200 grams Beef sirloin
+(10, 59),  -- Qty: 50 grams Brown sugar
+(10, 60),  -- Qty: 20 grams Cornstarch
+(10, 61),  -- Qty: 500 grams Pizza dough
+(10, 62),  -- Qty: 5 grams Fresh parsley
+(10, 63),  -- Qty: 150 grams Wheat berries
+(10, 64),  -- Qty: 1 tsp Dijon mustard
+(10, 65),  -- Qty: 100 grams Cheddar cheese
+(10, 66),  -- Qty: 2 pieces Green onions
+(10, 67),  -- Qty: 12 pieces Cabbage leaves
+(10, 68),  -- Qty: 1 tsp Thyme
+
+-- Vegan Lentil Curry
+(12, 69),  -- Qty: 200 grams Lentils
+(12, 70),  -- Qty: 0.400 l Coconut milk
+(12, 71),  -- Qty: 1 piece Onion
+(12, 72),  -- Qty: 3 cloves Garlic
+(12, 73),  -- Qty: 1 tbs Ginger
+(12, 74),  -- Qty: 1 tbs Turmeric
+(12, 75),  -- Qty: 1 tbs Cumin
+(12, 76),  -- Qty: 1 tbs Coriander
+(12, 77),  -- Qty: 1 tbs Garam masala
+(12, 78),  -- Qty: 2 pieces Tomatoes
+(12, 79),  -- Qty: 100 grams Spinach
+
+-- Grilled Chicken Caesar Salad
+(13, 80),  -- Qty: 300 grams Chicken breast
+(13, 81),  -- Qty: 1 head Romaine lettuce
+(13, 82),  -- Qty: 0.150 l Caesar dressing
+(13, 83),  -- Qty: 50 grams Croutons
+(13, 84),  -- Qty: 100 grams Parmesan cheese
+
+-- Roasted Vegetable Quinoa Bowl
+(14, 85),  -- Qty: 200 grams Quinoa
+(14, 86),  -- Qty: 150 grams Zucchini
+(14, 87),  -- Qty: 150 grams Bell peppers
+(14, 88),  -- Qty: 150 grams Cherry tomatoes
+(14, 89),  -- Qty: 0.045 l Olive oil
+(14, 90),  -- Qty: 5 grams Garlic powder
+(14, 91),  -- Qty: 2.5 grams Paprika
+(14, 92),  -- Qty: 5 grams Salt
+(14, 93),  -- Qty: 2.5 grams Black pepper
+(14, 94),  -- Qty: 150 grams Hummus
+
+-- Spicy Shrimp Stir-Fry
+(15, 95),  -- Qty: 300 grams Shrimp
+(15, 96),  -- Qty: 150 grams Broccoli
+(15, 97),  -- Qty: 100 grams Bell peppers
+(15, 98),  -- Qty: 50 grams Carrots
+(15, 99),  -- Qty: 0.030 l Soy sauce
+(15, 100), -- Qty: 0.020 l Ginger
+(15, 101), -- Qty: 0.030 l Sriracha
+(15, 102), -- Qty: 3 cloves Garlic
+(15, 103), -- Qty: 200 grams Rice
+
+-- Mushroom Risotto
+(16, 104), -- Qty: 150 grams Mushrooms
+(16, 105), -- Qty: 200 grams Arborio rice
+(16, 106), -- Qty: 0.500 l Vegetable or chicken broth
+
+-- Black Bean and Corn Salad
+(17, 107), -- Qty: 400 grams Black beans
+(17, 108), -- Qty: 200 grams Corn kernels
+(17, 109), -- Qty: 1 piece Red onion
+(17, 110), -- Qty: 250 grams Cherry tomatoes
+(17, 111), -- Qty: 2 pieces Avocado
+(17, 112), -- Qty: 30 grams Cilantro
+(17, 113), -- Qty: 2 tbs Lime juice
+(17, 114), -- Qty: 0.030 l Olive oil
+(17, 115), -- Qty: 5 grams Salt
+(17, 116), -- Qty: 2 grams Black pepper
+
+-- Honey Mustard Glazed Salmon
+(18, 117), -- Qty: 4 pieces Salmon fillets
+(18, 118), -- Qty: 0.060 l Dijon mustard
+(18, 119), -- Qty: 0.060 l Honey
+(18, 120), -- Qty: 0.030 l Soy sauce
+(18, 121), -- Qty: 0.030 l Olive oil
+(18, 122), -- Qty: 3 cloves Garlic
+(18, 123), -- Qty: 2 tbs Lemon juice
+
+-- Caprese Pasta Salad
+(19, 124), -- Qty: 300 grams Pasta
+(19, 125), -- Qty: 250 grams Cherry tomatoes
+(19, 126), -- Qty: 150 grams Mozzarella cheese
+(19, 127), -- Qty: 20 grams Fresh basil
+(19, 128), -- Qty: 0.030 l Balsamic vinegar
+(19, 129), -- Qty: 0.030 l Olive oil
+(19, 130), -- Qty: 5 grams Salt
+(19, 131), -- Qty: 2 grams Black pepper
+
+-- Chickpea and Spinach Stew
+(20, 132), -- Qty: 400 grams Chickpeas
+(20, 133), -- Qty: 200 grams Spinach
+(20, 134), -- Qty: 1 piece Onion
+(20, 135), -- Qty: 3 cloves Garlic
+(20, 136), -- Qty: 0.045 l Tomato paste
+(20, 137), -- Qty: 0.500 l Vegetable broth
+(20, 138), -- Qty: 1 tbs Cumin
+(20, 139), -- Qty: 1 tbs Paprika
+(20, 140), -- Qty: 1 tbs Coriander
+(20, 141), -- Qty: 2 tbs Lemon juice
+
+-- Teriyaki Tofu Stir-Fry
+(21, 142), -- Qty: 400 grams Tofu
+(21, 143), -- Qty: 150 grams Broccoli
+(21, 144), -- Qty: 100 grams Bell peppers
+(21, 145), -- Qty: 50 grams Carrots
+(21, 146), -- Qty: 0.060 l Teriyaki sauce
+(21, 147), -- Qty: 0.030 l Soy sauce
+(21, 148), -- Qty: 0.020 l Ginger
+(21, 149), -- Qty: 3 cloves Garlic
+(21, 150), -- Qty: 200 grams Rice
+
+-- Pesto Chicken Penne
+(22, 151), -- Qty: 400 grams Chicken breast
+(22, 152), -- Qty: 300 grams Penne pasta
+(22, 153), -- Qty: 250 grams Cherry tomatoes
+(22, 154), -- Qty: 0.100 l Pesto sauce
+(22, 155), -- Qty: 50 grams Parmesan cheese
+(22, 156), -- Qty: 0.030 l Olive oil
+(22, 157), -- Qty: 5 grams Salt
+(22, 158), -- Qty: 2 grams Black pepper
+
+-- Cauliflower and Chickpea Curry
+(23, 159), -- Qty: 1 piece Cauliflower
+(23, 160), -- Qty: 400 grams Chickpeas
+(23, 161), -- Qty: 1 piece Onion
+(23, 162), -- Qty: 3 cloves Garlic
+(23, 163), -- Qty: 20 grams Ginger
+(23, 164), -- Qty: 1 piece Tomato
+(23, 165), -- Qty: 0.400 l Coconut milk
+(23, 166), -- Qty: 2 tbs Curry powder
+(23, 167), -- Qty: 1 tbs Turmeric
+(23, 168), -- Qty: 1 tbs Cumin
+(23, 169), -- Qty: 1 tbs Coriander
+
+-- Mango Avocado Salsa
+(24, 170), -- Qty: 2 pieces Mango
+(24, 171), -- Qty: 2 pieces Avocado
+(24, 172), -- Qty: 1 piece Red onion
+(24, 173), -- Qty: 1 piece Jalapeño
+(24, 174), -- Qty: 30 grams Cilantro
+(24, 175), -- Qty: 2 tbs Lime juice
+(24, 176), -- Qty: 5 grams Salt
+(24, 177), -- Qty: 2 grams Black pepper
+
+-- Lemon Garlic Shrimp Pasta
+(25, 178), -- Qty: 400 grams Shrimp
+(25, 179), -- Qty: 300 grams Linguine pasta
+(25, 180), -- Qty: 250 grams Cherry tomatoes
+(25, 181), -- Qty: 150 grams Spinach
+(25, 182), -- Qty: 4 cloves Garlic
+(25, 183), -- Qty: 2 tbs Lemon juice
+(25, 184), -- Qty: 0.030 l Olive oil
+(25, 185), -- Qty: 1 tbs Red pepper flakes
+
+-- Stuffed Bell Peppers
+(26, 186), -- Qty: 4 pieces Bell peppers
+(26, 187), -- Qty: 400 grams Ground beef
+(26, 188), -- Qty: 150 grams Quinoa
+(26, 189), -- Qty: 1 piece Onion
+(26, 190), -- Qty: 0.250 l Tomato sauce
+(26, 191), -- Qty: 100 grams Mozzarella cheese
+(26, 192), -- Qty: 0.030 l Olive oil
+(26, 193), -- Qty: 5 grams Salt
+(26, 194), -- Qty: 2 grams Black pepper
+
+-- Mediterranean Quinoa Salad
+(27, 195), -- Qty: 200 grams Quinoa
+(27, 196), -- Qty: 1 piece Cucumber
+(27, 197), -- Qty: 250 grams Cherry tomatoes
+(27, 198), -- Qty: 100 grams Kalamata olives
+(27, 199), -- Qty: 1 piece Red onion
+(27, 200), -- Qty: 100 grams Feta cheese
+(27, 201), -- Qty: 0.030 l Olive oil
+(27, 202), -- Qty: 2 tbs Lemon juice
+(27, 203), -- Qty: 1 tbs Oregano
+
+-- Vegetarian Pad Thai
+(28, 204), -- Qty: 200 grams Rice noodles
+(28, 205), -- Qty: 200 grams Tofu
+(28, 206), -- Qty: 100 grams Bean sprouts
+(28, 207), -- Qty: 2 pieces Carrots
+(28, 208), -- Qty: 4 pieces Green onions
+(28, 209), -- Qty: 50 grams Peanuts
+(28, 210), -- Qty: 2 pieces Lime
+(28, 211), -- Qty: 0.030 l Soy sauce
+(28, 212), -- Qty: 0.030 l Tamarind paste
+(28, 213), -- Qty: 1 tbs Sriracha
+
+-- Lentil and Vegetable Stew
+(29, 214), -- Qty: 200 grams Lentils
+(29, 215), -- Qty: 2 pieces Carrots
+(29, 216), -- Qty: 2 pieces Celery
+(29, 217), -- Qty: 1 piece Onion
+(29, 218), -- Qty: 3 cloves Garlic
+(29, 219), -- Qty: 0.500 l Vegetable broth
+(29, 220), -- Qty: 1 piece Tomato
+(29, 221), -- Qty: 2 pieces Bay leaves
+(29, 222), -- Qty: 1 tbs Thyme
+(29, 223), -- Qty: 1 tbs Rosemary
+
+-- Cajun Shrimp and Sausage Skillet
+(30, 224), -- Qty: 400 grams Shrimp
+(30, 225), -- Qty: 250 grams Sausage
+(30, 226), -- Qty: 2 pieces Bell peppers
+(30, 227), -- Qty: 1 piece Onion
+(30, 228), -- Qty: 2 pieces Celery
+(30, 229), -- Qty: 3 cloves Garlic
+(30, 230), -- Qty: 2 tbs Cajun seasoning
+(30, 231), -- Qty: 1 tbs Paprika
+(30, 232), -- Qty: 1 tbs Thyme
+(30, 233), -- Qty: 0.030 l Olive oil
+
+-- Butternut Squash Risotto
+(31, 234), -- Qty: 300 grams Arborio rice
+(31, 235), -- Qty: 1 piece Butternut squash
+(31, 236), -- Qty: 1 piece Onion
+(31, 237), -- Qty: 3 cloves Garlic
+(31, 238), -- Qty: 0.120 l White wine
+(31, 239), -- Qty: 1 l Vegetable broth
+(31, 240), -- Qty: 50 grams Parmesan cheese
+(31, 241), -- Qty: 10 grams Sage
+(31, 242), -- Qty: 0.030 l Olive oil
+(31, 243), -- Qty: 5 grams Salt
+(31, 244); -- Qty: 2 grams Black pepper
 
 
 INSERT INTO mealplanner_api.recipe_instruction (instruction, step, recipe_id)
@@ -777,9 +1033,304 @@ VALUES
 ('Place a portion of the filling on each cabbage leaf and roll tightly. Arrange the cabbage rolls in a baking dish.', 3,
  20),
 ('In a separate bowl, mix tomato sauce and herbs. Pour the sauce over the cabbage rolls.', 4, 20),
-('Bake for 25-30 minutes or until the cabbage rolls are cooked through. Serve hot.', 5, 20);
+('Bake for 25-30 minutes or until the cabbage rolls are cooked through. Serve hot.', 5, 20),
+
+('Rinse the lentils thoroughly under cold water. In a pot, combine the lentils with water and bring to a boil. Reduce heat and simmer until lentils are tender.',
+ 1, 21),
+('In a separate pan, sauté diced onions in oil until translucent. Add minced garlic and grated ginger. Cook until fragrant.',
+ 2, 21),
+('Add turmeric, cumin, coriander, and garam masala to the onion mixture. Stir well to combine and let the spices toast for a minute.',
+ 3, 21),
+('Pour in coconut milk and mix, allowing the spices to blend with the coconut milk. Bring the mixture to a gentle simmer.',
+ 4, 21),
+('Add diced tomatoes to the curry. Cook until they soften and release their juices, enriching the flavor of the curry.',
+ 5, 21),
+('Fold in fresh spinach leaves, allowing them to wilt into the curry. Stir until the spinach is evenly distributed.', 6,
+ 21),
+('Once the lentils are tender, combine them with the curry mixture. Simmer for an additional 10-15 minutes to meld the flavors.',
+ 7, 21),
+('Adjust the seasoning as needed. Serve the vegan lentil curry over rice or with your favorite bread. Enjoy!', 8, 21),
 
 
+('Preheat the grill. Season chicken breasts with salt and pepper. Grill the chicken until fully cooked, with nice grill marks on each side.',
+ 1, 22),
+('While the chicken is grilling, wash and chop the romaine lettuce into bite-sized pieces. Place them in a large salad bowl.',
+ 2, 22),
+('Slice the grilled chicken into thin strips. Add the chicken strips to the bowl with the romaine lettuce.', 3, 22),
+('Pour Caesar dressing over the salad. Toss the salad gently to coat the lettuce and chicken evenly with the dressing.',
+ 4, 22),
+('Sprinkle croutons over the salad. The croutons add a delightful crunch to the salad.', 5, 22),
+('Grate Parmesan cheese over the top of the salad. The cheese adds a savory and salty kick to the dish.', 6, 22),
+('Toss the salad once more to ensure all ingredients are well combined. Serve the grilled chicken Caesar salad immediately.',
+ 7, 22),
+('Enjoy this delicious and satisfying salad as a light lunch or dinner option!', 8, 22),
+
+-- Roasted Vegetable Quinoa Bowl
+('Rinse quinoa under cold water. In a saucepan, combine quinoa with water and bring to a boil. Reduce heat, cover, and simmer until quinoa is cooked.',
+ 1, 23),
+('Preheat the oven. Cut zucchini and bell peppers into bite-sized pieces. Halve the cherry tomatoes. Place the vegetables on a baking sheet.',
+ 2, 23),
+('In a small bowl, mix olive oil, garlic powder, paprika, salt, and black pepper. Drizzle this mixture over the vegetables, ensuring they are evenly coated.',
+ 3, 23),
+('Roast the vegetables in the preheated oven until they are tender and slightly caramelized. Stir occasionally for even roasting.',
+ 4, 23),
+('While the vegetables are roasting, warm the hummus in a small saucepan or microwave. You\'ll use this as a flavorful topping for the bowl.',
+ 5, 23),
+('Fluff the cooked quinoa with a fork. Spoon the quinoa into serving bowls. Top with the roasted vegetables and a generous dollop of hummus.',
+ 6, 23),
+('Garnish with fresh herbs or additional spices if desired. Drizzle with extra olive oil if preferred. Enjoy your nourishing roasted vegetable quinoa bowl!',
+ 7, 23),
 
 
+-- Spicy Shrimp Stir-Fry
+('Start by cooking rice according to package instructions. Set aside once cooked.', 1, 24),
+('In a wok or large pan, heat oil over medium-high heat. Add peeled and deveined shrimp, stir-frying until they turn pink and opaque.',
+ 2, 24),
+('Add thinly sliced broccoli, bell peppers, and julienned carrots to the wok. Stir-fry the vegetables until they are tender-crisp.',
+ 3, 24),
+('In a small bowl, whisk together soy sauce, minced ginger, Sriracha, and minced garlic. Pour the sauce over the shrimp and vegetables.',
+ 4, 24),
+('Continue to stir-fry, ensuring the shrimp and vegetables are well-coated in the spicy sauce. Cook until everything is heated through.',
+ 5, 24),
+('Serve the spicy shrimp stir-fry over the cooked rice. Garnish with chopped green onions or sesame seeds if desired.',
+ 6, 24),
+('Enjoy this quick and flavorful spicy shrimp stir-fry for a delicious and satisfying meal!', 7, 24),
 
+-- Mushroom Risotto
+('Clean and slice the mushrooms. In a pan, sauté the mushrooms until they release their moisture and become golden brown. Set aside.',
+ 1, 25),
+('In a separate pot, heat the vegetable or chicken broth. Keep it simmering on low heat throughout the risotto preparation.',
+ 2, 25),
+('In the same pan used for mushrooms, toast Arborio rice over medium heat until the edges become translucent.', 3, 25),
+('Begin adding the warm broth to the rice one ladle at a time, stirring frequently. Allow the liquid to be absorbed before adding more.',
+ 4, 25),
+('Continue this process until the rice is creamy and cooked to al dente. This should take about 18-20 minutes. Adjust seasoning as needed.',
+ 5, 25),
+('Gently fold in the sautéed mushrooms, ensuring they are evenly distributed throughout the creamy risotto.', 6, 25),
+('Serve the mushroom risotto hot, garnished with freshly chopped parsley and a sprinkle of grated Parmesan cheese if desired.',
+ 7, 25),
+('Indulge in the rich and comforting flavors of this homemade mushroom risotto!', 8, 25),
+
+-- Black Bean and Corn Salad
+('Rinse black beans under cold water and drain. In a large mixing bowl, combine black beans and corn kernels.', 1, 26),
+('Finely chop red onion and halve the cherry tomatoes. Add them to the bowl with the black beans and corn.', 2, 26),
+('Dice ripe avocados and roughly chop cilantro. Gently fold them into the salad mixture, ensuring even distribution.',
+ 3, 26),
+('In a small bowl, whisk together lime juice, olive oil, salt, and black pepper. Pour the dressing over the salad and toss to coat.',
+ 4, 26),
+('Allow the salad to marinate in the refrigerator for at least 15-20 minutes to enhance the flavors.', 5, 26),
+('Before serving, give the salad a final toss. Adjust seasoning if necessary. Serve chilled as a refreshing side dish or a light main course.',
+ 6, 26),
+('Enjoy the vibrant colors and flavors of this black bean and corn salad!', 7, 26),
+
+-- Honey Mustard Glazed Salmon
+('Preheat the oven. Place salmon fillets on a baking sheet lined with parchment paper.', 1, 27),
+('In a small bowl, whisk together Dijon mustard, honey, soy sauce, olive oil, minced garlic, and lemon juice to create the glaze.',
+ 2, 27),
+('Brush the honey mustard glaze generously over each salmon fillet, ensuring they are well-coated on all sides.', 3,
+ 27),
+('Bake the salmon in the preheated oven until it flakes easily with a fork, typically 12-15 minutes depending on thickness.',
+ 4, 27),
+('While baking, baste the salmon with additional glaze halfway through the cooking time for extra flavor.', 5, 27),
+('Once done, remove the salmon from the oven. Drizzle any remaining glaze over the top. Serve the salmon hot.', 6, 27),
+('Pair this honey mustard glazed salmon with your favorite side dishes for a delicious and wholesome meal!', 7, 27),
+
+-- Caprese Pasta Salad
+('Cook the pasta according to the package instructions. Once cooked, drain and let it cool to room temperature.', 1,
+ 28),
+('While the pasta is cooking, halve the cherry tomatoes and cube the mozzarella cheese into bite-sized pieces.', 2, 28),
+('Chop fresh basil leaves. In a large mixing bowl, combine the cooled pasta, cherry tomatoes, mozzarella, and basil.',
+ 3, 28),
+('In a small bowl, whisk together balsamic vinegar, olive oil, salt, and black pepper. Pour the dressing over the pasta mixture.',
+ 4, 28),
+('Toss the ingredients gently to ensure the pasta is well-coated with the dressing and the flavors are evenly distributed.',
+ 5, 28),
+('Allow the Caprese pasta salad to chill in the refrigerator for at least 30 minutes to let the flavors meld.', 6, 28),
+('Before serving, give the salad a final toss. Adjust seasoning if necessary. Serve chilled as a delightful side or light main course.',
+ 7, 28),
+('Enjoy the freshness of this Caprese pasta salad, perfect for a summer meal!', 8, 28),
+
+-- Chickpea and Spinach Stew
+('In a large pot, sauté diced onions in a bit of olive oil until they become translucent. Add minced garlic and cook until fragrant.',
+ 1, 29),
+('Stir in cumin, paprika, and coriander, allowing the spices to toast for a minute and infuse the onion and garlic mixture.',
+ 2, 29),
+('Add chickpeas, tomato paste, and vegetable broth to the pot. Stir well to combine all ingredients.', 3, 29),
+('Bring the stew to a simmer and let it cook for about 15-20 minutes, allowing the flavors to meld together.', 4, 29),
+('Fold in fresh spinach leaves, letting them wilt into the stew. Stir until the spinach is evenly distributed.', 5, 29),
+('Finish the stew by drizzling lemon juice over it. Adjust seasoning if needed, adding more salt or spices to taste.',
+ 6, 29),
+('Serve the chickpea and spinach stew hot, perhaps with a slice of crusty bread. Enjoy this hearty and nutritious dish!',
+ 7, 29),
+('Delight in the wholesome flavors of this chickpea and spinach stew, perfect for a comforting meal!', 8, 29),
+
+
+-- Teriyaki Tofu Stir-Fry
+('Start by cooking rice according to package instructions. Set aside once cooked.', 1, 30),
+('Press and drain tofu to remove excess water. Cut tofu into bite-sized cubes. In a wok or large pan, stir-fry tofu until golden brown.',
+ 2, 30),
+('Add thinly sliced broccoli, bell peppers, and julienned carrots to the wok with the tofu. Stir-fry until the vegetables are tender-crisp.',
+ 3, 30),
+('In a small bowl, mix teriyaki sauce, soy sauce, minced ginger, and minced garlic. Pour the sauce over the tofu and vegetables.',
+ 4, 30),
+('Continue to stir-fry, ensuring the tofu and vegetables are well-coated in the flavorful sauce. Cook until everything is heated through.',
+ 5, 30),
+('Serve the teriyaki tofu stir-fry over the cooked rice. Garnish with sliced green onions or sesame seeds if desired.',
+ 6, 30),
+('Indulge in the deliciousness of this teriyaki tofu stir-fry, a perfect blend of flavors and textures!', 7, 30),
+
+-- Pesto Chicken Penne
+('Preheat the oven. Season chicken breasts with salt and black pepper. In a pan, heat olive oil and sear the chicken until golden brown on both sides.',
+ 1, 31),
+('Transfer the seared chicken to the oven and roast until fully cooked. Once done, let it rest before slicing into thin strips.',
+ 2, 31),
+('Cook penne pasta according to the package instructions. Drain and set aside.', 3, 31),
+('Halve cherry tomatoes and grate Parmesan cheese. In a large mixing bowl, combine cooked penne, sliced chicken, and cherry tomatoes.',
+ 4, 31),
+('Add pesto sauce to the bowl and toss everything together until the pasta and chicken are evenly coated with the pesto.',
+ 5, 31),
+('Sprinkle grated Parmesan cheese over the top. Drizzle with a bit of olive oil for extra richness.', 6, 31),
+('Serve the pesto chicken penne hot, garnished with fresh basil if available. Enjoy this flavorful and comforting pasta dish!',
+ 7, 31),
+('Savor the deliciousness of this pesto chicken penne, a perfect blend of vibrant flavors!', 8, 31),
+
+-- Cauliflower and Chickpea Curry
+('Chop cauliflower into florets. In a pot, sauté diced onions in oil until translucent. Add minced garlic and grated ginger. Cook until aromatic.',
+ 1, 32),
+('Add curry powder, turmeric, cumin, and coriander to the onion mixture. Stir well to combine and let the spices toast for a minute.',
+ 2, 32),
+('Dice the tomato and add it to the pot. Cook until the tomato breaks down and forms a thick base for the curry.', 3,
+ 32),
+('Pour in coconut milk, stirring to combine with the spice and vegetable mixture. Bring the curry to a gentle simmer.',
+ 4, 32),
+('Add chickpeas and cauliflower florets to the pot. Simmer until the cauliflower is tender and the flavors meld together.',
+ 5, 32),
+('Adjust seasoning as needed. Serve the cauliflower and chickpea curry over rice or with your favorite bread.', 6, 32),
+('Enjoy the warmth and richness of this cauliflower and chickpea curry, a delightful and satisfying dish!', 7, 32),
+('Savor the comforting flavors of this cauliflower and chickpea curry, perfect for a hearty meal!', 8, 32),
+
+
+-- Mango Avocado Salsa
+('Peel and dice the mangoes and avocados into bite-sized pieces. Finely chop red onion and jalapeño. Place them in a mixing bowl.',
+ 1, 33),
+('Chop fresh cilantro leaves. Add the cilantro to the bowl with the diced mangoes, avocados, red onion, and jalapeño.',
+ 2, 33),
+('In a small bowl, whisk together lime juice, salt, and black pepper. Pour the dressing over the salsa ingredients in the mixing bowl.',
+ 3, 33),
+('Gently toss the ingredients until they are well-coated with the lime dressing and the flavors are evenly distributed.',
+ 4, 33),
+('Let the mango avocado salsa sit for about 10-15 minutes to allow the flavors to meld together.', 5, 33),
+('Before serving, give the salsa a final toss. Adjust seasoning if necessary. Serve chilled as a refreshing topping or side dish.',
+ 6, 33),
+('Enjoy the vibrant and tropical flavors of this mango avocado salsa!', 7, 33),
+('Savor the freshness of this mango avocado salsa, perfect for enhancing a variety of dishes!', 8, 33),
+
+-- Lemon Garlic Shrimp Pasta
+('Start by cooking linguine pasta according to the package instructions. Drain and set aside.', 1, 34),
+('While the pasta is cooking, peel and devein the shrimp. In a pan, sauté the shrimp in olive oil until they turn pink and opaque.',
+ 2, 34),
+('Add minced garlic to the pan and sauté until fragrant. Be careful not to burn the garlic.', 3, 34),
+('Halve cherry tomatoes and add them to the pan. Stir until the tomatoes soften and release their juices.', 4, 34),
+('Fold in fresh spinach leaves, allowing them to wilt into the shrimp and tomato mixture. Stir until the spinach is evenly distributed.',
+ 5, 34),
+('Squeeze lemon juice over the shrimp and vegetables. Sprinkle red pepper flakes for a hint of heat.', 6, 34),
+('Add the cooked linguine to the pan and toss everything together until the pasta is well-coated with the flavorful mixture.',
+ 7, 34),
+('Serve the lemon garlic shrimp pasta hot, garnished with additional red pepper flakes and a drizzle of olive oil if desired.',
+ 8, 34),
+('Enjoy the zesty and savory flavors of this lemon garlic shrimp pasta!', 9, 34),
+
+-- Stuffed Bell Peppers
+('Preheat the oven. Cut the tops off the bell peppers and remove the seeds and membranes. Brush the outer surface of the peppers with olive oil.',
+ 1, 35),
+('In a pan, sauté diced onions in olive oil until translucent. Add ground beef and cook until browned. Season with salt and black pepper.',
+ 2, 35),
+('Cook quinoa according to package instructions. Once cooked, add the quinoa to the pan with the ground beef and mix well.',
+ 3, 35),
+('Pour tomato sauce into the beef and quinoa mixture. Stir to combine, allowing the flavors to meld.', 4, 35),
+('Generously stuff each bell pepper with the beef, quinoa, and tomato mixture. Top each pepper with mozzarella cheese.',
+ 5, 35),
+('Place the stuffed bell peppers in a baking dish. Bake in the preheated oven until the peppers are tender and the cheese is melted and bubbly.',
+ 6, 35),
+('Serve the stuffed bell peppers hot, garnished with fresh herbs if desired. Enjoy this hearty and flavorful dish!', 7,
+ 35),
+('Delight in the savory goodness of these stuffed bell peppers, a wholesome and satisfying meal!', 8, 35),
+
+
+-- Mediterranean Quinoa Salad
+('Rinse quinoa under cold water. In a saucepan, combine quinoa with water and bring to a boil. Reduce heat, cover, and simmer until quinoa is cooked.',
+ 1, 36),
+('While the quinoa is cooking, dice cucumber, halve cherry tomatoes, slice Kalamata olives, and finely chop red onion. Place them in a large salad bowl.',
+ 2, 36),
+('Crumble feta cheese and add it to the bowl with the prepared vegetables. Mix gently to combine.', 3, 36),
+('In a small bowl, whisk together olive oil, lemon juice, and oregano. Pour the dressing over the salad and toss to coat.',
+ 4, 36),
+('Allow the Mediterranean quinoa salad to chill in the refrigerator for at least 30 minutes to let the flavors meld.',
+ 5, 36),
+('Before serving, give the salad a final toss. Adjust seasoning if necessary. Serve chilled as a refreshing and nutritious side dish.',
+ 6, 36),
+('Enjoy the vibrant and flavorful combination of ingredients in this Mediterranean quinoa salad!', 7, 36),
+('Savor the freshness of this Mediterranean quinoa salad, perfect for a light and satisfying meal!', 8, 36),
+
+-- Vegetarian Pad Thai
+('Soak rice noodles in warm water until they are soft and pliable. Drain and set aside.', 1, 37),
+('Press and drain tofu to remove excess water. Cut tofu into small cubes. In a wok or large pan, stir-fry tofu until golden brown.',
+ 2, 37),
+('Julienne carrots and chop green onions. Add them to the wok with the tofu, along with bean sprouts.', 3, 37),
+('In a small bowl, mix soy sauce, tamarind paste, and Sriracha to create the Pad Thai sauce. Pour the sauce over the tofu and vegetable mixture.',
+ 4, 37),
+('Add soaked rice noodles to the wok. Toss everything together until the noodles are well-coated with the flavorful sauce.',
+ 5, 37),
+('Crush peanuts and sprinkle them over the Pad Thai. Squeeze lime juice over the dish for a burst of freshness.', 6,
+ 37),
+('Continue to stir-fry until all ingredients are heated through and well-mingled.', 7, 37),
+('Serve the vegetarian Pad Thai hot, garnished with additional peanuts, lime wedges, and extra Sriracha if desired.', 8,
+ 37),
+('Indulge in the deliciousness of this vegetarian Pad Thai, a perfect blend of flavors and textures!', 9, 37),
+
+
+-- Lentil and Vegetable Stew
+('Rinse lentils under cold water. In a large pot, combine lentils with vegetable broth. Bring to a boil, then reduce heat and simmer.',
+ 1, 38),
+('Dice carrots, celery, and onion. Mince garlic. Add these vegetables to the pot with the simmering lentils.', 2, 38),
+('Dice the tomato and add it to the stew. Stir well to combine all the vegetables and lentils.', 3, 38),
+('Toss in bay leaves, thyme, and rosemary. These herbs will infuse the stew with aromatic flavors.', 4, 38),
+('Simmer the lentil and vegetable stew for about 25-30 minutes or until the lentils are tender and the flavors have melded together.',
+ 5, 38),
+('Remove the bay leaves and adjust seasoning as needed. If the stew is too thick, you can add more vegetable broth to achieve the desired consistency.',
+ 6, 38),
+('Serve the lentil and vegetable stew hot, perhaps with a slice of crusty bread. Enjoy this hearty and nutritious dish!',
+ 7, 38),
+('Delight in the wholesome flavors of this lentil and vegetable stew, perfect for a comforting meal!', 8, 38),
+
+-- Cajun Shrimp and Sausage Skillet
+('In a large skillet, heat olive oil over medium-high heat. Add diced onion, celery, and bell peppers. Sauté until the vegetables are tender.',
+ 1, 39),
+('Slice sausage into rounds and add it to the skillet with the sautéed vegetables. Cook until the sausage is browned.',
+ 2, 39),
+('Add minced garlic to the skillet and stir until fragrant. Be careful not to burn the garlic.', 3, 39),
+('Toss in Cajun seasoning, paprika, and thyme. Stir well to coat the vegetables and sausage with the flavorful spices.',
+ 4, 39),
+('Add shrimp to the skillet and cook until they turn pink and opaque. Make sure not to overcook the shrimp.', 5, 39),
+('Continue to stir everything together until the ingredients are well-mingled and heated through.', 6, 39),
+('Serve the Cajun shrimp and sausage skillet hot, perhaps over rice or with crusty bread. Enjoy the bold and spicy flavors!',
+ 7, 39),
+('Indulge in the deliciousness of this Cajun shrimp and sausage skillet, a quick and flavorful dish!', 8, 39),
+
+-- Butternut Squash Risotto
+('Peel and dice the butternut squash into small cubes. In a roasting pan, toss the squash with olive oil, salt, and pepper. Roast in the oven until tender and slightly caramelized.',
+ 1, 40),
+('In a pot, heat vegetable broth and keep it simmering on low heat throughout the risotto preparation.', 2, 40),
+('In a separate pan, sauté diced onions in olive oil until translucent. Add minced garlic and cook until fragrant.', 3,
+ 40),
+('Add Arborio rice to the pan with the onions and garlic. Stir well to coat the rice in the oil and cook until the edges become translucent.',
+ 4, 40),
+('Pour in white wine and stir until it\'s mostly absorbed by the rice. Begin adding the warm vegetable broth,
+ one ladle at a time, stirring frequently.', 5, 40),
+('Once the rice is almost cooked,
+ fold in the roasted butternut squash cubes, chopped sage, and grated Parmesan cheese.', 6, 40),
+(' Continue adding the
+ broth until the rice is creamy and cooked to al dente.Adjust seasoning as needed.', 7, 40),
+(' Serve the butternut
+ squash risotto hot, garnished with additional Parmesan and sage if desired.', 8, 40),
+('Indulge in the rich and comforting flavors of this homemade butternut squash risotto!', 9, 40);
