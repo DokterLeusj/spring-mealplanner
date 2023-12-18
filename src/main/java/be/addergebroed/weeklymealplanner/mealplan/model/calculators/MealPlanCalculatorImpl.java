@@ -1,31 +1,44 @@
-package be.addergebroed.weeklymealplanner.mealplan.service;
+package be.addergebroed.weeklymealplanner.mealplan.model.calculators;
 
 import be.addergebroed.weeklymealplanner.mealplan.model.MealPlan;
 import be.addergebroed.weeklymealplanner.mealplan.model.MealPlanDay;
-import be.addergebroed.weeklymealplanner.mealplan.model.PlanPreference;
 import be.addergebroed.weeklymealplanner.mealplan.model.RestrictionsContainer;
+import be.addergebroed.weeklymealplanner.mealplan.model.dto.PlanPreferenceDto;
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 import be.addergebroed.weeklymealplanner.recipe.service.RecipeService;
-import be.addergebroed.weeklymealplanner.user.model.DietaryNeed;
+import be.addergebroed.weeklymealplanner.user.service.DietaryNeedService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class MealPlanCalculatorServiceImpl implements MealPlanCalculatorService {
+public class MealPlanCalculatorImpl implements MealPlanCalculator {
     private final RecipeService recipeService;
+    private final DietaryNeedService dietaryNeedService;
 
     @Override
-    public MealPlan calcMealPlan(PlanPreference planPreference, Set<DietaryNeed> dietaryNeeds) {
+    public MealPlan calcMealPlan(PlanPreferenceDto planPreference, Set<Long> dietaryNeedIds) {
         Set<Recipe> recipes = recipeService.fetchAllRecipesBy(null,
                 null,
                 null,
-                dietaryNeeds.stream().map(DietaryNeed::getId).toArray(Long[]::new));
-        int mealsPerDay = planPreference.getMealsPerDay();
+                dietaryNeedIds.toArray(Long[]::new));
+        int mealsPerDay = planPreference.mealsPerDay();
         Set<MealPlanDay> mealPlanDays = fillMealPlanDaysAdRandom(recipes, 5, mealsPerDay);
-        return new MealPlan(planPreference,new RestrictionsContainer(null,dietaryNeeds,null),
+        return setMealPlan(planPreference,dietaryNeedIds,mealPlanDays);
+    }
+
+    @Override
+    public MealPlan setMealPlan(PlanPreferenceDto planPreferenceDto, Set<Long> dietaryNeedIds, Set<MealPlanDay> mealPlanDays){
+        return new MealPlan(PlanPreferenceDto.convertToObj(planPreferenceDto),
+                new RestrictionsContainer(
+                        null,
+                        dietaryNeedIds.stream()
+                                .map(dietaryNeedService::fetchDietaryNeedById)
+                                .collect(Collectors.toSet()),
+                        null),
                 mealPlanDays);
     }
 

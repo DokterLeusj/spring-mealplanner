@@ -2,6 +2,7 @@ package be.addergebroed.weeklymealplanner.user.model;
 
 
 import be.addergebroed.weeklymealplanner.mealplan.model.MealPlan;
+import be.addergebroed.weeklymealplanner.mealplan.model.RestrictionsContainer;
 import be.addergebroed.weeklymealplanner.recipe.model.FoodCategory;
 import jakarta.persistence.*;
 import lombok.*;
@@ -32,8 +33,7 @@ public class DietaryNeed{
     @ManyToMany(mappedBy="dietaryNeeds")
     private Set<User> users = new HashSet<>();
 
-
-    @ManyToMany(mappedBy="dietaryNeeds")
-    private Set<MealPlan> mealPlans = new HashSet<>();
+    @ManyToMany(mappedBy = "dietaryNeeds")
+    private Set<RestrictionsContainer> restrictionsContainers;
 
 }
