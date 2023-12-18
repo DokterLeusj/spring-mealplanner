@@ -15,10 +15,17 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private final UserRepository userRepo;
 
 
+//    @Override
+//    @Transactional //todo:not needed if we don't implement roles (admin/NutriTech employee)
+//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//        User user = userRepo.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException(username));
+//        return new UserDetailsImpl(user);
+//    }
+
     @Override
-    @Transactional //todo:not needed if we don't implement roles (admin/NutriTech employee)
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepo.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException(username));
+    @Transactional
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepo.findByEmail(email).orElseThrow( () -> new UsernameNotFoundException(email));
         return new UserDetailsImpl(user);
     }
 }
