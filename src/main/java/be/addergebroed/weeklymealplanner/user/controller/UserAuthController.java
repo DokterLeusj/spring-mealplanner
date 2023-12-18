@@ -13,6 +13,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
@@ -31,7 +33,7 @@ public class UserAuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> handleLogin(@Valid @RequestBody UserLoginDto loginDto, BindingResult br) {
+    public ResponseEntity<Map<String, String>> handleLogin(@Valid @RequestBody UserLoginDto loginDto, BindingResult br) {
         if (br.hasErrors()) {
             throw new IllegalArgumentException("Invalid user sign in");
         }
@@ -42,6 +44,7 @@ public class UserAuthController {
             throw new BadCredentialsException("Invalid credentials");
         }
 
-        return ResponseEntity.ok(auth.getName());
+        return ResponseEntity.ok(Map.of("email", loginDto.email()));
+        // in future return json token iso email
     }
 }
