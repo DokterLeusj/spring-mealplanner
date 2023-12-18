@@ -12,7 +12,14 @@ VALUES (1, 0, 'Vegetables'),
        (10, 0, 'Cheese'),
        (11, 0, 'Oil and other fats'),
        (12, 0, 'Fruit'),
-       (13, 0, 'Vegetarian protein');
+       (13, 0, 'Vegetarian protein'),
+       (14, 0, 'Seafood'),
+       (15, 1, 'Soy'),
+       (16, 0, 'Eggs'),
+       (17, 1, 'Peanuts'),
+       (18, 0, 'Lentils'),
+       (19, 0, 'Avocado'),
+       (20, 1, 'Shellfish');
 
 INSERT INTO mealplanner_api.ingredient (id, name)
 VALUES (1, 'Chicken breast'),
@@ -97,8 +104,18 @@ VALUES (1, 'Chicken breast'),
        (80, 'Cheddar cheese'),
        (81, 'Green onions'),
        (82, 'Cabbage leaves'),
-       (83, 'Thyme');
-INSERT INTO mealplanner_api.ingredient_per_category (ingredient_id, food_category_id)
+       (83, 'Thyme'),
+       (84, 'Shrimp'),
+       (85, 'Edamame'),
+       (86, 'Eggplant'),
+       (87, 'Lentils'),
+       (88, 'Avocado'),
+       (89, 'Crab'),
+       (90, 'Peanut Butter'),
+       (91, 'Cilantro'),
+       (92, 'Pumpkin Seeds');
+       
+INSERT INTO mealplanner_api.ingredient_category (ingredient_id, food_category_id)
 VALUES (1, 5),   -- Chicken breast - Meat, Chicken, Animal Product
        (1, 9),
        (1, 6),
@@ -164,8 +181,9 @@ VALUES (1, 5),   -- Chicken breast - Meat, Chicken, Animal Product
        (40, 8),
        (41, 8),  -- Vanilla extract - Spices
        (42, 8),  -- Hot water - Spices
-       (43, 6),  -- Salmon fillets - Fish, Animal Product
+       (43, 6),  -- Salmon fillets - Fish, Animal Product, seafood
        (43, 5),
+       (43,14),
        (44, 1),  -- Lemon - Vegetables, Spices
        (44, 8),
        (45, 8),  -- Dill - Spices
@@ -221,8 +239,23 @@ VALUES (1, 5),   -- Chicken breast - Meat, Chicken, Animal Product
        (80, 6),
        (81, 1),  -- Green onions - Vegetables
        (82, 1),  -- Cabbage leaves - Vegetables
-       (83, 8);
--- Thyme - Spices
+       (83, 8),  -- Thyme - Spices
+       (84, 14), -- Shrimp - Seafood, Animal Product
+       (84, 6),
+       (85, 13), -- Edamame - Vegetarian protein, Grains
+       (85, 3),
+       (86, 1),   -- Eggplant - Vegetables
+       (87, 18),  -- Lentils - Vegetarian protein
+       (88, 12),  -- Avocado - Fruit
+       (89, 20),  -- Crab - Shellfish, seafood, animal
+       (89, 14),
+       (89, 6),
+       (90, 2), -- Peanut Butter - Nuts, Fruit
+       (90, 12),
+       (91, 8),   -- Cilantro - Spices
+       (92, 1),   -- Cucumber - Vegetables
+       (97, 2),
+       (97, 12);   -- Pumpkin Seeds - Nuts, Fruit
 
 
 # Dietary needs
@@ -407,7 +440,28 @@ VALUES (1, 'Classic Italian pasta dish with savory Bolognese sauce.', 'https://i
        (17, 'Wholesome salad with wheat berries, vegetables, and dressing.', null, 'Wheat Berry Salad', false, 17),
        (18, 'Cheesy omelette with a variety of ingredients.', null, 'Cheese Omelette', false, 18),
        (19, 'Classic egg fried rice with a medley of flavors.', null, 'Egg Fried Rice', false, 19),
-       (20, 'Stuffed cabbage leaves with a flavorful filling.', null, 'Cabbage Rolls', false, 20);
+       (20, 'Stuffed cabbage leaves with a flavorful filling.', null, 'Cabbage Rolls', false, 20),
+       (21, 'Immerse yourself in the fragrant allure of Vegan Lentil Curry. Tender lentils, bathed in a rich coconut milk and tomato sauce, mingle with an array of aromatic spices. This hearty curry promises a symphony of flavors and textures, delivering a satisfying, plant-based experience.', null, 'Vegan Lentil Curry', true, 17),
+       (22, 'Elevate your salad experience with the Grilled Chicken Caesar Salad. Juicy grilled chicken strips crown a bed of crisp romaine lettuce, tossed with crunchy croutons, cherry tomatoes, and shaved Parmesan. Drizzled with creamy Caesar dressing, this salad is a harmonious blend of freshness and savory indulgence.', null, 'Grilled Chicken Caesar Salad', false, 8),
+       (23, 'Embark on a journey of wholesome goodness with the Roasted Vegetable Quinoa Bowl. Colorful roasted bell peppers, zucchini, and cherry tomatoes intertwine with fluffy quinoa. Drizzled with balsamic glaze and sprinkled with fresh basil, this bowl promises a symphony of flavors and textures.', null, 'Roasted Vegetable Quinoa Bowl', true, 23),
+       (24, 'Ignite your taste buds with the Spicy Shrimp Stir-Fry. Succulent shrimp, stir-fried to perfection, join a medley of vibrant vegetables in a fiery garlic sauce. Served over a bed of steamed rice or noodles, this stir-fry is a tantalizing fusion of heat and savor.', null, 'Spicy Shrimp Stir-Fry', false, 11),
+       (25, 'Delight in the rich and creamy goodness of Mushroom Risotto. Each spoonful unveils the earthy essence of sautéed mushrooms, perfectly balanced with the silky Arborio rice. Garnished with Parmesan cheese and fresh parsley, this risotto promises a luxurious and comforting dining experience.', null, 'Mushroom Risotto', true, 13),
+       (26, 'Immerse yourself in the vibrant medley of Black Bean and Corn Salad. The hearty combination of black beans and sweet corn, tossed with juicy tomatoes and crisp red onions, creates a refreshing and nutritious salad. Drizzled with a zesty dressing, this salad is a celebration of color and flavor.', null, 'Black Bean and Corn Salad', false, 6),
+       (27, 'Succumb to the allure of Honey Mustard Glazed Salmon. Each bite reveals the succulence of perfectly grilled salmon, glazed with a luscious blend of honey and mustard. Served alongside vibrant vegetables, this dish promises a perfect harmony of sweet and savory.', null, 'Honey Mustard Glazed Salmon', true, 28),
+       (28, 'Transport your taste buds to Italy with the Caprese Pasta Salad. Al dente pasta, cherry tomatoes, mozzarella, and fresh basil come together in a delightful medley. Drizzled with balsamic glaze and olive oil, this salad is a refreshing and satisfying ode to the classic Caprese.', null, 'Caprese Pasta Salad', false, 15),
+       (29, 'Immerse yourself in the comfort of Chickpea and Spinach Stew. Sautéed onions, garlic, and carrots create a flavorful base for tender chickpeas and diced tomatoes. Fresh spinach adds a burst of green goodness, resulting in a hearty and wholesome stew.', null, 'Chickpea and Spinach Stew', true, 5),
+       (30, 'Indulge in the savory delights of Teriyaki Tofu Stir-Fry. Cubes of tofu, bathed in a sweet and tangy teriyaki sauce, join a colorful array of crisp vegetables. Served over a bed of steamed rice or noodles, this stir-fry promises a symphony of Asian-inspired flavors.', null, 'Teriyaki Tofu Stir-Fry', false, 20),
+       (31, 'Delight in the tantalizing aroma of Pesto Chicken Penne. Juicy chicken slices, cherry tomatoes, and al dente penne pasta are ensconced in a velvety pesto sauce. Garnished with grated Parmesan, this dish is a celebration of fresh, herbaceous flavors.', null, 'Pesto Chicken Penne', true, 1),
+       (32, 'Immerse yourself in the aromatic embrace of Cauliflower and Chickpea Curry. Diced onions, garlic, and ginger sautéed to perfection lay the foundation for a robust curry. Cauliflower florets and chickpeas soak up coconut milk and vegetable broth, creating a luscious, fragrant stew. Served over basmati rice or quinoa, this curry is garnished with fresh cilantro and a squeeze of lime juice, promising a symphony of flavors.', null, 'Cauliflower and Chickpea Curry', false, 9),
+       (33, 'Revel in the vibrant fusion of flavors with Mango Avocado Salsa. Ripe mangoes and avocados intermingle with red onions, jalapeños, and cilantro, creating a tantalizing salsa. A splash of lime juice enhances the freshness, making this salsa a delightful accompaniment or a standalone treat.', null, 'Mango Avocado Salsa', true, 12),
+       (34, 'Elevate your pasta experience with the bright and zesty Lemon Garlic Shrimp Pasta. Succulent shrimp, sautéed in a garlic-infused olive oil, join forces with cherry tomatoes and baby spinach. The marriage of lemon juice, al dente pasta, and fresh herbs creates a harmonious symphony that\'s both comforting and invigorating.', null, 'Lemon Garlic Shrimp Pasta', false, 29),
+       (35, 'Delight in the wholesome goodness of Stuffed Bell Peppers. Ground turkey, cooked quinoa, black beans, and corn unite in a flavorful mixture, creating a hearty filling for vibrant bell peppers. Baked to perfection and crowned with melted cheese, these stuffed peppers promise a comforting and satisfying meal.', null, 'Stuffed Bell Peppers', true, 18),
+       (36, 'Embark on a culinary journey with the vibrant and refreshing Mediterranean Quinoa Salad. Quinoa, tossed with cherry tomatoes, olives, cucumbers, and feta cheese, creates a symphony of textures. Drizzled with olive oil and a hint of oregano, this salad is a celebration of Mediterranean flavors.', null, 'Mediterranean Quinoa Salad', false, 14),
+       (37, 'Immerse yourself in the bold and vibrant flavors of Vegetarian Pad Thai. Rice noodles, stir-fried with tofu, bean sprouts, and julienned carrots, are enrobed in a delectable tamarind-infused sauce. Garnished with crushed peanuts and lime wedges, this dish promises an irresistible balance of sweet, sour, and savory.', null, 'Vegetarian Pad Thai', true, 26),
+       (38, 'Cozy up to the warmth and nourishment of Lentil and Vegetable Stew. Sautéed onions, carrots, and celery provide the backdrop for tender lentils, diced tomatoes, and a fragrant blend of herbs. A hearty and wholesome stew that\'s perfect for any occasion.', null, 'Lentil and Vegetable Stew', false, 3),
+       (39, 'Ignite your taste buds with the bold Cajun flavors of Shrimp and Sausage Skillet. Sliced sausage, succulent shrimp, and a medley of vibrant vegetables are brought together in a fiery and flavorful concoction. Served over rice or enjoyed on its own, this skillet promises a spicy and satisfying experience.', null, 'Cajun Shrimp and Sausage Skillet', true, 25),
+       (40, 'Delight in the creamy and comforting Butternut Squash Risotto. Arborio rice, toasted to perfection, is enveloped in a velvety blend of sautéed onions, butter, and roasted butternut squash. Garnished with sage and Parmesan cheese, this risotto is a celebration of autumnal flavors.', null, 'Butternut Squash Risotto', false, 7);
+
 INSERT INTO mealplanner_api.recipe_ingredient (id, qty, ingredient_id, unit_id)
 VALUES (1, 250, 12, 1),  -- Ground beef (Qty: 250 grams)
        (2, 1, 13, 2),    -- Onion (Qty: 1 piece)
@@ -481,7 +535,7 @@ VALUES (1, 250, 12, 1),  -- Ground beef (Qty: 250 grams)
        (70, 100, 80, 1), -- Cheddar cheese (Qty: 100 grams)
        (71, 2, 81, 1),   -- Green onions (Qty: 2 pieces)
        (72, 12, 82, 1),  -- Cabbage leaves (Qty: 12 pieces)
-       (73, 1, 83, 5); -- Thyme (Qty: 1 tsp)
+       (73, 1, 83, 5);   -- Thyme (Qty: 1 tsp)
 
 
 INSERT INTO mealplanner_api.recipe_recipe_ingredient (recipe_id, recipe_ingredient_id)
