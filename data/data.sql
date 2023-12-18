@@ -251,10 +251,6 @@ VALUES (1, 2000, 3, 2),
        (2, 2500, 4, 2),
        (3, 1800, 3, 1);
 
-INSERT INTO mealplanner_api.plan_preference_per_diet (plan_preference_id, dietary_need_id)
-VALUES (1, 1), -- Vegetarian
-       (2, 2), -- Gluten Free
-       (3, 3);
 
 # User
 # TODO: must have id's!
