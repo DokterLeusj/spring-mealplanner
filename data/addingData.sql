@@ -827,6 +827,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (248, 5, 18, 1),     -- Salt (Qty: 5 grams)
        (249, 2, 19, 1), -- Black pepper (Qty: 2 grams)
 
+       -- last 10 start here
        -- Grilled Chicken Salad
        (250, 250, 1, 1), -- black beans (Qty: 250g)
        (251, 250, 66, 1), -- corn (Qty: 250g)
