@@ -825,8 +825,94 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (246, 10, 83, 1),    -- Sage (Qty: 10 grams)
        (247, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (248, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (249, 2, 19, 1); -- Black pepper (Qty: 2 grams)
+       (249, 2, 19, 1), -- Black pepper (Qty: 2 grams)
 
+       -- Grilled Chicken Salad
+       (250, 250, 1, 1), -- black beans (Qty: 250g)
+       (251, 250, 66, 1), -- corn (Qty: 250g)
+       (252, 5, 67, 1), -- cumin (Qty: 5g)
+       (253, 5, 68, 1), -- chili powder (Qty: 5g)
+       (254, 0.035, 69, 4), -- almond milk (Qty: 35ml)
+       (255, 1, 70, 2), -- banana (Qty: 1 piece)
+       (256, 250, 71, 1), -- almond butter (Qty: 250g)
+       (257, 15, 72, 5), -- honey (Qty: 15tbs)
+       (258, 2, 62, 2), -- mixed salad greens (Qty: 2 pieces)
+       (259, 5, 77, 2), -- fresh parsley (Qty: 5 pieces)
+
+       -- Quinoa Stuffed Peppers
+       (260, 1, 23, 2), -- bell peppers (Qty: 1 piece)
+       (261, 250, 2, 1), -- quinoa (Qty: 250g)
+       (262, 2, 29, 2), -- zucchini (Qty: 2 pieces)
+       (263, 1, 99, 5), -- paprika (Qty: 1tbs)
+       (264, 1, 67, 5), -- cumin (Qty: 1tbs)
+       (265, 0.5, 7, 5), -- garlic powder (Qty: 0.5tbs)
+       (266, 0.5, 13, 5), -- onion powder (Qty: 0.5tbs)
+       (267, 25, 0, 2), -- fresh herbs (Qty: 25 pieces)
+
+       -- Tomato Basil Pasta
+       (268, 250, 20, 1), -- pasta (Qty: 250g)
+       (269, 250, 15, 1), -- diced tomatoes (Qty: 250g)
+       (270, 3, 7, 3), -- garlic (Qty: 3 cloves)
+       (271, 3, 17, 3), -- basil (Qty: 3 cloves)
+       (272, 2, 32, 5), -- olive oil (Qty: 2tbs)
+       (273, 2.5, 18, 1), -- salt (Qty: 251)
+       (274, 2.5, 19, 1), -- pepper (Qty: 251)
+       (275, 250, 21, 2), -- grated Parmesan cheese (Qty: 250g)
+
+       -- Almond Milk Smoothie
+       (276, 0.350, 69, 4), -- almond milk (Qty: 350ml)
+       (277, 1, 70, 2), -- banana (Qty: 1 piece)
+       (278, 250, 83, 1), -- handful of spinach(Qty: 250g)
+       (279, 100, 106, 1), -- berries (Qty: 100 g)
+
+       -- Beef and Broccoli Stir-Fry
+       (280, 250, 73, 1), -- beef sirloin (Qty: 250g)
+       (281, 5, 26, 5), -- soy sauce (Qty: 5tbs)
+       (282, 3, 7, 3), -- garlic (Qty: 3 cloves)
+       (283, 2, 27, 3), -- ginger (Qty: 2 cloves)
+       (284, 4, 8, 2), -- broccoli florets (Qty: 4 pieces)
+       (285, 5, 106, 5), -- oyster sauce (Qty: 5tbs)
+       (286, 5, 75, 1), -- cornstarch (Qty: 5g)
+       (287, 100, 29, 1), -- cooked rice (Qty: 100g)
+
+       -- Garlic Parmesan Breadsticks
+       (288, 3, 76, 1), -- pizza dough (Qty: 3 pieces)
+       (289, 5, 40, 4), -- melted butter (Qty: 5tbs)
+       (290, 3, 7, 3), -- minced garlic (Qty: 3 cloves)
+       (291, 250, 21, 1), -- grated Parmesan cheese (Qty: 250g)
+
+       -- Wheat Berry Salad
+       (292, 250, 78, 1), -- wheat berries (Qty: 250g)
+       (293, 2, 23, 2), -- chopped bell pepper (Qty: 2 pieces
+       (294, 2, 7, 3), -- Garlic (Qty: 2 cloves)
+       (295, 2, 32, 5), -- olive oil (Qty: 2tbs)
+       (296, 3, 79, 5), -- Dijon mustard (Qty: 3tbs)
+       (297, 2.5, 18, 1), -- salt (Qty: 2.5g)
+       (298, 2.5, 19, 1), -- pepper (Qty: 2.5g)
+
+       -- Cheese Omelette
+       (299, 4, 107, 2), -- eggs (Qty: 4 pieces)
+       (300, 2.5, 18, 1), -- salt (Qty: 2.5g)
+       (301, 2.5, 19, 1), -- pepper (Qty: 2.5g)
+       (302, 250, 10, 1), -- shredded cheese (Qty: 250g)
+
+       -- Egg Fried Rice
+       (303, 250, 29, 1), -- rice (Qty: 250g)
+       (304, 5, 32, 5), -- vegetable oil (Qty: 5tbs)
+       (305, 20, 25, 1), -- Snap peas (Qty: 2 pieces) - replacing diced vegetables
+       (306, 4, 107, 2), -- beaten eggs (Qty: 4 pieces)
+       (307, 5, 26, 5), -- soy sauce (Qty: 5tbs)
+       (308, 4, 81, 2), -- chopped green onions (Qty: 4 pieces)
+
+       -- Cabbage Rolls
+       (309, 1, 82, 2), -- cabbage leaves (Qty: 1 piece)
+       (310, 250, 12, 1), -- ground beef (Qty: 250g)
+       (311, 250, 97, 1), -- cooked rice (Qty: 250g)
+       (312, 2, 13, 2), -- diced onions (Qty: 2 pieces)
+       (313, 0.04, 28, 4), -- sesame oil (Qty: 4 pieces) - replacing seasonings
+       (314, 12, 82, 2), -- cabbage rolls (Qty: 12 pieces)
+       (315, 251, 33, 1), -- tomato sauce (Qty: 251g)
+       (316, 50, 81, 2); -- green onions (Qty: 5 pieces)
 
 INSERT INTO mealplanner_api.recipe_recipe_ingredient (recipe_id, recipe_ingredient_id)
 VALUES
