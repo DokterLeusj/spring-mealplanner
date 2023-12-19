@@ -8,6 +8,7 @@ import be.addergebroed.weeklymealplanner.user.model.dto.UserRegistrationDto;
 import be.addergebroed.weeklymealplanner.user.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,15 +17,16 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepo;
+    private final PasswordEncoder passwordEncoder;
     @Override
     public User registerNewUser(UserRegistrationDto user) {
         if (userRepo.findByEmail(user.email()).isPresent()){
-            throw new IllegalArgumentException("Email " + user.email() + " is already in use. Please use new ");
+            throw new IllegalArgumentException("Email " + user.email() + " is already in use. Please use another.");
         }
 
         User newUser = User.builder()
                 .email(user.email())
-                .password(user.password())
+                .password(passwordEncoder.encode(user.password()))
                 .build();
 
         return userRepo.save(newUser);
