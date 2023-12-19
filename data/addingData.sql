@@ -848,7 +848,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (264, 1, 67, 5),     -- cumin (Qty: 1tbs)
        (265, 0.5, 7, 5),    -- garlic powder (Qty: 0.5tbs)
        (266, 0.5, 13, 5),   -- onion powder (Qty: 0.5tbs)
-       (267, 25, 0, 2),     -- fresh herbs (Qty: 25 pieces)
+       (267, 25, 17, 1),     -- fresh herbs (Qty: 25 pieces)
 
        -- Tomato Basil Pasta
        (268, 250, 20, 1),   -- pasta (Qty: 250g)
