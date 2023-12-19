@@ -2,6 +2,7 @@ package be.addergebroed.weeklymealplanner.user.controller;
 
 
 import be.addergebroed.weeklymealplanner.user.model.dto.UserListDto;
+import be.addergebroed.weeklymealplanner.user.model.dto.UserPlanDto;
 import be.addergebroed.weeklymealplanner.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -26,4 +27,10 @@ public class UserController {
     ) {
         return userService.fetchAllUsers(hasRecipes);
     }
+
+    @GetMapping("/{id}/settings/plan")
+    public UserPlanDto handleGetUserPlanSettings(@PathVariable Long id) {
+        return UserPlanDto.convertToDto(userService.fetchUserById(id));
+    }
+
 }
