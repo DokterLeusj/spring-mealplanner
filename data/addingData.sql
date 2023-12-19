@@ -1,4 +1,5 @@
 # Ingredients
+SET FOREIGN_KEY_CHECKS=0;
 INSERT INTO mealplanner_api.food_category (id, allergen, name)
 VALUES (1, 0, 'Vegetables'),
        (2, 1, 'Nuts'),
@@ -1761,3 +1762,4 @@ VALUES
 (' Serve the butternut
  squash risotto hot, garnished with additional Parmesan and sage if desired.', 8, 40),
 ('Indulge in the rich and comforting flavors of this homemade butternut squash risotto!', 9, 40);
+SET FOREIGN_KEY_CHECKS=1;
