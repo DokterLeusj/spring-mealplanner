@@ -1,8 +1,9 @@
 package be.addergebroed.weeklymealplanner.mealplan.model.calculators;
 
-import be.addergebroed.weeklymealplanner.mealplan.model.MealPlan;
 import be.addergebroed.weeklymealplanner.mealplan.model.MealPlanDay;
 import be.addergebroed.weeklymealplanner.mealplan.model.RestrictionsContainer;
+import be.addergebroed.weeklymealplanner.mealplan.model.dto.MealPlanDayDto;
+import be.addergebroed.weeklymealplanner.mealplan.model.dto.MealPlanListDto;
 import be.addergebroed.weeklymealplanner.mealplan.model.dto.PlanPreferenceDto;
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 import be.addergebroed.weeklymealplanner.recipe.service.RecipeService;
@@ -20,26 +21,32 @@ public class MealPlanCalculatorImpl implements MealPlanCalculator {
     private final DietaryNeedService dietaryNeedService;
 
     @Override
-    public MealPlan calcMealPlan(PlanPreferenceDto planPreference, Set<Long> dietaryNeedIds) {
+    public MealPlanListDto calcMealPlanDto(int mealsPerDay, Set<Long> dietaryNeedIds) {
+        if (dietaryNeedIds == null) {
+            dietaryNeedIds = Set.of();
+        }
         Set<Recipe> recipes = recipeService.fetchAllRecipesBy(null,
                 null,
                 null,
                 dietaryNeedIds.toArray(Long[]::new));
-        int mealsPerDay = planPreference.mealsPerDay();
-        Set<MealPlanDay> mealPlanDays = fillMealPlanDaysAdRandom(recipes, 5, mealsPerDay);
-        return setMealPlan(planPreference,dietaryNeedIds,mealPlanDays);
+        Set<MealPlanDayDto> mealPlanDays =
+                fillMealPlanDaysAdRandom(recipes, 5, mealsPerDay)
+                        .stream()
+                        .map(MealPlanDayDto::convertToDto)
+                        .collect(Collectors.toSet());
+        ;
+        PlanPreferenceDto planPreference = new PlanPreferenceDto(null, null, mealsPerDay, null);
+        return createMealPlanDto(planPreference, dietaryNeedIds, mealPlanDays);
     }
 
     @Override
-    public MealPlan setMealPlan(PlanPreferenceDto planPreferenceDto, Set<Long> dietaryNeedIds, Set<MealPlanDay> mealPlanDays){
-        return new MealPlan(PlanPreferenceDto.convertToObj(planPreferenceDto),
-                new RestrictionsContainer(
-                        null,
-                        dietaryNeedIds.stream()
-                                .map(dietaryNeedService::fetchDietaryNeedById)
-                                .collect(Collectors.toSet()),
-                        null),
-                mealPlanDays);
+    public MealPlanListDto createMealPlanDto(PlanPreferenceDto planPreferenceDto, Set<Long> dietaryNeedIds, Set<MealPlanDayDto> mealPlanDays) {
+        return new MealPlanListDto(
+                null,
+                planPreferenceDto,
+                dietaryNeedIds,
+                mealPlanDays
+        );
     }
 
     private Set<MealPlanDay> fillMealPlanDaysAdRandom(Set<Recipe> recipes, int totalDays, int mealsPerDay) {

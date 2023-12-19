@@ -2,27 +2,19 @@ package be.addergebroed.weeklymealplanner.mealplan.model.dto;
 
 import be.addergebroed.weeklymealplanner.mealplan.model.PlanPreference;
 
+import java.util.Optional;
+
 
 public record PlanPreferenceDto(Long id,
-                                int kcalTarget,
+                                Optional<Integer> kcalTarget,
                                 int mealsPerDay,
-                                int servingsPerMeal) {
+                                Optional<Integer>  servingsPerMeal) {
     public static PlanPreferenceDto convertToDto(PlanPreference planPreference) {
         return new PlanPreferenceDto(
                 planPreference.getId(),
-                planPreference.getKcalTarget(),
+               Optional.of(planPreference.getKcalTarget()),
                 planPreference.getMealsPerDay(),
-                planPreference.getServingsPerMeal()
-        );
-    }
-
-    public static PlanPreference convertToObj(PlanPreferenceDto planPreference) {
-        return new PlanPreference(
-                planPreference.id(),
-                planPreference.kcalTarget(),
-                planPreference.mealsPerDay(),
-                planPreference.servingsPerMeal,
-                null
+                Optional.of(planPreference.getServingsPerMeal())
         );
     }
 

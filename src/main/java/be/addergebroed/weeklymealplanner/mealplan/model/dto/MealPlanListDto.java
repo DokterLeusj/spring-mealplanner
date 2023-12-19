@@ -5,19 +5,28 @@ import be.addergebroed.weeklymealplanner.mealplan.model.RestrictionsContainer;
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 import be.addergebroed.weeklymealplanner.mealplan.model.MealPlan;
 import be.addergebroed.weeklymealplanner.mealplan.model.PlanPreference;
+import be.addergebroed.weeklymealplanner.user.model.DietaryNeed;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public record MealPlanListDto(Long id,
-                              PlanPreference planPreference,
-                              RestrictionsContainer restrictionsContainer,
-                              Set<MealPlanDay> mealPlanDays) {
+                              PlanPreferenceDto planPreference,
+                              Set<Long> dietaryNeedIds,
+                              Set<MealPlanDayDto> mealPlanDays) {
     public static MealPlanListDto convertToDto(MealPlan mealPlan) {
         return new MealPlanListDto(
                 mealPlan.getId(),
-                mealPlan.getPlanPreference(),
-                mealPlan.getRestrictionsContainer(),
-                mealPlan.getMealPlanDays()
+                PlanPreferenceDto.convertToDto(mealPlan.getPlanPreference()),
+                mealPlan.getRestrictionsContainer()
+                        .getDietaryNeeds()
+                        .stream()
+                        .map(DietaryNeed::getId)
+                        .collect(Collectors.toSet())
+                ,
+                mealPlan.getMealPlanDays().stream()
+                        .map(MealPlanDayDto::convertToDto)
+                        .collect(Collectors.toSet())
         );
     }
 }

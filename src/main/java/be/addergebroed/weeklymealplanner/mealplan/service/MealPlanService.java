@@ -17,5 +17,5 @@ public interface MealPlanService {
 
     MealPlan fetchMealPlansById(Long id);
 
-    MealPlanListDto calcMealPlan(PlanPreferenceDto planPreference, Set<Long> dietaryNeeds);
+    MealPlanListDto calcMealPlan(int mealsPerDay, Set<Long> dietaryNeeds);
 }

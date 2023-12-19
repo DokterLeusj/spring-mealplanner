@@ -3,7 +3,6 @@ package be.addergebroed.weeklymealplanner.mealplan.service;
 import be.addergebroed.weeklymealplanner.mealplan.model.MealPlan;
 import be.addergebroed.weeklymealplanner.mealplan.model.calculators.MealPlanCalculator;
 import be.addergebroed.weeklymealplanner.mealplan.model.dto.MealPlanListDto;
-import be.addergebroed.weeklymealplanner.mealplan.model.dto.PlanPreferenceDto;
 import be.addergebroed.weeklymealplanner.mealplan.repository.MealPlanRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -32,9 +31,8 @@ public class MealPlanServiceImpl implements MealPlanService {
     }
 
     @Override
-    public MealPlanListDto calcMealPlan(PlanPreferenceDto planPreference, Set<Long> dietaryNeeds) {
-        MealPlan mealPlan = mealPlanCalculator.calcMealPlan(planPreference, dietaryNeeds);
-        return MealPlanListDto.convertToDto(mealPlan);
+    public MealPlanListDto calcMealPlan(int mealsPerDay, Set<Long> dietaryNeedIds) {
+        return mealPlanCalculator.calcMealPlanDto(mealsPerDay, dietaryNeedIds);
     }
 
 }
