@@ -254,7 +254,6 @@ VALUES (1, 2000, 3, 2),
 # User
 
 # User
-# TODO: must have id's!
 INSERT INTO mealplanner_api.user (id, email, img_url, password, username, plan_preference_id)
 VALUES (1, 'matteo.rossi@example.com', '', '$2y$10$J2Z62ZIkwZptBvK/4eAlSesjOjgy6DkeuhqQCB8ZtLeVoxVSFiP/m',
         'PastaLoverMatteo', 1),
