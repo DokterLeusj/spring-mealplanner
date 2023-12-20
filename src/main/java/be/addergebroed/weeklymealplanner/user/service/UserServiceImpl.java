@@ -19,16 +19,14 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepo;
     private final PasswordEncoder passwordEncoder;
     @Override
-    public User registerNewUser(UserRegistrationDto user) {
+    public User addNewUser(UserRegistrationDto user) {
         if (userRepo.findByEmail(user.email()).isPresent()){
-            throw new IllegalArgumentException("Email " + user.email() + " is already in use. Please use another.");
+            throw new IllegalArgumentException("A user with email " + user.email() + " already exist. Can not create new user");
         }
-
         User newUser = User.builder()
                 .email(user.email())
                 .password(passwordEncoder.encode(user.password()))
                 .build();
-
         return userRepo.save(newUser);
     }
 

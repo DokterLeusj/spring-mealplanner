@@ -28,7 +28,7 @@ public class UserAuthController {
         if (br.hasErrors()) {
             throw new IllegalArgumentException("Invalid User registration");
         }
-        userService.registerNewUser(userDto);
+        userService.addNewUser(userDto);
         return ResponseEntity.ok("You can now log in as " + userDto.email());
     }
 
