@@ -1,7 +1,10 @@
-package be.addergebroed.weeklymealplanner.user.model;
+package be.addergebroed.weeklymealplanner.mealplan.model;
 
+import be.addergebroed.weeklymealplanner.user.model.DietaryNeed;
+import be.addergebroed.weeklymealplanner.user.model.User;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -23,17 +26,7 @@ public class PlanPreference {
 
     private int servingsPerMeal;
 
-
-    @ManyToMany
-    @JoinTable(name = "plan_preference_per_diet",
-            joinColumns = @JoinColumn(name = "plan_preference_id", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "dietary_need_id", nullable = false))
-    private Set<DietaryNeed> dietaryNeeds = new HashSet<>();
-
     @OneToMany(mappedBy = "planPreference")
     private Set<User> users = new HashSet<>();
-
-    @OneToMany(mappedBy = "planPreference")
-    private Set<MealPlanPossibility> mealPlans = new HashSet<>();
 
 }

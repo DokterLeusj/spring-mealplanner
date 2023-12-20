@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
@@ -30,7 +31,7 @@ public class RecipeController {
             @RequestParam(required = false)Long[] authorIds,
             @RequestParam(required = false)Long[] excludedCategoryIds,
             @RequestParam(required = false)Long[] dietaryNeedIds) {
-        List<Recipe> filteredRecipes = recipeService.fetchAllRecipesBy(nameContains,  authorIds, excludedCategoryIds, dietaryNeedIds);
+        Set<Recipe> filteredRecipes = recipeService.fetchAllRecipesBy(nameContains,  authorIds, excludedCategoryIds, dietaryNeedIds);
         return filteredRecipes.stream()
                 .map(RecipeListDto::convertToDto)
                 .collect(Collectors.toList());

@@ -8,17 +8,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
 public class RecipeServiceImpl implements RecipeService {
     private final RecipeIngredientRepository recipeIngredientRepo;
     private final RecipeRepository recipeRepo;
-//
-//    @Override
-//    public List<Recipe> fetchAllRecipes() {
-//        return recipeRepo.findAll();
-//    }
 
     @Override
     public Recipe fetchRecipeById(Long id) {
@@ -29,10 +25,10 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public List<Recipe> fetchAllRecipesBy(String nameContains,
-                                             Long[] authorIds,
-                                             Long[] excludedCategoryIds,
-                                             Long[] dietaryNeedIds) {
+    public Set<Recipe> fetchAllRecipesBy(String nameContains,
+                                         Long[] authorIds,
+                                         Long[] excludedCategoryIds,
+                                         Long[] dietaryNeedIds) {
         return recipeRepo.findAllBy(nameContains,authorIds,excludedCategoryIds,dietaryNeedIds);
     }
 }

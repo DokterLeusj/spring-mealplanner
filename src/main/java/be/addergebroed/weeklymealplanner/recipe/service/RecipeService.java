@@ -3,6 +3,7 @@ package be.addergebroed.weeklymealplanner.recipe.service;
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 
 import java.util.List;
+import java.util.Set;
 
 public interface RecipeService {
     //C
@@ -10,10 +11,10 @@ public interface RecipeService {
 
    Recipe fetchRecipeById(Long id);
 
-    List<Recipe> fetchAllRecipesBy(String nameContains,
-                                      Long[] authorIds,
-                                      Long[] excludedCategoryIds,
-                                      Long[] dietaryNeedIds
+    Set<Recipe> fetchAllRecipesBy(String nameContains,
+                                  Long[] authorIds,
+                                  Long[] excludedCategoryIds,
+                                  Long[] dietaryNeedIds
     );
 
     //U

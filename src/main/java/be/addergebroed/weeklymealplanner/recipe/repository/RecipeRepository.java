@@ -6,9 +6,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Set;
 
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
-    @Query("SELECT r FROM Recipe r " +
+    @Query("SELECT DISTINCT r FROM Recipe r " +
             "WHERE ((:nameContains IS NULL OR LOWER(r.name) LIKE LOWER(CONCAT('%', :nameContains, '%')))) " +
             "       AND (:authorIds IS NULL OR r.author.id IN :authorIds) " +
             "       AND r.id not IN (" +
@@ -19,7 +20,7 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
             "                left JOIN fc.dietaryNeeds dn " +
             "           where ((:excludedCategoryIds IS NOT NULL AND fc.id in :excludedCategoryIds) " +
             "               or (:dietaryNeedIds IS NOT NULL AND dn.id in :dietaryNeedIds )))")
-    List<Recipe> findAllBy(
+    Set<Recipe> findAllBy(
             @Param("nameContains") String nameContains,
             @Param("authorIds") Long[] authorIds,
             @Param("excludedCategoryIds") Long[] excludedCategoryIds,

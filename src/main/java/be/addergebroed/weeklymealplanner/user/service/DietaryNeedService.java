@@ -9,6 +9,7 @@ public interface DietaryNeedService {
     //C
     //R
     List<DietaryNeed> fetchAllNeeds();
+    DietaryNeed fetchDietaryNeedById(Long id);
     //U
     //D
 

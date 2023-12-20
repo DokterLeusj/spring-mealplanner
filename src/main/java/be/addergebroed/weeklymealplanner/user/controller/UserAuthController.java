@@ -1,5 +1,9 @@
 package be.addergebroed.weeklymealplanner.user.controller;
 
+import be.addergebroed.weeklymealplanner.security.UserDetailsImpl;
+import be.addergebroed.weeklymealplanner.security.UserDetailsServiceImpl;
+import be.addergebroed.weeklymealplanner.user.model.User;
+import be.addergebroed.weeklymealplanner.user.model.dto.UserListDto;
 import be.addergebroed.weeklymealplanner.user.model.dto.UserLoginDto;
 import be.addergebroed.weeklymealplanner.user.model.dto.UserRegistrationDto;
 import be.addergebroed.weeklymealplanner.user.service.UserService;
@@ -35,16 +39,19 @@ public class UserAuthController {
     @PostMapping("/login")
     public ResponseEntity<Map<String, String>> handleLogin(@Valid @RequestBody UserLoginDto loginDto, BindingResult br) {
         if (br.hasErrors()) {
+//            In body, gives 401 unauthorized
             throw new IllegalArgumentException("Invalid user sign in");
         }
 
         Authentication auth = authManager.authenticate(new UsernamePasswordAuthenticationToken(loginDto.email(), loginDto.password()));
 
         if (!auth.isAuthenticated()) {
+//            In body, gives 401 unauthorized
             throw new BadCredentialsException("Invalid credentials");
         }
 
-        return ResponseEntity.ok(Map.of("email", loginDto.email()));
+        UserListDto loggedInUser= UserListDto.convertToDto(UserDetailsImpl.getUser(auth));
+        return ResponseEntity.ok(UserListDto.getMap(loggedInUser));
         // in future return json token iso email
     }
 }

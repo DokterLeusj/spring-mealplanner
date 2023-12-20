@@ -1,13 +1,15 @@
 package be.addergebroed.weeklymealplanner.security;
 
 import be.addergebroed.weeklymealplanner.user.model.User;
+import lombok.Getter;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
-
+@Getter
 public class UserDetailsImpl implements UserDetails {
     private final User user;
     private final Set<GrantedAuthority> auths = new HashSet<>();
@@ -49,4 +51,9 @@ public class UserDetailsImpl implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public static User getUser(Authentication auth){
+return        ((UserDetailsImpl) auth.getPrincipal()).getUser();
+    }
+
 }
