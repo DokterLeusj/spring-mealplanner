@@ -141,7 +141,7 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (3, 1),    -- Tomato - Vegetables, Fruit
        (3, 12),
        (4, 4),    -- Milk - Dairy, Fruit
-       (4, 12),
+       (4, 6),
        (5, 2),    -- Almonds - Nuts, Fruit
        (5, 12),
        (6, 5),    -- Beef - Meat, Animal Product
@@ -155,6 +155,7 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (9, 8),
        (10, 4),   -- Cheese - Dairy, Animal Product
        (10, 6),
+       (10, 10),
        (11, 1),   -- Cabbage - Vegetables
        (12, 5),   -- Ground beef - Meat, Animal Product
        (12, 6),
@@ -169,6 +170,7 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (20, 7),
        (21, 4),   -- Parmesan cheese - Dairy, Animal Product
        (21, 6),
+       (21, 10),
        (22, 13),  -- Tofu - Vegetarian protein, Grains
        (22, 3),
        (23, 1),   -- Bell peppers - Vegetables
@@ -187,6 +189,7 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (33, 8),   -- Marinara sauce - Spices
        (34, 4),   -- Mozzarella cheese - Dairy, Animal Product
        (34, 6),
+       (34, 10),
        (35, 8),   -- Balsamic glaze - Spices
        (36, 3),   -- All-purpose flour - Grains, Gluten
        (36, 7),
@@ -196,7 +199,7 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (40, 11),  -- Vegetable oil - Oil and other fats, Spices
        (40, 8),
        (41, 8),   -- Vanilla extract - Spices
-       (42, 8),   -- Hot water - Spices
+          -- Hot water - Spices
        (43, 6),   -- Salmon fillets - Fish, Animal Product, seafood
        (43, 5),
        (43, 14),
@@ -207,7 +210,7 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (46, 7),
        (47, 1),   -- Mushrooms - Vegetables
        (48, 8),   -- Vegetable or chicken broth - Spices
-       (49, 8),   -- Butter - Spices
+       (49, 4),   -- Butter - dairy
        (50, 5),   -- Greek Salad - Meat, Animal Product
        (50, 6),
        (51, 1),   -- Cucumber - Vegetables
@@ -215,20 +218,20 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (53, 1),   -- Kalamata olives - Vegetables
        (54, 4),   -- Feta cheese - Dairy, Animal Product
        (54, 6),
+       (54, 10),
        (55, 1),   -- Red wine vinegar - Vegetables
        (56, 1),   -- Ladyfingers - Vegetables
        (57, 1),   -- Strong brewed coffee - Vegetables
        (58, 4),   -- Mascarpone cheese - Dairy, Animal Product
        (58, 6),
-       (59, 4),   -- Taco seasoning - Dairy, Animal Product
-       (59, 6),
-       (60, 4),   -- Taco shells - Dairy, Animal Product
-       (60, 6),
+       (58, 10),
+       (59, 8),   -- Taco seasoning -
+       (60, 3),   -- Taco shells -
        (61, 1),   -- Lettuce - Vegetables
        (62, 1),   -- Mixed salad greens - Vegetables
        (63, 1),   -- Cherry tomatoes - Vegetables
        (64, 1),   -- Balsamic vinaigrette dressing - Vegetables
-       (65, 8),   -- Black beans - Spices
+       (65, 1),   -- Black beans - vegetable
        (66, 8),   -- Corn - Spices
        (67, 8),   -- Cumin - Spices
        (68, 8),   -- Chili powder - Spices
@@ -238,8 +241,7 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (70, 13),  -- Vegetarian protein
        (71, 2),   -- Almond butter - Nuts, Fruit
        (71, 12),  -- Oil and other fats
-       (72, 5),   -- Honey - Meat, Animal Product
-       (72, 6),
+       (72, 6),     -- Honey -  Animal Product
        (73, 5),   -- Beef sirloin - Meat, Animal Product
        (73, 6),
        (74, 8),   -- Brown sugar - Spices
@@ -253,6 +255,7 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (79, 8),   -- Dijon mustard - Spices
        (80, 4),   -- Cheddar cheese - Dairy, Animal Product
        (80, 6),
+       (80, 10),
        (81, 1),   -- Green onions - Vegetables
        (82, 1),   -- Cabbage leaves - Vegetables
        (83, 8),   -- Thyme - Spices
@@ -262,6 +265,7 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (85, 3),
        (86, 1),   -- Eggplant - Vegetables
        (87, 18),  -- Lentils - Vegetarian protein
+       (87, 1),
        (88, 12),  -- Avocado - Fruit
        (89, 20),  -- Crab - Shellfish, seafood, animal
        (89, 14),
@@ -269,15 +273,12 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (90, 2),   -- Peanut Butter - Nuts, Fruit
        (90, 12),
        (91, 8),   -- Coriander - Spices
-       (92, 1),   -- Cucumber - Vegetables
-       (92, 2),
-       (92, 12),  -- Pumpkin Seeds - Nuts, Fruit
+       (92, 1),     -- Pumpkin Seeds - Nuts, Fruit
        (93, 3),   -- Linguine pasta - Grains, Gluten
        (93, 7),
        (94, 8),   -- Red pepper flakes - spices
        (95, 3),   -- Chickpeas - Grains, Vegetarian protein
        (95, 13),
-       (96, 3),   -- rice noodles
        (97, 8),   -- Cajun seasoning;
        (98, 5),   -- Sausages
        (98, 6),
@@ -309,7 +310,11 @@ VALUES (3, 4),
        (2, 7),
        (1, 9),
        (4, 9),
-       (3, 10);
+       (3, 10),
+       (4,10),
+       (4,14),
+       (4,16),
+       (4,20);
 
 
 # Plans
