@@ -1020,6 +1020,7 @@ VALUES
 (9, 46),-- Qty: 200 grams Ladyfingers
 (9, 47),-- Qty: 250 ml Strong brewed coffee
 (9, 48),   -- Qty: 250 grams Mascarpone cheese
+(9,28), -- cacao powder
 
 
 -- Beef Tacos -> 10
