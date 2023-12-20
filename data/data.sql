@@ -945,7 +945,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
 
 INSERT INTO mealplanner_api.recipe_recipe_ingredient (recipe_id, recipe_ingredient_id)
 VALUES
--- Spaghetti Bolognese
+-- Spaghetti Bolognese -> 1
 (1, 1),    -- Qty: 250 grams Ground beef
 (1, 2),    -- Qty: 1 piece Onion
 (1, 3),    -- Qty: 3 cloves Garlic
@@ -958,7 +958,7 @@ VALUES
 (1, 10),   -- Qty: 300 grams Spaghetti noodles
 (1, 11),   -- Qty: 100 grams Parmesan cheese
 
--- Vegetarian Stir-Fry
+-- Vegetarian Stir-Fry -> 2
 (2, 12),   -- Qty: 200 grams Tofu
 (2, 13),   -- Qty: 1 piece Broccoli
 (2, 14),   -- Qty: 2 pieces Bell peppers
@@ -969,50 +969,52 @@ VALUES
 (2, 19),   -- Qty: 2 tbs Sesame oil
 (2, 20),   -- Qty: 200 grams Rice
 
--- Chicken Parmesan
+-- Chicken Parmesan -> 3
 (3, 21),   -- Qty: 150 grams Flour
 (3, 22),   -- Qty: 100 grams Bread crumbs
 (3, 23),   -- Qty: 30 ml Olive oil
 (3, 24),   -- Qty: 500 ml Marinara sauce
+(3, 11),   -- Qty: 100 grams Parmesan cheese
+(3, 80),   -- kiek
 
--- Chocolate Cake
+-- Chocolate Cake -> 5
 (4, 25),   -- Qty: 200 grams Mozzarella cheese
 (4, 26),   -- Qty: 30 ml Balsamic glaze
 (4, 27),   -- Qty: 200 grams All-purpose flour
 (4, 28),   -- Qty: 30 grams Cocoa powder
 
--- Grilled Salmon
+-- Grilled Salmon ->6
 (5, 29),   -- Qty: 200 grams Salmon fillets
 (5, 30),   -- Qty: 1 piece Lemon
 (5, 31),   -- Qty: 5 grams Dill
 (5, 32),   -- Qty: 200 grams Arborio rice
 
--- Mushroom Risotto
+-- Mushroom Risotto -> 7
 (6, 33),   -- Qty: 150 grams Mushrooms
 (6, 34),   -- Qty: 500 ml Vegetable or chicken broth
 (6, 35),   -- Qty: 50 grams Butter
 (6, 36),   -- Qty: 1 piece Cucumber
 (6, 37),   -- Qty: 1 piece Red onion
 
--- Greek Salad
+-- Greek Salad -> 8
 (7, 38),   -- Qty: 100 grams Kalamata olives
 (7, 39),   -- Qty: 150 grams Feta cheese
 (7, 40),   -- Qty: 30 ml Red wine vinegar
 
--- Tiramisu
+-- Tiramisu -> 9
 (8, 41),   -- Qty: 200 grams Ladyfingers
 (8, 42),   -- Qty: 250 ml Strong brewed coffee
 (8, 43),   -- Qty: 250 grams Mascarpone cheese
 (8, 44),   -- Qty: 1 piece Taco seasoning
 (8, 45),   -- Qty: 8 pieces Taco shells
 
--- Beef Tacos
+-- Beef Tacos -> 10
 (9, 46),   -- Qty: 100 grams Lettuce
 (9, 47),   -- Qty: 100 grams Mixed salad greens
 (9, 48),   -- Qty: 150 grams Cherry tomatoes
 (9, 49),   -- Qty: 50 ml Balsamic vinaigrette dressing
 
--- Grilled Chicken Salad
+-- Grilled Chicken Salad -> 11
 (10, 50),  -- Qty: 200 grams Black beans
 (10, 51),  -- Qty: 150 grams Corn
 (10, 52),  -- Qty: 1 tsp Cumin
@@ -1045,7 +1047,7 @@ VALUES
 (11, 258), -- mixed salad greens (Qty: 2 pieces)
 (11, 259), -- fresh parsley (Qty: 5 pieces)
 
--- Quinoa Stuffed Peppers
+-- Quinoa Stuffed Peppers -> 12
 (12, 260), -- bell peppers (Qty: 1 piece)
 (12, 261), -- quinoa (Qty: 250g)
 (12, 262), -- zucchini (Qty: 2 pieces)
