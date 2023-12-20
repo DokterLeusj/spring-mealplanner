@@ -12,10 +12,10 @@ public record DietaryNeedDto(Long id, String name) {
                 dietaryNeed.getName()
         );
     }
-    public static Set<Long> convertToIds(Set<DietaryNeed> dietaryNeeds) {
+
+    public static Set<DietaryNeedDto> convertToDto(Set<DietaryNeed> dietaryNeeds) {
         return dietaryNeeds.stream()
                 .map(DietaryNeedDto::convertToDto)
-                .map(DietaryNeedDto::id)
                 .collect(Collectors.toSet())
                 ;
     }
