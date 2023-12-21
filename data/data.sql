@@ -104,7 +104,7 @@ VALUES (1, 'Chicken breast'),
        (79, 'Dijon mustard'),
        (80, 'Cheddar cheese'),
        (81, 'Green onions'),
-       (82, 'Cabbage leaves'),
+       (82, 'Green cabbage'),
        (83, 'Thyme'),
        (84, 'Shrimp'),
        (85, 'Edamame'),
@@ -536,9 +536,9 @@ VALUES (1, 'Classic Italian pasta dish with savory Bolognese sauce.', 'https://i
         false, 9),
        (10, 'Savory beef tacos with a variety of toppings.', 'https://i.imgur.com/6LttCTS.jpg', 'Beef Tacos', false,
         10),
-       (11, 'Light and nutritious salad with grilled chicken and fresh greens.', 'https://i.imgur.com/P2ExjnZ.jpg',
-        'Grilled Chicken Salad', true,
-        11),
+#        (11, 'Light and nutritious salad with grilled chicken and fresh greens.', 'https://i.imgur.com/P2ExjnZ.jpg',
+#         'Grilled Chicken Salad', true,
+#         11),
        (12, 'Quinoa-filled bell peppers for a wholesome and tasty dish.', 'https://i.imgur.com/w4Mi6T1.jpg',
         'Quinoa Stuffed Peppers', false, 12),
        (13, 'Delicious pasta dish featuring tomatoes and basil.', 'https://i.imgur.com/RUptR3Y.jpg',
@@ -623,8 +623,8 @@ INSERT INTO mealplanner_api.recipe_ingredient (id, qty, ingredient_id, unit_id)
 VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (2, 1, 13, 2),       -- Onion (Qty: 1 piece)
        (3, 3, 7, 3),        -- Garlic (Qty: 3 cloves)
-       (4, 150, 14, 5),     -- Tomato paste (Qty: 150 grams)
-       (5, 400, 15, 4),     -- Canned tomatoes (Qty: 400 grams)
+       (4, 150, 14, 1),     -- Tomato paste (Qty: 150 grams)
+       (5, 400, 15, 1),     -- Canned tomatoes (Qty: 400 grams)
        (6, 1, 16, 5),       -- Oregano (Qty: 1 tsp)
        (7, 1, 17, 5),       -- Basil (Qty: 1 tsp)
        (8, 1, 18, 5),       -- Salt (Qty: 1 tsp)
@@ -632,25 +632,25 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (10, 300, 20, 1),    -- Spaghetti noodles (Qty: 300 grams)
        (11, 100, 21, 1),    -- Parmesan cheese (Qty: 100 grams)
        (12, 200, 22, 1),    -- Tofu (Qty: 200 grams)
-       (13, 1, 8, 5),       -- Broccoli (Qty: 1 piece)
-       (14, 2, 23, 1),      -- Bell peppers (Qty: 2 pieces)
+       (13, 1, 8, 2),       -- Broccoli (Qty: 1 piece)
+       (14, 2, 23, 2),      -- Bell peppers (Qty: 2 pieces)
        (15, 150, 24, 1),    -- Carrots (Qty: 150 grams)
        (16, 100, 25, 1),    -- Snap peas (Qty: 100 grams)
-       (17, 50, 26, 5),     -- Soy sauce (Qty: 50 ml)
-       (18, 1, 27, 1),      -- Ginger (Qty: 1 piece)
+       (17, 0.050, 26, 4),     -- Soy sauce (Qty: 50 ml)
+       (18, 1, 27, 5),      -- Ginger (Qty: 1 piece)
        (19, 2, 28, 5),      -- Sesame oil (Qty: 2 tbs)
        (20, 200, 29, 1),    -- Rice (Qty: 200 grams)
        (21, 150, 30, 1),    -- Flour (Qty: 150 grams)
        (22, 100, 31, 1),    -- Bread crumbs (Qty: 100 grams)
-       (23, 30, 32, 4),     -- Olive oil (Qty: 30 ml)
-       (24, 500, 33, 4),    -- Marinara sauce (Qty: 500 ml)
+       (23, 0.030, 32, 4),     -- Olive oil (Qty: 30 ml)
+       (24, 0.500, 33, 4),    -- Marinara sauce (Qty: 500 ml)
        (25, 200, 34, 1),    -- Mozzarella cheese (Qty: 200 grams)
        (26, 30, 35, 5),     -- Balsamic glaze (Qty: 30 ml)
        (27, 200, 36, 1),    -- All-purpose flour (Qty: 200 grams)
        (28, 30, 37, 1),     -- Cocoa powder (Qty: 30 grams)
        (29, 10, 38, 1),     -- Baking powder (Qty: 10 grams)
        (30, 100, 39, 1),    -- Sugar (Qty: 100 grams)
-       (31, 30, 40, 4),     -- Vegetable oil (Qty: 30 ml)
+       (31, 0.030, 40, 4),     -- Vegetable oil (Qty: 30 ml)
        (32, 5, 41, 5),      -- Vanilla extract (Qty: 5 ml)
        (33, 30, 42, 4),     -- Hot water (Qty: 30 ml)
        (34, 200, 43, 1),    -- Salmon fillets (Qty: 200 grams)
@@ -672,7 +672,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (50, 8, 60, 1),      -- Taco shells (Qty: 8 pieces)
        (51, 100, 61, 1),    -- Lettuce (Qty: 100 grams)
        (52, 100, 62, 1),    -- Mixed salad greens (Qty: 100 grams)
-       (53, 150, 63, 2),    -- Cherry tomatoes (Qty: 150 grams)
+       (53, 150, 63, 1),    -- Cherry tomatoes (Qty: 150 grams)
        (54, 50, 64, 5),     -- Balsamic vinaigrette dressing (Qty: 50 ml)
        (55, 200, 65, 1),    -- Black beans (Qty: 200 grams)
        (56, 150, 66, 1),    -- Corn (Qty: 150 grams)
@@ -705,7 +705,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (80, 1, 26, 2),      -- Cumin (Qty: 1 tbs)
        (81, 1, 17, 2),      -- Coriander (Qty: 1 tbs)
        (82, 1, 128, 4),      -- Garam masala (Qty: 1 tbs)
-       (83, 2, 15, 2),      -- Tomatoes (Qty: 2 pieces)
+       (83, 2, 3, 2),      -- Tomatoes (Qty: 2 pieces)
        (84, 100, 11, 1),    -- Spinach (Qty: 100 grams)
 
 -- Grilled Chicken Caesar Salad
@@ -947,22 +947,22 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        -- Almond Milk Smoothie
        (276, 0.350, 69, 4), -- almond milk (Qty: 350ml)
        (277, 1, 70, 2),     -- banana (Qty: 1 piece)
-       (278, 250, 83, 1),   -- handful of spinach(Qty: 250g)
-       (279, 100, 106, 1),  -- berries (Qty: 100 g)
+       (278, 250, 112, 1),   -- handful of spinach(Qty: 250g)
+       (279, 100, 105, 1),  -- berries (Qty: 100 g)
 
        -- Beef and Broccoli Stir-Fry
        (280, 250, 73, 1),   -- beef sirloin (Qty: 250g)
        (281, 5, 26, 5),     -- soy sauce (Qty: 5tbs)
        (282, 3, 7, 3),      -- garlic (Qty: 3 cloves)
        (283, 2, 27, 3),     -- ginger (Qty: 2 cloves)
-       (284, 4, 8, 2),      -- broccoli florets (Qty: 4 pieces)
+       (284, 1, 8, 2),      -- broccoli florets (Qty: 4 pieces)
        (285, 5, 106, 5),    -- oyster sauce (Qty: 5tbs)
        (286, 5, 75, 1),     -- cornstarch (Qty: 5g)
        (287, 100, 29, 1),   -- cooked rice (Qty: 100g)
 
        -- Garlic Parmesan Breadsticks
-       (288, 3, 76, 1),     -- pizza dough (Qty: 3 pieces)
-       (289, 5, 40, 4),     -- melted butter (Qty: 5tbs)
+       (288, 200, 76, 1),     -- pizza dough (Qty: 3 pieces)
+       (289, 5, 49, 4),     -- melted butter (Qty: 5tbs)
        (290, 3, 7, 3),      -- minced garlic (Qty: 3 cloves)
        (291, 250, 21, 1),   -- grated Parmesan cheese (Qty: 250g)
 
@@ -984,7 +984,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        -- Egg Fried Rice
        (303, 250, 29, 1),   -- rice (Qty: 250g)
        (304, 5, 32, 5),     -- vegetable oil (Qty: 5tbs)
-       (305, 20, 25, 1),    -- Snap peas (Qty: 2 pieces) - replacing diced vegetables
+       (305, 200, 25, 1),    -- Snap peas (Qty: 2 pieces) - replacing diced vegetables
        (306, 4, 107, 2),    -- beaten eggs (Qty: 4 pieces)
        (307, 5, 26, 5),     -- soy sauce (Qty: 5tbs)
        (308, 4, 81, 2),     -- chopped green onions (Qty: 4 pieces)
@@ -996,8 +996,9 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (312, 2, 13, 2),     -- diced onions (Qty: 2 pieces)
        (313, 0.04, 28, 4),  -- sesame oil (Qty: 4 pieces) - replacing seasonings
        (314, 12, 82, 2),    -- cabbage rolls (Qty: 12 pieces)
-       (315, 251, 33, 1),   -- tomato sauce (Qty: 251g)
-       (316, 50, 81, 2); -- green onions (Qty: 5 pieces)
+       (315, 0.251, 33, 4),   -- tomato sauce (Qty: 251g)
+       (316, 50, 81, 1), -- green onions (Qty: 5 pieces)
+       (317,1,107,2);    -- eitje dabij
 
 INSERT INTO mealplanner_api.recipe_recipe_ingredient (recipe_id, recipe_ingredient_id)
 VALUES
@@ -1031,7 +1032,9 @@ VALUES
 (3, 23),   -- Qty: 30 ml Olive oil V
 (3, 24),   -- Qty: 500 ml Marinara sauce V
 (3, 11),   -- Qty: 100 grams Parmesan cheese V
-(3, 80),   -- kiek V
+(3, 85),   -- kiek V
+(3,317),  -- eitje dabij
+(3,25),
 
 -- Caprese Salad == 4
 (4, 21),   -- Qty: 150 grams Flour V
@@ -1040,6 +1043,7 @@ VALUES
 (4, 24),   -- Qty: 500 ml Marinara sauce V
 (4, 25),   -- Qty: 200 grams Mozzarella cheese
 (4, 83),   -- Tomatoes (Qty: 2 pieces)
+(4,317), -- eitje dabij
 
 -- Chocolate Cake -> 5
 (5, 27),   -- Qty: 200 grams All-purpose flour
@@ -1084,28 +1088,29 @@ VALUES
 (10, 51),  -- Qty: 100 grams Lettuce
 (10, 52),  -- Qty: 100 grams Mixed salad greens
 (10, 53),  -- Qty: 150 grams Cherry tomatoes
-(10, 54),  -- Qty: 50 ml Balsamic vinaigrette dressing
+(10, 54), -- Qty: 50 ml Balsamic vinaigrette dressing
+(10,1),
 
--- Grilled Chicken Salad -> 11
-(11, 55),  -- Qty: 200 grams Black beans
-(11, 56),  -- Qty: 150 grams Corn
-(11, 57),  -- Qty: 1 tsp Cumin
-(11, 58),  -- Qty: 1 tsp Chili powder
-(11, 59),  -- Qty: 250 ml Almond milk
-(11, 60),  -- Qty: 1 piece Banana
-(11, 61),  -- Qty: 30 grams Almond butter
-(11, 62),  -- Qty: 30 grams Honey
-(11, 63),  -- Qty: 200 grams Beef sirloin
-(11, 64),  -- Qty: 50 grams Brown sugar
-(11, 65),  -- Qty: 20 grams Cornstarch
-(11, 66),  -- Qty: 500 grams Pizza dough
-(11, 67),  -- Qty: 5 grams Fresh parsley
-(11, 68),  -- Qty: 150 grams Wheat berries
-(11, 69),  -- Qty: 1 tsp Dijon mustard
-(11, 70),  -- Qty: 100 grams Cheddar cheese
-(11, 71),  -- Qty: 2 pieces Green onions
-(11, 72),  -- Qty: 12 pieces Cabbage leaves
-(11, 73),  -- Qty: 1 tsp Thyme
+# -- Grilled Chicken Salad -> 11
+# (11, 55),  -- Qty: 200 grams Black beans
+# (11, 56),  -- Qty: 150 grams Corn
+# (11, 57),  -- Qty: 1 tsp Cumin
+# (11, 58),  -- Qty: 1 tsp Chili powder
+# (11, 59),  -- Qty: 250 ml Almond milk
+# (11, 60),  -- Qty: 1 piece Banana
+# (11, 61),  -- Qty: 30 grams Almond butter
+# (11, 62),  -- Qty: 30 grams Honey
+# (11, 63),  -- Qty: 200 grams Beef sirloin
+# (11, 64),  -- Qty: 50 grams Brown sugar
+# (11, 65),  -- Qty: 20 grams Cornstarch
+# (11, 66),  -- Qty: 500 grams Pizza dough
+# (11, 67),  -- Qty: 5 grams Fresh parsley
+# (11, 68),  -- Qty: 150 grams Wheat berries
+# (11, 69),  -- Qty: 1 tsp Dijon mustard
+# (11, 70),  -- Qty: 100 grams Cheddar cheese
+# (11, 71),  -- Qty: 2 pieces Green onions
+# (11, 72),  -- Qty: 12 pieces Cabbage leaves
+# (11, 73),  -- Qty: 1 tsp Thyme
 
 # -- Grilled Chicken Salad
 # (11, 250), -- black beans (Qty: 250g)
@@ -1190,7 +1195,6 @@ VALUES
 (20, 311), -- cooked rice (Qty: 250g)
 (20, 312), -- diced onions (Qty: 2 pieces)
 (20, 313), -- sesame oil (Qty: 0.04tbs)
-(20, 314), -- cabbage rolls (Qty: 12 pieces)
 (20, 315), -- tomato sauce (Qty: 251g)
 (20, 316), -- green onions (Qty: 5 pieces)
 
@@ -1494,19 +1498,19 @@ VALUES
  3, 10),
 ('Top with shredded cheddar cheese and serve the beef tacos immediately.', 4, 10),
 
--- Grilled Chicken Salad
-('In a large bowl, combine black beans, corn, cumin, and chili powder.', 1, 11),
-('In a blender, mix almond milk, banana, almond butter, and honey until smooth. Pour the dressing over the salad.', 2,
- 11),
-('Toss the salad until well coated with the almond milk dressing.', 3, 11),
-('Serve the grilled chicken salad chilled, garnished with fresh parsley.', 4, 11),
-('Enjoy this nutritious and flavorful salad!', 5, 11),
--- Quinoa Stuffed Peppers
-('Preheat the oven to 375°F (190°C). Cut bell peppers in half lengthwise and remove seeds and membranes.', 1, 12),
-('In a saucepan, cook quinoa according to package instructions. In a bowl, mix cooked quinoa with your favorite vegetables and seasonings.',
- 2, 12),
-('Fill each bell pepper half with the quinoa mixture. Place the stuffed peppers in a baking dish.', 3, 12),
-('Bake for 25-30 minutes or until peppers are tender. Garnish with fresh herbs and serve hot.', 4, 12),
+# -- Grilled Chicken Salad
+# ('In a large bowl, combine black beans, corn, cumin, and chili powder.', 1, 11),
+# ('In a blender, mix almond milk, banana, almond butter, and honey until smooth. Pour the dressing over the salad.', 2,
+#  11),
+# ('Toss the salad until well coated with the almond milk dressing.', 3, 11),
+# ('Serve the grilled chicken salad chilled, garnished with fresh parsley.', 4, 11),
+# ('Enjoy this nutritious and flavorful salad!', 5, 11),
+# -- Quinoa Stuffed Peppers
+# ('Preheat the oven to 375°F (190°C). Cut bell peppers in half lengthwise and remove seeds and membranes.', 1, 12),
+# ('In a saucepan, cook quinoa according to package instructions. In a bowl, mix cooked quinoa with your favorite vegetables and seasonings.',
+#  2, 12),
+# ('Fill each bell pepper half with the quinoa mixture. Place the stuffed peppers in a baking dish.', 3, 12),
+# ('Bake for 25-30 minutes or until peppers are tender. Garnish with fresh herbs and serve hot.', 4, 12),
 
 -- Tomato Basil Pasta
 ('Cook pasta in a large pot of salted boiling water until al dente. Drain and set aside.', 1, 13),
