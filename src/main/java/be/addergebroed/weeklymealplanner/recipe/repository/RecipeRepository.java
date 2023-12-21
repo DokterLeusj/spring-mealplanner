@@ -14,10 +14,10 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
             "       AND (:authorIds IS NULL OR r.author.id IN :authorIds) " +
             "       AND r.id not IN (" +
             "           SELECT r.id FROM Recipe r " +
-            "               left JOIN r.recipeIngredients ri " +
-            "                left JOIN ri.ingredient i " +
-            "                left JOIN i.foodCategories fc " +
-            "                left JOIN fc.dietaryNeeds dn " +
+            "               JOIN r.recipeIngredients ri " +
+            "                JOIN ri.ingredient i " +
+            "                JOIN i.foodCategories fc " +
+            "                 JOIN fc.dietaryNeeds dn " +
             "           where ((:excludedCategoryIds IS NOT NULL AND fc.id in :excludedCategoryIds) " +
             "               or (:dietaryNeedIds IS NOT NULL AND dn.id in :dietaryNeedIds )))")
     Set<Recipe> findAllBy(
