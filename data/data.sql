@@ -148,7 +148,14 @@ VALUES (1, 'Chicken breast'),
        (123, 'Rosemary'),
        (124,'Butternut Squach'),
        (125,'white wine'),
-       (126,'Sage');
+       (126,'Sage'),
+       (127,'Hummus'),
+       (128,'Garam masala'),
+       (129, 'garlic powder'),
+       (130, 'Romaine lettuce'),
+       (131, 'Black pepper'),
+       (132, 'Lime juice'),
+       (133,'Lemon juice');
 
 INSERT INTO mealplanner_api.ingredient_per_category (ingredient_id, food_category_id)
 VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
@@ -333,7 +340,14 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (122,1),
        (123,8),
        (124,1),
-       (126,8);
+       (126,8),
+       (127,1),
+       (128,8),
+       (129,8),
+       (130,1),
+       (131, 8),
+       (132, 12),
+       (133,12);
 
 # Dietary needs
 INSERT INTO mealplanner_api.dietary_need (id, name)
@@ -690,13 +704,13 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (79, 1, 28, 2),      -- Turmeric (Qty: 1 tbs)
        (80, 1, 26, 2),      -- Cumin (Qty: 1 tbs)
        (81, 1, 17, 2),      -- Coriander (Qty: 1 tbs)
-       (82, 1, 18, 2),      -- Garam masala (Qty: 1 tbs)
+       (82, 1, 128, 4),      -- Garam masala (Qty: 1 tbs)
        (83, 2, 15, 2),      -- Tomatoes (Qty: 2 pieces)
        (84, 100, 11, 1),    -- Spinach (Qty: 100 grams)
 
 -- Grilled Chicken Caesar Salad
        (85, 300, 1, 1),     -- Chicken breast (Qty: 300 grams)
-       (86, 1, 62, 2),      -- Romaine lettuce (Qty: 1 head)
+       (86, 1, 130, 2),      -- Romaine lettuce (Qty: 1 head)
        (87, 0.200, 109, 4), -- Caesar dressing (Qty: 0.15 l)
        (88, 50, 108, 1),    -- Croutons (Qty: 50 grams)
        (89, 100, 21, 6),    -- Parmesan cheese (Qty: 100 grams)
@@ -707,10 +721,11 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (92, 150, 23, 1),    -- Bell peppers (Qty: 150 grams)
        (93, 150, 63, 1),    -- Cherry tomatoes (Qty: 150 grams)
        (94, 0.045, 32, 4),  -- Olive oil (Qty: 0.045 l)
-       (95, 5, 7, 1),       -- Garlic powder (Qty: 5 grams)
+       (95, 5, 129, 1),       -- Garlic powder (Qty: 5 grams)
        (96, 2.5, 99, 1),    -- Paprika (Qty: 2.5 grams)
        (97, 5, 18, 1),      -- Salt (Qty: 5 grams)
-       (98, 2.5, 19, 1),    -- Black pepper (Qty: 2.5 grams)
+       (98, 2.5, 131, 1),    -- Black pepper (Qty: 2.5 grams)
+       (99, 100,127,1),     -- 100g Hummus
 
        -- Spicy Shrimp Stir-Fry
        (100, 300, 84, 1),   -- Shrimp (Qty: 300 grams)
@@ -735,10 +750,10 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (115, 250, 63, 2),   -- Cherry tomatoes (Qty: 250 grams)
        (116, 2, 88, 6),     -- Avocado (Qty: 2 pieces)
        (117, 30, 91, 5),    -- Coriander (Qty: 30 grams)
-       (118, 2, 111, 5),    -- Lime juice (Qty: 2 tbs)
+       (118, 2, 132, 5),    -- Lime juice (Qty: 2 tbs)
        (119, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (120, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (121, 2, 19, 1),     -- Black pepper (Qty: 2 grams)
+       (121, 2, 131, 1),     -- Black pepper (Qty: 2 grams)
 
 -- Honey Mustard Glazed Salmon
        (122, 4, 43, 1),     -- Salmon fillets (Qty: 4 pieces)
@@ -747,7 +762,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (125, 0.03, 26, 4),  -- Soy sauce (Qty: 0.03 l)
        (126, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (127, 3, 7, 3),      -- Garlic (Qty: 3 cloves)
-       (128, 2, 44, 5),     -- Lemon juice (Qty: 2 tbs)
+       (128, 2, 133, 5),     -- Lemon juice (Qty: 2 tbs)
 
 -- Caprese Pasta Salad
        (129, 300, 93, 2),   -- Pasta (Qty: 300 grams)
@@ -757,7 +772,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (133, 0.03, 35, 4),  -- Balsamic vinegar (Qty: 0.03 l)
        (134, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (135, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (136, 2, 19, 1),     -- Black pepper (Qty: 2 grams)
+       (136, 2, 131, 1),     -- Black pepper (Qty: 2 grams)
 
 -- Chickpea and Spinach Stew
        (137, 400, 95, 1),   -- Chickpeas (Qty: 400 grams)
@@ -769,7 +784,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (143, 4, 67, 1),     -- Cumin (Qty: 1 tbs)
        (144, 5, 99, 1),     -- Paprika (Qty: 1 tbs)
        (145, 6, 17, 1),     -- Coriander (Qty: 1 tbs)
-       (146, 2, 35, 5),     -- Lemon juice (Qty: 2 tbs)
+       (146, 2, 133, 5),     -- Lemon juice (Qty: 2 tbs)
 
 -- Teriyaki Tofu Stir-Fry
        (147, 400, 22, 2),   -- Tofu (Qty: 400 grams)
@@ -790,7 +805,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (160, 50, 21, 6),    -- Parmesan cheese (Qty: 50 grams)
        (161, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (162, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (163, 2, 19, 1),     -- Black pepper (Qty: 2 grams)
+       (163, 2, 131, 1),     -- Black pepper (Qty: 2 grams)
 
 -- Cauliflower and Chickpea Curry
        (164, 1, 116, 2),    -- Cauliflower (Qty: 1 piece)
@@ -811,9 +826,9 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (177, 1, 13, 2),     -- Red onion (Qty: 1 piece)
        (178, 1, 121, 2),     -- Jalapeño (Qty: 1 piece)
        (179, 30, 91, 5),    -- Coriander (Qty: 30 grams)
-       (180, 2, 111, 5),     -- Lime juice (Qty: 2 tbs)
+       (180, 2, 132, 5),     -- Lime juice (Qty: 2 tbs)
        (181, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (182, 2, 19, 1),     -- Black pepper (Qty: 2 grams)
+       (182, 2, 131, 1),     -- Black pepper (Qty: 2 grams)
 
 -- Lemon Garlic Shrimp Pasta
        (183, 400, 84, 1),   -- Shrimp (Qty: 400 grams)
@@ -821,7 +836,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (185, 250, 63, 2),   -- Cherry tomatoes (Qty: 250 grams)
        (186, 150, 112, 2),   -- Spinach (Qty: 150 grams)
        (187, 4, 7, 3),      -- Garlic (Qty: 4 cloves)
-       (188, 2, 44, 5),     -- Lemon juice (Qty: 2 tbs)
+       (188, 2, 133, 5),     -- Lemon juice (Qty: 2 tbs)
        (189, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (190, 1, 94, 1),     -- Red pepper flakes (Qty: 1 tsp)
 
@@ -834,7 +849,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (196, 100, 34, 2),   -- Mozzarella cheese (Qty: 100 grams)
        (197, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (198, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (199, 2, 19, 1),     -- Black pepper (Qty: 2 grams)
+       (199, 2, 131, 1),     -- Black pepper (Qty: 2 grams)
 
 -- Mediterranean Quinoa Salad
        (200, 200, 2, 2),    -- Quinoa (Qty: 200 grams)
@@ -844,7 +859,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (204, 1, 52, 2),     -- Red onion (Qty: 1 piece)
        (205, 100, 54, 2),   -- Feta cheese (Qty: 100 grams)
        (206, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
-       (207, 2, 44, 6),     -- Lemon juice (Qty: 2 tbs)
+       (207, 2, 133, 6),     -- Lemon juice (Qty: 2 tbs)
        (208, 1, 16, 2),     -- Oregano (Qty: 1 tsp)
 
 -- Vegetarian Pad Thai
@@ -894,7 +909,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (246, 10, 126, 1),    -- Sage (Qty: 10 grams)
        (247, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (248, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (249, 2, 19, 1),     -- Black pepper (Qty: 2 grams)
+       (249, 2, 131, 1),     -- Black pepper (Qty: 2 grams)
 
        -- last 10 start here
        -- Grilled Chicken Salad
@@ -915,7 +930,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (262, 2, 29, 2),     -- zucchini (Qty: 2 pieces)
        (263, 1, 99, 5),     -- paprika (Qty: 1tbs)
        (264, 1, 67, 5),     -- cumin (Qty: 1tbs)
-       (265, 0.5, 7, 5),    -- garlic powder (Qty: 0.5tbs)
+       (265, 0.5, 129, 5),    -- garlic powder (Qty: 0.5tbs)
        (266, 0.5, 13, 5),   -- onion powder (Qty: 0.5tbs)
        (267, 25, 17, 1),    -- fresh herbs (Qty: 25 pieces)
 
