@@ -70,7 +70,7 @@ VALUES (1, 'Chicken breast'),
        (45, 'Dill'),
        (46, 'Arborio rice'),
        (47, 'Mushrooms'),
-       (48, 'Vegetable or chicken broth'),
+       (48, 'Vegetable broth'),
        (49, 'Butter'),
        (50, 'Greek Salad:'),
        (51, 'Cucumber'),
@@ -140,22 +140,22 @@ VALUES (1, 'Chicken breast'),
        (115, 'Pesto sauce'),
        (116, 'Cauliflower'),
        (117, 'Coconut milk'),
-       (118,'curry powder'),
-       (119,'Turmeric'),
-       (120,'Mango'),
-       (121,'Jalapeño'),
+       (118, 'curry powder'),
+       (119, 'Turmeric'),
+       (120, 'Mango'),
+       (121, 'Jalapeño'),
        (122, 'Celery'),
        (123, 'Rosemary'),
-       (124,'Butternut Squach'),
-       (125,'white wine'),
-       (126,'Sage'),
-       (127,'Hummus'),
-       (128,'Garam masala'),
+       (124, 'Butternut Squach'),
+       (125, 'white wine'),
+       (126, 'Sage'),
+       (127, 'Hummus'),
+       (128, 'Garam masala'),
        (129, 'garlic powder'),
        (130, 'Romaine lettuce'),
        (131, 'Black pepper'),
        (132, 'Lime juice'),
-       (133,'Lemon juice');
+       (133, 'Lemon juice');
 
 INSERT INTO mealplanner_api.ingredient_per_category (ingredient_id, food_category_id)
 VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
@@ -332,22 +332,22 @@ VALUES (1, 5),    -- Chicken breast - Meat, Chicken, Animal Product
        (115, 2),
        (116, 1),
        (117, 12),
-       (118,8),
-       (119,8),
-       (120,12),
-       (121,8),
-       (121,1),
-       (122,1),
-       (123,8),
-       (124,1),
-       (126,8),
-       (127,1),
-       (128,8),
-       (129,8),
-       (130,1),
+       (118, 8),
+       (119, 8),
+       (120, 12),
+       (121, 8),
+       (121, 1),
+       (122, 1),
+       (123, 8),
+       (124, 1),
+       (126, 8),
+       (127, 1),
+       (128, 8),
+       (129, 8),
+       (130, 1),
        (131, 8),
        (132, 12),
-       (133,12);
+       (133, 12);
 
 # Dietary needs
 INSERT INTO mealplanner_api.dietary_need (id, name)
@@ -636,21 +636,21 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (14, 2, 23, 2),      -- Bell peppers (Qty: 2 pieces)
        (15, 150, 24, 1),    -- Carrots (Qty: 150 grams)
        (16, 100, 25, 1),    -- Snap peas (Qty: 100 grams)
-       (17, 0.050, 26, 4),     -- Soy sauce (Qty: 50 ml)
+       (17, 0.050, 26, 4),  -- Soy sauce (Qty: 50 ml)
        (18, 1, 27, 5),      -- Ginger (Qty: 1 piece)
        (19, 2, 28, 5),      -- Sesame oil (Qty: 2 tbs)
        (20, 200, 29, 1),    -- Rice (Qty: 200 grams)
        (21, 150, 30, 1),    -- Flour (Qty: 150 grams)
        (22, 100, 31, 1),    -- Bread crumbs (Qty: 100 grams)
-       (23, 0.030, 32, 4),     -- Olive oil (Qty: 30 ml)
-       (24, 0.500, 33, 4),    -- Marinara sauce (Qty: 500 ml)
+       (23, 0.030, 32, 4),  -- Olive oil (Qty: 30 ml)
+       (24, 0.500, 33, 4),  -- Marinara sauce (Qty: 500 ml)
        (25, 200, 34, 1),    -- Mozzarella cheese (Qty: 200 grams)
        (26, 30, 35, 5),     -- Balsamic glaze (Qty: 30 ml)
        (27, 200, 36, 1),    -- All-purpose flour (Qty: 200 grams)
        (28, 30, 37, 1),     -- Cocoa powder (Qty: 30 grams)
        (29, 10, 38, 1),     -- Baking powder (Qty: 10 grams)
        (30, 100, 39, 1),    -- Sugar (Qty: 100 grams)
-       (31, 0.030, 40, 4),     -- Vegetable oil (Qty: 30 ml)
+       (31, 0.030, 40, 4),  -- Vegetable oil (Qty: 30 ml)
        (32, 5, 41, 5),      -- Vanilla extract (Qty: 5 ml)
        (33, 30, 42, 4),     -- Hot water (Qty: 30 ml)
        (34, 200, 43, 1),    -- Salmon fillets (Qty: 200 grams)
@@ -658,22 +658,22 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (36, 5, 45, 1),      -- Dill (Qty: 5 grams)
        (37, 200, 46, 1),    -- Arborio rice (Qty: 200 grams)
        (38, 150, 47, 1),    -- Mushrooms (Qty: 150 grams)
-       (39, 500, 48, 4),    -- Vegetable or chicken broth (Qty: 500 ml)
+       (39, 0.500, 48, 4),  -- Vegetable or chicken broth (Qty: 500 ml)
        (40, 50, 49, 1),     -- Butter (Qty: 50 grams)
        (41, 1, 51, 2),      -- Cucumber (Qty: 1 piece)
        (42, 1, 52, 2),      -- Red onion (Qty: 1 piece)
        (43, 100, 53, 1),    -- Kalamata olives (Qty: 100 grams)
        (44, 150, 54, 1),    -- Feta cheese (Qty: 150 grams)
-       (45, 30, 55, 4),     -- Red wine vinegar (Qty: 30 ml)
-       (46, 100, 56, 2),    -- Ladyfingers (Qty: 100 grams)
-       (47, 250, 57, 4),    -- Strong brewed coffee (Qty: 250 ml)
+       (45, 0.030, 55, 4),  -- Red wine vinegar (Qty: 30 ml)
+       (46, 200, 56, 1),    -- Ladyfingers (Qty: 100 grams)
+       (47, 0.250, 57, 4),  -- Strong brewed coffee (Qty: 250 ml)
        (48, 250, 58, 1),    -- Mascarpone cheese (Qty: 250 grams)
        (49, 1, 59, 1),      -- Taco seasoning (Qty: 1 piece)
        (50, 8, 60, 1),      -- Taco shells (Qty: 8 pieces)
        (51, 100, 61, 1),    -- Lettuce (Qty: 100 grams)
        (52, 100, 62, 1),    -- Mixed salad greens (Qty: 100 grams)
        (53, 150, 63, 1),    -- Cherry tomatoes (Qty: 150 grams)
-       (54, 50, 64, 5),     -- Balsamic vinaigrette dressing (Qty: 50 ml)
+       (54, 1, 64, 5),      -- Balsamic vinaigrette dressing (Qty: 50 ml)
        (55, 200, 65, 1),    -- Black beans (Qty: 200 grams)
        (56, 150, 66, 1),    -- Corn (Qty: 150 grams)
        (57, 1, 67, 5),      -- Cumin (Qty: 1 tsp)
@@ -700,20 +700,20 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (75, 0.4, 4, 4),     -- Coconut milk (Qty: 0.4 l)
        (76, 1, 13, 2),      -- Onion (Qty: 1 piece)
        (77, 3, 7, 3),       -- Garlic (Qty: 3 cloves)
-       (78, 1, 27, 2),      -- Ginger (Qty: 1 tbs)
-       (79, 1, 28, 2),      -- Turmeric (Qty: 1 tbs)
-       (80, 1, 26, 2),      -- Cumin (Qty: 1 tbs)
-       (81, 1, 17, 2),      -- Coriander (Qty: 1 tbs)
-       (82, 1, 128, 4),      -- Garam masala (Qty: 1 tbs)
-       (83, 2, 3, 2),      -- Tomatoes (Qty: 2 pieces)
+       (78, 1, 27, 5),      -- Ginger (Qty: 1 tbs)
+       (79, 1, 28, 5),      -- Turmeric (Qty: 1 tbs)
+       (80, 1, 26, 5),      -- Cumin (Qty: 1 tbs)
+       (81, 1, 17, 5),      -- Coriander (Qty: 1 tbs)
+       (82, 1, 128, 5),     -- Garam masala (Qty: 1 tbs)
+       (83, 2, 3, 2),       -- Tomatoes (Qty: 2 pieces)
        (84, 100, 11, 1),    -- Spinach (Qty: 100 grams)
 
 -- Grilled Chicken Caesar Salad
        (85, 300, 1, 1),     -- Chicken breast (Qty: 300 grams)
-       (86, 1, 130, 2),      -- Romaine lettuce (Qty: 1 head)
-       (87, 0.200, 109, 4), -- Caesar dressing (Qty: 0.15 l)
+       (86, 1, 130, 2),     -- Romaine lettuce (Qty: 1 head)
+       (87, 0100, 109, 4),  -- Caesar dressing (Qty: 0.15 l)
        (88, 50, 108, 1),    -- Croutons (Qty: 50 grams)
-       (89, 100, 21, 6),    -- Parmesan cheese (Qty: 100 grams)
+       (89, 100, 21, 1),    -- Parmesan cheese (Qty: 100 grams)
 
 -- Roasted Vegetable Quinoa Bowl
        (90, 200, 2, 1),     -- Quinoa (Qty: 200 grams)
@@ -721,22 +721,22 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (92, 150, 23, 1),    -- Bell peppers (Qty: 150 grams)
        (93, 150, 63, 1),    -- Cherry tomatoes (Qty: 150 grams)
        (94, 0.045, 32, 4),  -- Olive oil (Qty: 0.045 l)
-       (95, 5, 129, 1),       -- Garlic powder (Qty: 5 grams)
+       (95, 5, 129, 1),     -- Garlic powder (Qty: 5 grams)
        (96, 2.5, 99, 1),    -- Paprika (Qty: 2.5 grams)
        (97, 5, 18, 1),      -- Salt (Qty: 5 grams)
-       (98, 2.5, 131, 1),    -- Black pepper (Qty: 2.5 grams)
-       (99, 100,127,1),     -- 100g Hummus
+       (98, 2.5, 131, 1),   -- Black pepper (Qty: 2.5 grams)
+       (99, 100, 127, 1),   -- 100g Hummus
 
        -- Spicy Shrimp Stir-Fry
        (100, 300, 84, 1),   -- Shrimp (Qty: 300 grams)
-       (101, 150, 8, 2),    -- Broccoli (Qty: 150 grams)
-       (102, 100, 23, 2),   -- Bell peppers (Qty: 100 grams)
-       (103, 50, 24, 2),    -- Carrots (Qty: 50 grams)
+       (101, 150, 8, 1),    -- Broccoli (Qty: 150 grams)
+       (102, 100, 23, 1),   -- Bell peppers (Qty: 100 grams)
+       (103, 50, 24, 1),    -- Carrots (Qty: 50 grams)
        (104, 0.03, 26, 4),  -- Soy sauce (Qty: 0.03 l)
-       (105, 0.02, 27, 4),  -- Ginger (Qty: 0.02 l)
+       (105, 2, 27, 5),  -- Ginger (Qty: 0.02 l)
        (106, 0.03, 103, 4), -- Sriracha (Qty: 0.03 l)
        (107, 3, 7, 3),      -- Garlic (Qty: 3 cloves)
-       (108, 200, 29, 2),   -- Rice (Qty: 200 grams)
+       (108, 200, 29, 1),   -- Rice (Qty: 200 grams)
 
 -- Mushroom Risotto
        (109, 150, 47, 1),   -- Mushrooms (Qty: 150 grams)
@@ -747,13 +747,13 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (112, 400, 65, 1),   -- Black beans (Qty: 400 grams)
        (113, 200, 66, 1),   -- Corn kernels (Qty: 200 grams)
        (114, 1, 13, 2),     -- Red onion (Qty: 1 piece)
-       (115, 250, 63, 2),   -- Cherry tomatoes (Qty: 250 grams)
+       (115, 250, 63, 1),   -- Cherry tomatoes (Qty: 250 grams)
        (116, 2, 88, 6),     -- Avocado (Qty: 2 pieces)
-       (117, 30, 91, 5),    -- Coriander (Qty: 30 grams)
+       (117, 30, 91, 1),    -- Coriander (Qty: 30 grams)
        (118, 2, 132, 5),    -- Lime juice (Qty: 2 tbs)
        (119, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (120, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (121, 2, 131, 1),     -- Black pepper (Qty: 2 grams)
+       (121, 2, 131, 1),    -- Black pepper (Qty: 2 grams)
 
 -- Honey Mustard Glazed Salmon
        (122, 4, 43, 1),     -- Salmon fillets (Qty: 4 pieces)
@@ -762,17 +762,17 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (125, 0.03, 26, 4),  -- Soy sauce (Qty: 0.03 l)
        (126, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (127, 3, 7, 3),      -- Garlic (Qty: 3 cloves)
-       (128, 2, 133, 5),     -- Lemon juice (Qty: 2 tbs)
+       (128, 2, 133, 5),    -- Lemon juice (Qty: 2 tbs)
 
 -- Caprese Pasta Salad
-       (129, 300, 93, 2),   -- Pasta (Qty: 300 grams)
-       (130, 250, 63, 2),   -- Cherry tomatoes (Qty: 250 grams)
-       (131, 150, 34, 2),   -- Mozzarella cheese (Qty: 150 grams)
-       (132, 20, 17, 2),    -- Fresh basil (Qty: 20 grams)
+       (129, 300, 93, 1),   -- Pasta (Qty: 300 grams)
+       (130, 250, 63, 1),   -- Cherry tomatoes (Qty: 250 grams)
+       (131, 150, 34, 1),   -- Mozzarella cheese (Qty: 150 grams)
+       (132, 20, 17, 1),    -- Fresh basil (Qty: 20 grams)
        (133, 0.03, 35, 4),  -- Balsamic vinegar (Qty: 0.03 l)
        (134, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (135, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (136, 2, 131, 1),     -- Black pepper (Qty: 2 grams)
+       (136, 2, 131, 1),    -- Black pepper (Qty: 2 grams)
 
 -- Chickpea and Spinach Stew
        (137, 400, 95, 1),   -- Chickpeas (Qty: 400 grams)
@@ -783,133 +783,133 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (142, 0.5, 48, 4),   -- Vegetable broth (Qty: 0.5 l)
        (143, 4, 67, 1),     -- Cumin (Qty: 1 tbs)
        (144, 5, 99, 1),     -- Paprika (Qty: 1 tbs)
-       (145, 6, 17, 1),     -- Coriander (Qty: 1 tbs)
-       (146, 2, 133, 5),     -- Lemon juice (Qty: 2 tbs)
+       (145, 1, 17, 5),     -- Coriander (Qty: 1 tbs)
+       (146, 2, 133, 5),    -- Lemon juice (Qty: 2 tbs)
 
 -- Teriyaki Tofu Stir-Fry
-       (147, 400, 22, 2),   -- Tofu (Qty: 400 grams)
-       (148, 150, 8, 2),    -- Broccoli (Qty: 150 grams)
-       (149, 100, 23, 2),   -- Bell peppers (Qty: 100 grams)
-       (150, 50, 24, 2),    -- Carrots (Qty: 50 grams)
+       (147, 400, 22, 1),   -- Tofu (Qty: 400 grams)
+       (148, 150, 8, 1),    -- Broccoli (Qty: 150 grams)
+       (149, 100, 23, 1),   -- Bell peppers (Qty: 100 grams)
+       (150, 50, 24, 1),    -- Carrots (Qty: 50 grams)
        (151, 0.06, 113, 4), -- Teriyaki sauce (Qty: 0.06 l)
        (152, 0.03, 26, 4),  -- Soy sauce (Qty: 0.03 l)
        (153, 0.02, 27, 4),  -- Ginger (Qty: 0.02 l)
        (154, 3, 7, 3),      -- Garlic (Qty: 3 cloves)
-       (155, 200, 29, 2),   -- Rice (Qty: 200 grams)
+       (155, 200, 29, 1),   -- Rice (Qty: 200 grams)
 
 -- Pesto Chicken Penne
        (156, 400, 1, 1),    -- Chicken breast (Qty: 400 grams)
-       (157, 300, 114, 2),  -- Penne pasta (Qty: 300 grams)
-       (158, 250, 63, 2),   -- Cherry tomatoes (Qty: 250 grams)
+       (157, 300, 114, 1),  -- Penne pasta (Qty: 300 grams)
+       (158, 250, 63, 1),   -- Cherry tomatoes (Qty: 250 grams)
        (159, 0.1, 115, 4),  -- Pesto sauce (Qty: 0.1 l)
-       (160, 50, 21, 6),    -- Parmesan cheese (Qty: 50 grams)
+       (160, 50, 21, 1),    -- Parmesan cheese (Qty: 50 grams)
        (161, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (162, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (163, 2, 131, 1),     -- Black pepper (Qty: 2 grams)
+       (163, 2, 131, 1),    -- Black pepper (Qty: 2 grams)
 
 -- Cauliflower and Chickpea Curry
        (164, 1, 116, 2),    -- Cauliflower (Qty: 1 piece)
        (165, 400, 95, 1),   -- Chickpeas (Qty: 400 grams)
        (166, 1, 13, 2),     -- Onion (Qty: 1 piece)
        (167, 3, 7, 3),      -- Garlic (Qty: 3 cloves)
-       (168, 20, 27, 2),    -- Ginger (Qty: 20 grams)
+       (168, 20, 27, 1),    -- Ginger (Qty: 20 grams)
        (169, 1, 3, 2),      -- Tomato (Qty: 1 piece)
-       (170, 0.4, 117, 4),   -- Coconut milk (Qty: 0.4 l)
-       (171, 2, 118, 2),     -- Curry powder (Qty: 2 tbs)
-       (172, 1, 119, 2),     -- Turmeric (Qty: 1 tbs)
-       (173, 1, 67, 2),     -- Cumin (Qty: 1 tbs)
-       (174, 1, 91, 2),     -- Coriander (Qty: 1 tbs)
+       (170, 0.4, 117, 4),  -- Coconut milk (Qty: 0.4 l)
+       (171, 2, 118, 5),    -- Curry powder (Qty: 2 tbs)
+       (172, 1, 119, 5),    -- Turmeric (Qty: 1 tbs)
+       (173, 1, 67, 5),     -- Cumin (Qty: 1 tbs)
+       (174, 1, 91, 5),     -- Coriander (Qty: 1 tbs)
 
 -- Mango Avocado Salsa
-       (175, 2, 120, 2),     -- Mango (Qty: 2 pieces)
+       (175, 2, 120, 2),    -- Mango (Qty: 2 pieces)
        (176, 2, 88, 2),     -- Avocado (Qty: 2 pieces)
        (177, 1, 13, 2),     -- Red onion (Qty: 1 piece)
-       (178, 1, 121, 2),     -- Jalapeño (Qty: 1 piece)
-       (179, 30, 91, 5),    -- Coriander (Qty: 30 grams)
-       (180, 2, 132, 5),     -- Lime juice (Qty: 2 tbs)
+       (178, 1, 121, 2),    -- Jalapeño (Qty: 1 piece)
+       (179, 30, 91, 1),    -- Coriander (Qty: 30 grams)
+       (180, 2, 132, 5),    -- Lime juice (Qty: 2 tbs)
        (181, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (182, 2, 131, 1),     -- Black pepper (Qty: 2 grams)
+       (182, 2, 131, 1),    -- Black pepper (Qty: 2 grams)
 
 -- Lemon Garlic Shrimp Pasta
        (183, 400, 84, 1),   -- Shrimp (Qty: 400 grams)
-       (184, 300, 93, 2),   -- Linguine pasta (Qty: 300 grams)
-       (185, 250, 63, 2),   -- Cherry tomatoes (Qty: 250 grams)
-       (186, 150, 112, 2),   -- Spinach (Qty: 150 grams)
+       (184, 300, 93, 1),   -- Linguine pasta (Qty: 300 grams)
+       (185, 250, 63, 1),   -- Cherry tomatoes (Qty: 250 grams)
+       (186, 150, 112, 1),  -- Spinach (Qty: 150 grams)
        (187, 4, 7, 3),      -- Garlic (Qty: 4 cloves)
-       (188, 2, 133, 5),     -- Lemon juice (Qty: 2 tbs)
+       (188, 2, 133, 5),    -- Lemon juice (Qty: 2 tbs)
        (189, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
-       (190, 1, 94, 1),     -- Red pepper flakes (Qty: 1 tsp)
+       (190, 1, 94, 5),     -- Red pepper flakes (Qty: 1 tsp)
 
 -- Stuffed Bell Peppers
        (191, 4, 23, 2),     -- Bell peppers (Qty: 4 pieces)
        (192, 400, 12, 1),   -- Ground beef (Qty: 400 grams)
-       (193, 150, 2, 1),   -- Quinoa (Qty: 150 grams)
+       (193, 150, 2, 1),    -- Quinoa (Qty: 150 grams)
        (194, 1, 13, 2),     -- Onion (Qty: 1 piece)
        (195, 0.25, 14, 4),  -- Tomato sauce (Qty: 0.25 l)
-       (196, 100, 34, 2),   -- Mozzarella cheese (Qty: 100 grams)
+       (196, 100, 34, 1),   -- Mozzarella cheese (Qty: 100 grams)
        (197, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (198, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (199, 2, 131, 1),     -- Black pepper (Qty: 2 grams)
+       (199, 2, 131, 1),    -- Black pepper (Qty: 2 grams)
 
 -- Mediterranean Quinoa Salad
-       (200, 200, 2, 2),    -- Quinoa (Qty: 200 grams)
+       (200, 200, 2, 1),    -- Quinoa (Qty: 200 grams)
        (201, 1, 51, 2),     -- Cucumber (Qty: 1 piece)
-       (202, 250, 63, 2),   -- Cherry tomatoes (Qty: 250 grams)
-       (203, 100, 53, 2),   -- Kalamata olives (Qty: 100 grams)
+       (202, 250, 63, 1),   -- Cherry tomatoes (Qty: 250 grams)
+       (203, 100, 53, 1),   -- Kalamata olives (Qty: 100 grams)
        (204, 1, 52, 2),     -- Red onion (Qty: 1 piece)
-       (205, 100, 54, 2),   -- Feta cheese (Qty: 100 grams)
+       (205, 100, 54, 1),   -- Feta cheese (Qty: 100 grams)
        (206, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
-       (207, 2, 133, 6),     -- Lemon juice (Qty: 2 tbs)
-       (208, 1, 16, 2),     -- Oregano (Qty: 1 tsp)
+       (207, 2, 133, 5),    -- Lemon juice (Qty: 2 tbs)
+       (208, 1, 16, 5),     -- Oregano (Qty: 1 tsp)
 
 -- Vegetarian Pad Thai
-       (209, 200, 96, 2),   -- Rice noodles (Qty: 200 grams)
-       (210, 200, 22, 2),   -- Tofu (Qty: 200 grams)
-       (211, 100, 100, 2),  -- Bean sprouts (Qty: 100 grams)
+       (209, 200, 96, 1),   -- Rice noodles (Qty: 200 grams)
+       (210, 200, 22, 1),   -- Tofu (Qty: 200 grams)
+       (211, 100, 100, 1),  -- Bean sprouts (Qty: 100 grams)
        (212, 2, 24, 2),     -- Carrots (Qty: 2 pieces)
        (213, 4, 81, 2),     -- Green onions (Qty: 4 pieces)
-       (214, 50, 101, 6),   -- Peanuts (Qty: 50 grams)
-       (215, 2, 111, 2),     -- Lime (Qty: 2 pieces)
+       (214, 50, 101, 1),   -- Peanuts (Qty: 50 grams)
+       (215, 2, 111, 2),    -- Lime (Qty: 2 pieces)
        (216, 0.03, 26, 4),  -- Soy sauce (Qty: 0.03 l)
        (217, 0.03, 102, 4), -- Tamarind paste (Qty: 0.03 l)
        (218, 1, 103, 5),    -- Sriracha (Qty: 1 tbs)
 
 -- Lentil and Vegetable Stew
-       (219, 200, 87, 2),   -- Lentils (Qty: 200 grams)
+       (219, 200, 87, 1),   -- Lentils (Qty: 200 grams)
        (220, 2, 24, 2),     -- Carrots (Qty: 2 pieces)
-       (221, 2, 122, 2),     -- Celery (Qty: 2 pieces)
+       (221, 2, 122, 2),    -- Celery (Qty: 2 pieces)
        (222, 1, 13, 2),     -- Onion (Qty: 1 piece)
        (223, 3, 7, 3),      -- Garlic (Qty: 3 cloves)
        (224, 0.5, 48, 4),   -- Vegetable broth (Qty: 0.5 l)
-       (225, 1, 3, 2),     -- Tomato (Qty: 1 piece)
+       (225, 1, 3, 2),      -- Tomato (Qty: 1 piece)
        (226, 2, 104, 2),    -- Bay leaves (Qty: 2 pieces)
-       (227, 1, 83, 1),     -- Thyme (Qty: 1 tbs)
-       (228, 1, 123, 1),     -- Rosemary (Qty: 1 tbs)
+       (227, 1, 83, 5),     -- Thyme (Qty: 1 tbs)
+       (228, 1, 123, 5),    -- Rosemary (Qty: 1 tbs)
 
 -- Cajun Shrimp and Sausage Skillet
        (229, 400, 84, 1),   -- Shrimp (Qty: 400 grams)
-       (230, 250, 98, 2),   -- Sausage (Qty: 250 grams)
+       (230, 250, 98, 1),   -- Sausage (Qty: 250 grams)
        (231, 2, 23, 2),     -- Bell peppers (Qty: 2 pieces)
        (232, 1, 13, 2),     -- Onion (Qty: 1 piece)
-       (233, 2, 122, 2),     -- Celery (Qty: 2 pieces)
+       (233, 2, 122, 2),    -- Celery (Qty: 2 pieces)
        (234, 3, 7, 3),      -- Garlic (Qty: 3 cloves)
-       (235, 2, 97, 2),    -- Cajun seasoning (Qty: 2 tbs)
-       (236, 1, 99, 2),     -- Paprika (Qty: 1 tbs)
-       (237, 1, 83, 1),     -- Thyme (Qty: 1 tbs)
+       (235, 2, 97, 5),     -- Cajun seasoning (Qty: 2 tbs)
+       (236, 1, 99, 5),     -- Paprika (Qty: 1 tbs)
+       (237, 1, 83, 5),     -- Thyme (Qty: 1 tbs)
        (238, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
 
 -- Butternut Squash Risotto
-       (239, 300, 46, 2),   -- Arborio rice (Qty: 300 grams)
-       (240, 1, 124, 2),     -- Butternut Squach (Qty: 1 piece)
+       (239, 300, 46, 1),   -- Arborio rice (Qty: 300 grams)
+       (240, 1, 124, 2),    -- Butternut Squach (Qty: 1 piece)
        (241, 1, 13, 2),     -- Onion (Qty: 1 piece)
        (242, 3, 7, 3),      -- Garlic (Qty: 3 cloves)
-       (243, 0.75, 125, 4),  -- White wine (Qty: 0.12 l)
+       (243, 0.75, 125, 4), -- White wine (Qty: 0.12 l)
        (244, 1, 48, 4),     -- Vegetable broth (Qty: 1 l)
-       (245, 50, 21, 2),    -- Parmesan cheese (Qty: 50 grams)
-       (246, 10, 126, 1),    -- Sage (Qty: 10 grams)
+       (245, 50, 21, 1),    -- Parmesan cheese (Qty: 50 grams)
+       (246, 10, 126, 1),   -- Sage (Qty: 10 grams)
        (247, 0.03, 32, 4),  -- Olive oil (Qty: 0.03 l)
        (248, 5, 18, 1),     -- Salt (Qty: 5 grams)
-       (249, 2, 131, 1),     -- Black pepper (Qty: 2 grams)
+       (249, 2, 131, 1),    -- Black pepper (Qty: 2 grams)
 
        -- last 10 start here
        -- Grilled Chicken Salad
@@ -927,10 +927,10 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        -- Quinoa Stuffed Peppers
        (260, 1, 23, 2),     -- bell peppers (Qty: 1 piece)
        (261, 250, 2, 1),    -- quinoa (Qty: 250g)
-       (262, 2, 29, 2),     -- zucchini (Qty: 2 pieces)
+       (262, 2, 110, 2),    -- zucchini (Qty: 2 pieces)
        (263, 1, 99, 5),     -- paprika (Qty: 1tbs)
        (264, 1, 67, 5),     -- cumin (Qty: 1tbs)
-       (265, 0.5, 129, 5),    -- garlic powder (Qty: 0.5tbs)
+       (265, 0.5, 129, 5),  -- garlic powder (Qty: 0.5tbs)
        (266, 0.5, 13, 5),   -- onion powder (Qty: 0.5tbs)
        (267, 25, 17, 1),    -- fresh herbs (Qty: 25 pieces)
 
@@ -938,7 +938,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (268, 250, 20, 1),   -- pasta (Qty: 250g)
        (269, 250, 15, 1),   -- diced tomatoes (Qty: 250g)
        (270, 3, 7, 3),      -- garlic (Qty: 3 cloves)
-       (271, 3, 17, 3),     -- basil (Qty: 3 cloves)
+       (271, 10, 17, 1),    -- basil (Qty: 3 cloves)
        (272, 2, 32, 5),     -- olive oil (Qty: 2tbs)
        (273, 2.5, 18, 1),   -- salt (Qty: 251)
        (274, 2.5, 19, 1),   -- pepper (Qty: 251)
@@ -947,22 +947,22 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        -- Almond Milk Smoothie
        (276, 0.350, 69, 4), -- almond milk (Qty: 350ml)
        (277, 1, 70, 2),     -- banana (Qty: 1 piece)
-       (278, 250, 112, 1),   -- handful of spinach(Qty: 250g)
+       (278, 150, 112, 1),  -- handful of spinach(Qty: 250g)
        (279, 100, 105, 1),  -- berries (Qty: 100 g)
 
        -- Beef and Broccoli Stir-Fry
        (280, 250, 73, 1),   -- beef sirloin (Qty: 250g)
        (281, 5, 26, 5),     -- soy sauce (Qty: 5tbs)
        (282, 3, 7, 3),      -- garlic (Qty: 3 cloves)
-       (283, 2, 27, 3),     -- ginger (Qty: 2 cloves)
+       (283, 2, 27, 5),     -- ginger (Qty: 2 cloves)
        (284, 1, 8, 2),      -- broccoli florets (Qty: 4 pieces)
        (285, 5, 106, 5),    -- oyster sauce (Qty: 5tbs)
        (286, 5, 75, 1),     -- cornstarch (Qty: 5g)
        (287, 100, 29, 1),   -- cooked rice (Qty: 100g)
 
        -- Garlic Parmesan Breadsticks
-       (288, 200, 76, 1),     -- pizza dough (Qty: 3 pieces)
-       (289, 5, 49, 4),     -- melted butter (Qty: 5tbs)
+       (288, 200, 76, 1),   -- pizza dough (Qty: 3 pieces)
+       (289, 50, 49, 1),    -- melted butter (Qty: 5tbs)
        (290, 3, 7, 3),      -- minced garlic (Qty: 3 cloves)
        (291, 250, 21, 1),   -- grated Parmesan cheese (Qty: 250g)
 
@@ -984,7 +984,7 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        -- Egg Fried Rice
        (303, 250, 29, 1),   -- rice (Qty: 250g)
        (304, 5, 32, 5),     -- vegetable oil (Qty: 5tbs)
-       (305, 200, 25, 1),    -- Snap peas (Qty: 2 pieces) - replacing diced vegetables
+       (305, 200, 25, 1),   -- Snap peas (Qty: 2 pieces) - replacing diced vegetables
        (306, 4, 107, 2),    -- beaten eggs (Qty: 4 pieces)
        (307, 5, 26, 5),     -- soy sauce (Qty: 5tbs)
        (308, 4, 81, 2),     -- chopped green onions (Qty: 4 pieces)
@@ -996,9 +996,9 @@ VALUES (1, 250, 12, 1),     -- Ground beef (Qty: 250 grams)
        (312, 2, 13, 2),     -- diced onions (Qty: 2 pieces)
        (313, 0.04, 28, 4),  -- sesame oil (Qty: 4 pieces) - replacing seasonings
        (314, 12, 82, 2),    -- cabbage rolls (Qty: 12 pieces)
-       (315, 0.251, 33, 4),   -- tomato sauce (Qty: 251g)
-       (316, 50, 81, 1), -- green onions (Qty: 5 pieces)
-       (317,1,107,2);    -- eitje dabij
+       (315, 0.251, 33, 4), -- tomato sauce (Qty: 251g)
+       (316, 50, 81, 1),    -- green onions (Qty: 5 pieces)
+       (317, 1, 107, 2); -- eitje dabij
 
 INSERT INTO mealplanner_api.recipe_recipe_ingredient (recipe_id, recipe_ingredient_id)
 VALUES
@@ -1033,8 +1033,8 @@ VALUES
 (3, 24),   -- Qty: 500 ml Marinara sauce V
 (3, 11),   -- Qty: 100 grams Parmesan cheese V
 (3, 85),   -- kiek V
-(3,317),  -- eitje dabij
-(3,25),
+(3, 317),  -- eitje dabij
+(3, 25),
 
 -- Caprese Salad == 4
 (4, 21),   -- Qty: 150 grams Flour V
@@ -1043,7 +1043,7 @@ VALUES
 (4, 24),   -- Qty: 500 ml Marinara sauce V
 (4, 25),   -- Qty: 200 grams Mozzarella cheese
 (4, 83),   -- Tomatoes (Qty: 2 pieces)
-(4,317), -- eitje dabij
+(4, 317),  -- eitje dabij
 
 -- Chocolate Cake -> 5
 (5, 27),   -- Qty: 200 grams All-purpose flour
@@ -1088,8 +1088,8 @@ VALUES
 (10, 51),  -- Qty: 100 grams Lettuce
 (10, 52),  -- Qty: 100 grams Mixed salad greens
 (10, 53),  -- Qty: 150 grams Cherry tomatoes
-(10, 54), -- Qty: 50 ml Balsamic vinaigrette dressing
-(10,1),
+(10, 54),  -- Qty: 50 ml Balsamic vinaigrette dressing
+(10, 1),
 
 # -- Grilled Chicken Salad -> 11
 # (11, 55),  -- Qty: 200 grams Black beans
