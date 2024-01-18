@@ -21,4 +21,9 @@ public class IngredientServiceImpl implements IngredientService {
     public List<Ingredient> fetchAllIngredients() {
         return ingredientRepo.findAll();
     }
+
+    @Override
+    public Ingredient fetchIngredientById(Long id) {
+        return ingredientRepo.findById(id).orElseThrow(()->new EntityNotFoundException("No ingredient with id "+id));
+    }
 }

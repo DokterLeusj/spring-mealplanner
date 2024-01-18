@@ -5,9 +5,10 @@ import be.addergebroed.weeklymealplanner.recipe.model.Ingredient;
 import java.util.List;
 
 public interface IngredientService {
-    List<Ingredient> fetchAllIngredients();
     //C
     //R
+    List<Ingredient> fetchAllIngredients();
+    Ingredient fetchIngredientById(Long id);
     //U
     //D
 }

@@ -502,7 +502,7 @@ VALUES (1, 'matteo.rossi@example.com', '', '$2y$10$J2Z62ZIkwZptBvK/4eAlSesjOjgy6
 
 INSERT INTO mealplanner_api.dietary_need_per_user (user_id, dietary_need_id)
 VALUES (1, 1),
-       (60, 3);
+       (60, 4);
 
 
 # Recipes
