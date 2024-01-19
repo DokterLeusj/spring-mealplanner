@@ -1,9 +1,11 @@
 package be.addergebroed.weeklymealplanner.recipe.controller;
 
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
+import be.addergebroed.weeklymealplanner.recipe.model.dto.CreatedRecipeDto;
 import be.addergebroed.weeklymealplanner.recipe.model.dto.NewRecipeDto;
 import be.addergebroed.weeklymealplanner.recipe.model.dto.RecipeDetailDto;
 import be.addergebroed.weeklymealplanner.recipe.model.dto.RecipeListDto;
+import be.addergebroed.weeklymealplanner.recipe.service.RecipeMappingService;
 import be.addergebroed.weeklymealplanner.recipe.service.RecipeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +25,7 @@ import java.util.stream.Collectors;
 @CrossOrigin
 public class RecipeController {
     private final RecipeService recipeService;
+    private final RecipeMappingService recipeMappingService;
 
 
     @PostMapping("")
@@ -30,9 +33,9 @@ public class RecipeController {
         if (br.hasErrors()) {
             throw new IllegalArgumentException();
         } else {
-            Recipe recipe = modelMapper.map(recipeDto, Recipe.class);
-            Recipe registeredRecipe = quoteService.registerNewQuote(recipe);
-            return new ResponseEntity<>(modelMapper.map(registeredQuote, CreatedQuoteDto.class), HttpStatus.CREATED);
+            Recipe recipe = recipeMappingService.mapNewRecipeDtoToRecipe(recipeDto);
+            Recipe registeredRecipe = recipeService.registerNewRecipe(recipe);
+            return new ResponseEntity<>(CreatedRecipeDto.convertToDto(registeredRecipe), HttpStatus.CREATED);
         }
     }
 

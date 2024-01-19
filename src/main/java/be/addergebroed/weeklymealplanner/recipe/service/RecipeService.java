@@ -7,6 +7,7 @@ import java.util.Set;
 
 public interface RecipeService {
     //C
+    Recipe registerNewRecipe(Recipe recipe);
     //R
 
    Recipe fetchRecipeById(Long id);
