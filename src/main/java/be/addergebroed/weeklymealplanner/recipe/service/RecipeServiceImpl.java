@@ -3,6 +3,7 @@ package be.addergebroed.weeklymealplanner.recipe.service;
 import be.addergebroed.weeklymealplanner.recipe.model.Recipe;
 import be.addergebroed.weeklymealplanner.recipe.repository.RecipeIngredientRepository;
 import be.addergebroed.weeklymealplanner.recipe.repository.RecipeRepository;
+import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,14 @@ import java.util.Set;
 public class RecipeServiceImpl implements RecipeService {
     private final RecipeIngredientRepository recipeIngredientRepo;
     private final RecipeRepository recipeRepo;
+
+    @Override
+    public Recipe registerNewRecipe(Recipe recipe) {
+        if (recipe.getId()!=null){
+            throw new EntityExistsException("New recipe to register must have empty id, currently id = "+recipe.getId());
+        }
+        return recipeRepo.save(recipe);
+    }
 
     @Override
     public Recipe fetchRecipeById(Long id) {
